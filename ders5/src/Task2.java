@@ -3,31 +3,16 @@ import java.util.Scanner;
 public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("ədədi daxil edin: ");
-        var score = scanner.nextInt();
-        if (score>=91 && score<=100) {
-            System.out.println("balınız: A");
-        } else if (score>=81 && score<=90){
-            System.out.println("balınız: B");
-        }else if (score>=71 && score<=80){
-            System.out.println("balınız: C");
-        }else if (score>=61 && score<=70){
-            System.out.println("balınız: D");
-        }else if (score>=51 && score<=60){
-            System.out.println("balinız: E");
-        }else{
-            System.out.println("balınız: F");
+        System.out.print("Ədədi daxil edin: ");
+        var num = scanner.nextInt();
+        if(num%3==0 && num%4==0){
+            System.out.println("Bu ədəd həm 3'ə həm 4'ə qalıqsız bölünür.");
+        } else if(num%3==0) {
+            System.out.println("Bu ədəd Yalnız 3'ə qalıqsız bölünür.");
+        } else if(num%4==0) {
+            System.out.println("Bu ədəd yalnız 4'ə qalıqsız bölünür.");
+        } else{
+            System.out.println("Bu ədəd 3'ə və 4'ə qalıqsız bölünmür.");
         }
     }
 }
-
-
-
-/*
- * 91-100 = A - ELA
- * 81-90 = B - COX YAXSI
- * 71-80 = C - YAXSI
- * 61-70 = D - KAFI
- * 51-60 = E - QENAETBEXS
- * 51 - baldan asagi = F - QEYRI KAFI
- */
