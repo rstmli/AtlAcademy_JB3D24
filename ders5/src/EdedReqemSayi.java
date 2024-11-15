@@ -7,7 +7,7 @@ public class EdedReqemSayi {
         int number = scanner.nextInt();
         if(number>0){
             int reqemsayi = 0;
-            for(;number>0;number/=10){
+            for(reqemsayi = 0;number>0;number/=10){
                 reqemsayi++;
             }
             System.out.println("bu ədəd " + reqemsayi + " rəqəmlidir.");
