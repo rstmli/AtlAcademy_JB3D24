@@ -3,15 +3,19 @@ import java.util.Scanner;
 public class EdedReqemSayi {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        var number = scanner.nextInt();
-        var reqemsayi = 0;
-        if(number<0){
-            number = -number;
-            System.out.println(number);
+        System.out.print("ədədi daxil edin: ");
+        int number = scanner.nextInt();
+        if(number>0){
+            int reqemsayi = 0;
+            for(;number>0;number/=10){
+                reqemsayi++;
+            }
+
+            System.out.println("bu ədəd " + reqemsayi + " rəqəmlidir.");
+        } else {
+            System.out.println("daxil etdiyiniz ədəd mənfi ədəddir");
         }
-        for(;number>0;number/=10){
-            reqemsayi++;
-        }
-        System.out.println(reqemsayi);
+
+
     }
 }
