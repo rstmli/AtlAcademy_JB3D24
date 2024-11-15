@@ -9,6 +9,5 @@ public class Sahmat_task {
             bugda = bugda.multiply(BigInteger.valueOf(2));
         }
         System.out.println(" bugda denesinin sayi: " + sum);
-
     }
 }
