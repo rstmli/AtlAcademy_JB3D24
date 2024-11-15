@@ -10,8 +10,8 @@ public class EdedReqemSayi {
             for(;number>0;number/=10){
                 reqemsayi++;
             }
-
             System.out.println("bu ədəd " + reqemsayi + " rəqəmlidir.");
+
         } else {
             System.out.println("daxil etdiyiniz ədəd mənfi ədəddir");
         }
