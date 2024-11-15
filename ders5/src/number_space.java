@@ -7,7 +7,7 @@ public class number_space {
         System.out.print(mesaj);
         int a = scanner.nextInt();
         while (true){
-            if (a< 10 || a>99){
+            if (a<10 || a>99){
                 System.out.println("Daxil etdiyiniz eded iki reqemli deyil");
                 System.out.print(mesaj);
                 a = scanner.nextInt();
