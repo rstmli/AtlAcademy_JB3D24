@@ -6,6 +6,7 @@ public class Sahmat_task {
         for(int i = 1; i<=64;i++){
             bugda = bugda.multiply(BigInteger.valueOf(2));
         }
+        
         System.out.println(" bugda denesinin sayi: " + bugda);
     }
 }
