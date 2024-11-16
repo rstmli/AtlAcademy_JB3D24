@@ -11,7 +11,7 @@ public class Task2 {
                 cem = a+cem;
             }
 
-            else if(a==0){
+            else{
                 break;
             }
         }
