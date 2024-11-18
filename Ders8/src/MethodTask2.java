@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class MethodTask2 {
     public String reverse(String a){
         String b = "";
@@ -11,8 +10,6 @@ public class MethodTask2 {
         }
         return b;
     }
-
-
     public static void main(String[] args) {
         MethodTask2 convert = new MethodTask2();
         Scanner scanner = new Scanner(System.in);
