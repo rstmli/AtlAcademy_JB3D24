@@ -10,8 +10,14 @@ public class SumAverage {
             arr[i] = scanner.nextInt();
             average = average+arr[i];
         }
+
         int sum = (int) average;
         System.out.println("ədədlərin cəmi: " + sum + " ədədi ortası: " + sum/5);
 
     }
 }
+
+// serti operatorlar
+//muqayise
+//arfimetiq
+//dovru
