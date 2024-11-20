@@ -1,22 +1,27 @@
-public class Bmw extends CarMain {
-    public Bmw(){
-        System.out.println("--------- Bmw xüsusiyyətləri ---------");
-        System.out.println(dynamicDriving());
-        System.out.println(externalDesign());
-        System.out.println(intellectualTechnologies());
-        System.out.println(suitablePrice());
+public class Bmw extends Car {
+    private String sport;
+
+    public void setSport(String electric) {
+        this.sport = electric;
     }
-    private String dynamicDriving(){
-        return "BMW, sürüş keyfiyyəti və idarəetmə ilə məşhurdur.";
-    }
-    private String externalDesign(){
-        return "BMW-nin xarici dizaynı çox vaxt kəskin və iddialıdır.";
-    }
-    private String intellectualTechnologies(){
-        return "BMW, sürücünün avtomobili daha rahat və təhlükəsiz idarə etməsini təmin edir.";
-    }
-    private String suitablePrice(){
-        return "BMW, premium avtomobillər arasında orta və yüksək qiymət aralığında yerləşir.";
+    public String getSport() {
+        return sport;
     }
 
+
+    public Bmw() {
+
+    }
+
+    public Bmw(String name, int speed, double motor, String fuel, String sport){
+        super(name,speed,motor,fuel);
+        this.sport = sport;
+
+    }
+
+
+    public void displayInfo(){
+        super.displayInfo();
+        System.out.println(" " + sport);
+    }
 }

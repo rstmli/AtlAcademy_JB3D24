@@ -1,21 +1,22 @@
-public class Mercedes extends CarMain {
-    public Mercedes(){
-        System.out.println("--------- Mercedes xüsusiyyətləri ---------");
-        System.out.println(comfort());
-        System.out.println(additionalSafety());
-        System.out.println(highTechnology());
-        System.out.println(innovationEcology());
+public class Mercedes extends Car{
+    private String comfortable;
+
+    public void setComfortable(String comfortable) {
+        this.comfortable = comfortable;
     }
-    private String comfort(){
-        return "Mercedes, bütün dünyada lüks və komfortlu avtomobilləri ilə tanınır. ";
+    public String getComfortable(){
+        return comfortable;
     }
-    private String additionalSafety(){
-        return "Mercedes, yüksək təhlükəsizlik xüsusiyyətləri ilə də məşhurdur.";
+    public Mercedes (String name, int speed, double motor, String fuel,String comfortable) {
+        super(name,speed,motor,fuel);
+        this.comfortable = comfortable;
+
     }
-    private String highTechnology(){
-        return "Mercedes'in MBUX infoteynment sistemi çox inkişaf etmişdir və səsli əmrlərlə idarə oluna bilər.";
+
+    public void displayInfo(){
+        super.displayInfo();
+        System.out.println(" ");
     }
-    private String innovationEcology(){
-        return "Mercedes, ekoloji cəhətdən təmiz və gələcəyin avtomobilləri olan EQ seriyası ilə tanınır.";
-    }
+
+
 }
