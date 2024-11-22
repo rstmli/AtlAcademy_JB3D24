@@ -21,7 +21,7 @@ public class Teacher extends Academy {
         return subject;
     }
 
-    public Teacher(String academyName,String surname, String address, int teacherId, String subject ){
+    public Teacher(String academyName, String address, int teacherId, String subject ){
         super(academyName,address);
         this.teacherId = teacherId;
         this.subject = subject;
