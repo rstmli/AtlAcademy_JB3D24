@@ -2,6 +2,9 @@ public class Teacher extends Academy {
     private int teacherId;
     private String subject;
 
+    Student student = new Student();
+
+
     public void setTeacherId(int teacherId) {
         this.teacherId = teacherId;
     }
@@ -18,8 +21,8 @@ public class Teacher extends Academy {
         return subject;
     }
 
-    public Teacher(String name,String surname, String address, int teacherId, String subject ){
-        super(name,surname,address);
+    public Teacher(String academyName,String surname, String address, int teacherId, String subject ){
+        super(academyName,address);
         this.teacherId = teacherId;
         this.subject = subject;
 

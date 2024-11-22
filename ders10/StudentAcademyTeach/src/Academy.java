@@ -1,20 +1,12 @@
 public class Academy {
 
 
-    private String name;
-    private String surname;
+    private String academyName;
     private String address;
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
 
     public void setName(String name) {
-        this.name = name;
+        this.academyName = name;
     }
 
     public void setAddress(String address) {
@@ -22,15 +14,14 @@ public class Academy {
     }
 
     public  String getName(){
-        return name;
+        return academyName;
     }
     public String getAddress(){
         return address;
     }
 
-    public Academy(String name,String surname, String address){
-        this.name = name;
-        this.surname = surname;
+    public Academy(String academyName, String address){
+        this.academyName = academyName;
         this.address = address;
 
     }
@@ -39,7 +30,7 @@ public class Academy {
 
     }
     public void displayInfo(){
-        System.out.print("adi: : " + name + " Soyadi: " + name +" address " + address + " ");
+        System.out.print("adi: : " + academyName +" address " + address + " ");
     }
 
 

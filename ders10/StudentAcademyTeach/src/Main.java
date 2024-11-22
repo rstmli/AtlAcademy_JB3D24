@@ -2,8 +2,8 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Student student = new Student("Huseyn","Rustemli","goycay",1,"Atl Academy");
-        Teacher teacher = new Teacher("Mushviq","Manafli","baku",1,"Java");
+        Student student = new Student("AtlAcademy","Huseyn","Rustemli","goycay",1,"Atl Academy");
+        Teacher teacher = new Teacher("AtlAcademy","Manafli","baku",1,"Java");
         student.study();
         teacher.teach();
     }
