@@ -32,7 +32,6 @@ public class Teacher extends Academy {
     }
 
     public void teach(){
-        super.displayInfo();
         System.out.println("Teacher id: " + teacherId + " subject: " + subject);
     }
 

@@ -2,10 +2,9 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-    var banan = new Banana("Banan","red","yiyebilirik","payiz","ekvador",true);
-        banan.info();
-        banan.printCountry();
-        System.out.println(banan.getTaste());
-
+    Dog dog = new Dog();
+    Abstratct cat = new Cat();
+    dog.makeSound();
+    cat.makeSound();
     }
 }

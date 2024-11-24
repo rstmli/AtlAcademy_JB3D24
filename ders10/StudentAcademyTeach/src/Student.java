@@ -2,10 +2,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 public class Student extends Academy{
 
-    private int id;
-    private String name;
-    private String surname;
+    private String  id;
     private String course;
+    private String name;
 
 
     public String getName() {
@@ -16,15 +15,7 @@ public class Student extends Academy{
         this.name = name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public void setId(int id){
+    public void setId(String id){
         this.id = id;
     }
 
@@ -32,7 +23,7 @@ public class Student extends Academy{
         this.course = course;
     }
 
-    public int getId(){
+    public String  getId(){
         return this.id;
     }
     public String getCourse(){
@@ -43,15 +34,17 @@ public class Student extends Academy{
 
     }
 
-    public Student(String academyName ,String name, String surname, String address, int id, String course ){
+    public Student(String academyName ,String name, String address, String id, String course ){
         super(academyName,address);
         this.id = id;
         this.name = name;
-        this.surname = surname;
         this.course = course;
     }
+    public Student(String id, String name){
+
+    }
+
     public void study(){
-        super.displayInfo();
         System.out.println("id: " + id + " kurs: " + course);
     }
 

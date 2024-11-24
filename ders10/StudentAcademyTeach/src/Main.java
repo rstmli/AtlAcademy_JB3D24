@@ -2,9 +2,13 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Student student = new Student("AtlAcademy","Huseyn","Rustemli","goycay",1,"Atl Academy");
-        Teacher teacher = new Teacher("AtlAcademy","baku",1,"Java");
-        student.study();
-        teacher.teach();
+//        Student student = new Student(123,"AtlAcademy","Baku",);
+//        student.study();
+//        student.study();
+        Student studentadd = new Student("S1234","Huseyn");
+        studentadd.study();
+        Academy studentad = new Academy();
+        studentad.addStudent(studentadd);
+
     }
 }
