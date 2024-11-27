@@ -10,4 +10,10 @@ public class BikeVehicle implements Vehicle{
     public void stopEngine() {
         System.out.println("Velosipedin mühərriki söndürüldü.");
     }
+
+    @Override
+    public String getFuelType() {
+        return "benzin";
+    }
+
 }
