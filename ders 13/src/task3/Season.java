@@ -29,7 +29,7 @@ public enum Season {
         this.minTemperator = minTemperator;
     }
     public String getFormatInfo() {
-        return String.format("%s: %d minumum temperature C Max temperature %d C (%s)",
+        return String.format("%s: minumum temperature %d°C Max temperature %d°C (%s)",
                 this.name(),this.minTemperator,this.maxTemperator,this.description);
     }
 
