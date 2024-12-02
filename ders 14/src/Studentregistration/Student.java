@@ -13,10 +13,10 @@ public class Student {
 
     public int getAge(){
         LocalDate currentTime = LocalDate.now();
-        Period period = Period.between(birthDate, currenttime);
+        Period period = Period.between(birthDate, currentTime);
         return period.getYears();
     }
-
+g
     public String getName() {
         return name;
     }
