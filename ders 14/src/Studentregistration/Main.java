@@ -9,12 +9,21 @@ public class Main {
                 new Student("Emin", LocalDate.of(2009,1,8)),
                 new Student("Huseyn", LocalDate.of(2004,1,8))
         };
-
+        System.out.println("\nclone olunmus arrays");
         Student[] clonearrays = students.clone();
         for(Student student : clonearrays){
             System.out.println(student);
         }
-        System.out.println("yasi 18 den kicik olan telebeler");
+        System.out.println("\nCopy olunmus arrays");
+
+        Student[] copyArrays = Arrays.copyOf(students, students.length);
+        for(int i = 0; i< students.length;i++){
+            System.out.println(students[i]);
+        }
+
+
+
+        System.out.println("\nyasi 18 den kicik olan telebeler");
         for(Student student : clonearrays){
             if(student.getAge() < 18){
                 System.out.println(student);
