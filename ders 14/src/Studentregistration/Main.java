@@ -15,7 +15,7 @@ public class Main {
 
         }
 //        Student[] copiedStudents = new Student[students.length];
-        Student[] copiedStudents = Arrays.copyOf(students, students.length);
+        Student[] copiedStudents = Arrays.copyOf(students,students.length);
         for (int i = 0; i < students.length; i++) {
             copiedStudents[i] = students[i];
         }
