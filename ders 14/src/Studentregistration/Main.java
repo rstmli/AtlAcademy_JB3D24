@@ -9,7 +9,7 @@ public class Main {
                 new Student("Emin", LocalDate.of(2009,1,8)),
                 new Student("Huseyn", LocalDate.of(2004,1,8))
         };
-        System.out.println("\nclone olunmus arrays");
+        System.out.println("clone olunmus arrays");
         Student[] clonearrays = students.clone();
         for(Student student : clonearrays){
             System.out.println(student);
@@ -17,8 +17,8 @@ public class Main {
         System.out.println("\nCopy olunmus arrays");
 
         Student[] copyArrays = Arrays.copyOf(students, students.length);
-        for(int i = 0; i< students.length;i++){
-            System.out.println(students[i]);
+        for(int i = 0; i< copyArrays.length;i++){
+            System.out.println(copyArrays[i]);
         }
 
 
