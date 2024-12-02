@@ -12,7 +12,7 @@ public class Student {
     }
 
     public int getAge(){
-        LocalDate currenttime = LocalDate.now();
+        LocalDate currentTime = LocalDate.now();
         Period period = Period.between(birthDate, currenttime);
         return period.getYears();
     }
