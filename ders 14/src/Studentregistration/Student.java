@@ -16,7 +16,6 @@ public class Student {
         Period period = Period.between(birthDate, currentTime);
         return period.getYears();
     }
-g
     public String getName() {
         return name;
     }

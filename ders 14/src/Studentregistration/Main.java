@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Student student1 = new Student("Huseyn",LocalDate.of(2009,12,24));
-        Student student2 = new Student("Ilkin",LocalDate.of(2007,12,24));
-        Student student3 = new Student("Emin",LocalDate.of(2004,12,24));
-        Student[] students = {student1,student2,student3};
+        Student[] students = {
+        new Student("Huseyn",LocalDate.of(2009,12,24)),
+        new Student("Ilkin",LocalDate.of(2007,12,24)),
+        new Student("Emin",LocalDate.of(2004,12,24))
+        };
         Student[] cloneStudents = students.clone();
         System.out.println("Clone edilmiş array:");
         for(Student student : cloneStudents){
