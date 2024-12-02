@@ -5,31 +5,23 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Student[] students = {
-        new Student("Huseyn",LocalDate.of(2009,12,24)),
-        new Student("Ilkin",LocalDate.of(2007,12,24)),
-        new Student("Emin",LocalDate.of(2004,12,24))
+                new Student("Huseyn", LocalDate.of(2004,1,8)),
+                new Student("Emin", LocalDate.of(2009,1,8)),
+                new Student("Huseyn", LocalDate.of(2004,1,8))
         };
-        Student[] cloneStudents = students.clone();
-        System.out.println("Clone edilmiş array:");
-        for(Student student : cloneStudents){
-            System.out.println(student);
 
-        }
-//        Student[] copiedStudents = new Student[students.length];
-        Student[] copiedStudents = Arrays.copyOf(students,students.length);
-        for (int i = 0; i < students.length; i++) {
-            copiedStudents[i] = students[i];
-        }
-        System.out.println("Manual copy edilmiş array:");
-        for (Student student : copiedStudents) {
+        Student[] clonearrays = students.clone();
+        for(Student student : clonearrays){
             System.out.println(student);
         }
-        System.out.println("Yasi 18 den kicik olan telebeler");
-        for (Student student : students) {
-            if (student.getAge() < 18) {
-                System.out.println("Ad: " + student.getName() + " Yasi: " + student.getAge() + " dogum tarixi: " + student.getBirthDate());
+        System.out.println("yasi 18 den kicik olan telebeler");
+        for(Student student : clonearrays){
+            if(student.getAge() < 18){
+                System.out.println(student);
             }
         }
+
+
     }
 }
 

@@ -4,28 +4,28 @@ import java.time.Period;
 
 public class Student {
     private String name;
-    private LocalDate birthDate;
+    private LocalDate birthDay;
 
-    public Student(String name, LocalDate birthDate) {
+    public Student(String name, LocalDate birthDay) {
         this.name = name;
-        this.birthDate = birthDate;
+        this.birthDay = birthDay;
     }
 
-    public int getAge(){
-        LocalDate currentTime = LocalDate.now();
-        Period period = Period.between(birthDate, currentTime);
-        return period.getYears();
-    }
     public String getName() {
         return name;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public LocalDate getBirthDay() {
+        return birthDay;
+    }
+    public int getAge(){
+        LocalDate currentTime = LocalDate.now();
+        Period period = Period.between(birthDay, currentTime);
+        return period.getYears();
     }
 
     @Override
     public String toString() {
-        return "Ad: " + name + ", Doğum tarixi: " + birthDate;
+        return "name " + name + " " + birthDay + " yasi: " + getAge();
     }
 }
