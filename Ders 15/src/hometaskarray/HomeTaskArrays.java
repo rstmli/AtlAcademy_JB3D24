@@ -64,18 +64,19 @@ public class HomeTaskArrays {
     public static void reverseArray(){
         Scanner scanner = new Scanner(System.in);
         LinkedList<Integer> array = new LinkedList<>();
+        LinkedList<Integer> reverse = new LinkedList<>();
         for(int i = 0;i<5;i++){
             System.out.print((i+1) + ". elementi daxil edin: ");
             array.add(scanner.nextInt());
 
         }
-        Iterator<Integer> iterator =  array.descendingIterator();
-        while(iterator.hasNext()){
-            Integer value = iterator.next();
-            System.out.println(value);
-
+        for(int a : array) {
+            reverse.addFirst(a);
         }
+        System.out.println(reverse);
     }
+
+
     public static void addElements(){
         Scanner scanner = new Scanner(System.in);
         LinkedList<String> array = new LinkedList<>();
