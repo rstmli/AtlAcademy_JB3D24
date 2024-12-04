@@ -4,7 +4,7 @@ import java.util.*;
 
 public class HomeTaskArrays {
     public static void main(String[] args) {
-//        removeELements();
+        removeELements();
 //        searchElements();
 //        sizeArrays();
 //        reverseArray();
@@ -75,7 +75,6 @@ public class HomeTaskArrays {
         }
         System.out.println(reverse);
     }
-
 
     public static void addElements(){
         Scanner scanner = new Scanner(System.in);
