@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
 import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
     elementInTheArray();
@@ -69,7 +67,5 @@ public class Main {
         int maxnum = Arrays.stream(array).max().getAsInt();
         int minnum = Arrays.stream(array).min().getAsInt();
         System.out.print("en boyuk element: " + maxnum + " en kicik element: " + minnum);
-
     }
-
 }

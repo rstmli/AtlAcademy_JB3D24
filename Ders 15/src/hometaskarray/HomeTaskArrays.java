@@ -84,8 +84,8 @@ public class HomeTaskArrays {
             array.add(scanner.next());
         }
         System.out.println("Arraydaki elementler: " + array);
-        array.add(0,"Aytac");
-        array.add(array.size(),"Aytac");
+        array.addFirst("Huseyn");
+        array.addLast("Elnur");
         System.out.println("Arraydaki yeni elementler: " + array);
 
     }
