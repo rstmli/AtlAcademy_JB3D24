@@ -8,11 +8,13 @@ public class Book {
     private String title;
     private String author;
     private boolean available;
+    private String genre;
     LocalDate date = LocalDate.now();
 
-    public Book(String title,String author) {
+    public Book(String title, String author, String genre) {
         this.title = title;
         this.author = author;
+        this.genre = genre;
         this.available = true;
     }
 
@@ -26,7 +28,7 @@ public class Book {
     public void rent(long b) {
         if(available){
             available = false;
-            System.out.println("'" + title + "' kitabi icraye goturuldu." + date);
+            System.out.println("'" + title + "' kitabi icraye goturuldu." + date + " categori: " + genre);
             System.out.println(getTitle() + " Kitabi geri qaytaracaq: " + date.plusDays(b));
 
 
@@ -36,7 +38,7 @@ public class Book {
     }
     public void returnBook(){
         available = true;
-        System.out.println("'" + title + "' geri qaytarıldı." + date);
+        System.out.println("'" + title + "' geri qaytarıldı." + date + " qaytarildigi janr: " + genre);
     }
 
     public boolean isAvailable() {
@@ -46,6 +48,10 @@ public class Book {
     @Override
     public String toString() {
         String status = available ? "Movcuddur" : "Movcud deyil";
-        return "Book{title='" + title + "', author='" + author + "', available=" + status + "}";
+        return "Book{title='" + title + "', author='" + author + "', available=" + status + " Janri: " + genre+ " }";
+    }
+
+    public String getGenre() {
+        return genre;
     }
 }
