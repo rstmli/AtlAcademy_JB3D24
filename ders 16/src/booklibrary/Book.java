@@ -1,9 +1,14 @@
 package booklibrary;
 
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
+import java.util.Locale;
+
 public class Book {
     private String title;
     private String author;
     private boolean available;
+    LocalDate date = LocalDate.now();
 
     public Book(String title,String author) {
         this.title = title;
@@ -15,17 +20,23 @@ public class Book {
         return title;
     }
 
-    public void rent(){
+//    public void reverseBookTime(long a) {
+//
+//    }
+    public void rent(long b) {
         if(available){
             available = false;
-            System.out.println("'" + title + "' kitabi icraye goturuldu.");
+            System.out.println("'" + title + "' kitabi icraye goturuldu." + date);
+            System.out.println(getTitle() + " Kitabi geri qaytaracaq: " + date.plusDays(b));
+
+
         }else{
-            System.out.println("'" + title + "' artıq icarəyə götürülüb.");
+
         }
     }
     public void returnBook(){
         available = true;
-        System.out.println("'" + title + "' geri qaytarıldı.");
+        System.out.println("'" + title + "' geri qaytarıldı." + date);
     }
 
     public boolean isAvailable() {
