@@ -16,7 +16,7 @@ public class Library {
         books.add(book);
         System.out.println("'" + book.getTitle() + "' kitabxanaya əlavə edildi.");
     }
-    public void rent(String title,long b ) throws RentErrorException{
+    public void rent(String title,long b ){
         for(Book book: books){
             if(book.getTitle().equals(title)){
                 book.rent(b);
