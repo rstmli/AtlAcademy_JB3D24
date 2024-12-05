@@ -15,7 +15,10 @@ public class Main {
             System.out.println(b);
         }
         boolean keys =  myMap.containsKey("Baki");
+//        String a = keys ? "var" : "yoxdur";
+
         boolean value = myMap.containsValue(90);
+//        System.out.println(a);
 
 
 

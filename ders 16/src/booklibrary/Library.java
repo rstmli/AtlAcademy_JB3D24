@@ -30,7 +30,7 @@ public class Library {
         }
         System.out.println(title + " kitabi icareye goturulmeyib.");
     }
-    public void showavailablBpoks(){
+    public void showavailableBooks(){
         for(Book book:books){
             if(book.isAvailable()){
                 System.out.println(book);

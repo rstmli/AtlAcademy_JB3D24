@@ -10,7 +10,7 @@ public class Main {
         library.rent("Java Programing");
         library.returnBook("Java Programing");
         library.returnBook("Java Programing");
-        library.showavailablBpoks();
+        library.showavailableBooks();
     }
 
 }
