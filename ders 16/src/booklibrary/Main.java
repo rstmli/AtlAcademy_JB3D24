@@ -10,7 +10,6 @@ public class Main {
             library.addBook(java1);
             library.returnBook("Java Programing");
             library.rent("Java Programing",2);
-            library.showavailableBooks("Code");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }

@@ -28,7 +28,7 @@ public class Book {
     public void rent(long b) {
         if(available){
             available = false;
-            System.out.println("'" + title + "' kitabi icraye goturuldu." + date + " categori: " + genre);
+            System.out.println("'" + title + "' kitabi icaraye goturuldu." + date + " categori: " + genre);
             System.out.println(getTitle() + " Kitabi geri qaytaracaq: " + date.plusDays(b));
 
 

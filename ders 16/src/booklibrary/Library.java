@@ -6,6 +6,8 @@ import java.time.LocalDate;
 
 public class Library {
         private Map<String, Set<Book>> booksByGenre;
+
+
         public Library() {
             booksByGenre = new HashMap<>();
         }
@@ -23,6 +25,23 @@ public class Library {
             }
         }
     }
+    public void runtBooksInfo(Book bookhoice){
+        boolean hasRentedBooks = false;
+        if(bookhoice.equals("Janr")){
+            bookhoice = bookhoice;
+        }
+        for (Set<Book> books : booksByGenre.values()) {
+            for (Book book : books) {
+                if (!book.isAvailable()) {
+                    System.out.println(bookhoice);
+                    hasRentedBooks = true;
+                }
+            }
+        }
+        if (!hasRentedBooks) {
+            System.out.println("Hazırda icarəyə verilmiş heç bir kitab yoxdur.");
+        }
+    }
 
     public void returnBook(String title){
         for (Set<Book> books : booksByGenre.values()) {
@@ -35,6 +54,7 @@ public class Library {
         }
         throw new ReturnErrorException( title + " kitabi icareye goturulmeyib.");
     }
+
     public void showavailableBooks(String genre){
         Set<Book> books = booksByGenre.get(genre);
         if (books != null) {
