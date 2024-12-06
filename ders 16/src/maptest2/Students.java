@@ -18,8 +18,9 @@ public class Students{
     }
     public void removeStudent(Integer id) {
         if(studentsMap.containsKey(id)){
+            Student student = studentsMap.get(id);
             studentsMap.remove(id);
-            System.out.println("id-si " + id + " olan tələbə silindi.");
+            System.out.println("id-si " + id + " olan tələbə silindi." + " telebinin adi: " + student.getName());
         }
     }
     public void printStudents() {
