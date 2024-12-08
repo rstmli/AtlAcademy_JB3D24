@@ -1,17 +1,16 @@
 package maptest2;
 
+import java.util.HashMap;
+
 public class Main {
     public static void main(String[] args) {
         Students students = new Students();
-        Student huseyn = new Student(2,"huseyn");
-        Student ilkin = new Student(1,"Ilkin");
-        Student emin = new Student(3,"Emin");
-        students.addStudent(huseyn);
-        students.addStudent(ilkin);
-        students.addStudent(emin);
-        students.printStudents();
-        students.removeStudent(1);
-        students.printStudents();
+        Student st1 = new Student(31,"Elnur");
+        Student st2 = new Student(32,"Huseyn");
+        students.add(st1);
+        students.remove(31);
+        students.add(st2);
+        students.printInfo();
 
     }
 }

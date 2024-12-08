@@ -7,26 +7,24 @@ import java.util.Set;
 
 public class Students{
 
-    private Map<Integer, Student> studentsMap;
+    private Map<Integer,Student> students;
 
     public Students() {
-        this.studentsMap = new HashMap<>();
+        this.students = new HashMap<>();
+    }
+    public void add(Student student) {
+        this.students.put(student.getId(), student);
+        System.out.println(student.getName() + " adli telebenin qeydiyyati ugurla basa catdi");
+    }
+    public void remove(Integer id){
+        Student student = this.students.get(id);
+        this.students.remove(id);
+        System.out.println(id+"-idli " + student.getName() + " qeydiyyati ugurla silindi.");
+    }
+    public void printInfo(){
+        for(Student student : students.values()){
+            System.out.println(student);
+        }
     }
 
-    public void addStudent(Student student) {
-        studentsMap.put(student.getId(), student);
-    }
-    public void removeStudent(Integer id) {
-        if(studentsMap.containsKey(id)){
-            Student student = studentsMap.get(id);
-            studentsMap.remove(id);
-            System.out.println("id-si " + id + " olan tələbə silindi." + " telebinin adi: " + student.getName());
-        }
-    }
-    public void printStudents() {
-        System.out.println("telebelerin siyahisi");
-        for (Map.Entry<Integer, Student> entry : studentsMap.entrySet()) {
-            System.out.println("ID: " + entry.getKey() + ", Name: " + entry.getValue().getName());
-        }
-    }
 }
