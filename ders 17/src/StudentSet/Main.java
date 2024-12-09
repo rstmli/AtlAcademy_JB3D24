@@ -10,6 +10,7 @@ public class Main {
         register.add(huseyn);
         register.add(emin);
         register.showStudent();
+        register.searchStudent(ilkin);
     }
 
 

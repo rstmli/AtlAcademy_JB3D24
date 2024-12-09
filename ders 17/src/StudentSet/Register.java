@@ -18,5 +18,12 @@ public class Register {
         for(Student student : students){
             System.out.println(student);
         }
+
+    }
+
+    public void searchStudent(Student student){
+        if(students.contains(student)){
+            System.out.println("Found student: " + student);
+        }
     }
 }
