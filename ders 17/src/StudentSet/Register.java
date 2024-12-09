@@ -24,6 +24,8 @@ public class Register {
     public void searchStudent(Student student){
         if(students.contains(student)){
             System.out.println("Found student: " + student);
+        }else{
+            System.out.println("Not found student: " + student);
         }
     }
 }
