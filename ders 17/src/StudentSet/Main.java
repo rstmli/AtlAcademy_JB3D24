@@ -12,7 +12,7 @@ public class Main {
            register.add(huseyn);
            register.add(emin);
            register.showStudent();
-           register.searchStudent("Huseyn");
+           register.searchStudent("Ilkin");
        }catch (SearchNotFoundException | NoStudentstoshowException e){
            System.out.println(e.getMessage());
        }

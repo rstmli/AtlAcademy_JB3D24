@@ -18,6 +18,7 @@ public class Register {
             for(Student student : students){
                 System.out.println(student);
             }
+            return;
         }
         throw new NoStudentstoshowException("There are no students to display on the list.");
 
