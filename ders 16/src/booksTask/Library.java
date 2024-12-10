@@ -19,6 +19,7 @@ public class Library {
                 return;
             }
         }
+
         System.out.println(title + " kitabi icarededir");
     }
 
@@ -33,15 +34,12 @@ public class Library {
         System.out.println(" icarede kitap yoxdu");
     }
     public void showAvailableBooks() {
-        boolean found = false;
         for (Book book : books) {
             if (book.isAvailable()) {
-                System.out.println(book.toString());
-                found = true;
+                System.out.println(book);
+                return;
             }
         }
-        if (!found) {
             System.out.println("Hazırda əlçatan kitab yoxdur.");
-        }
     }
 }
