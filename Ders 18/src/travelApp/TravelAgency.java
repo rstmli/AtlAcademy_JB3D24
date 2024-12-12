@@ -8,9 +8,9 @@ public class TravelAgency {
     private List<Tour> tours;
     private List<Customer> customer;
 
-    public TravelAgency(String agencyName, List<Tour> tours) {
+    public TravelAgency(String agencyName) {
         this.agencyName = agencyName;
-        this.tours = tours;
+        this.tours = new ArrayList<>();
         this.customer = new ArrayList<>();
     }
 
@@ -42,6 +42,9 @@ public class TravelAgency {
     }
     public void deleteTour(Tour tour){
         tours.remove(tour);
+    }
+    public void displayInfo(){
+        System.out.println(agencyName);
     }
 
     @Override

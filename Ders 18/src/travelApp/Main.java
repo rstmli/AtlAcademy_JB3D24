@@ -4,19 +4,26 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-//        Tour cityTour = new CityTour(1,"Seher Turu",TourPackage.CITY_TOUR);
-//        Tour desertTour = new DesertSafari(2,"sehra Turu",TourPackage.DESERT_SAFARI);
-//        Tour shipTour = new CruiseTrip(3,"Gemi Turu",TourPackage.CRUISE_TRIP);
-//        Tour beachTour = new BeachHoliday(4,"pilaj Turu",TourPackage.BEACH_HOLIDAY);
-//        Tour mountTour = new MountainAdventure(5,"Dag Turu",TourPackage.BEACH_HOLIDAY);
 
-        ArrayList<Tour> tours = new ArrayList<>();
+        TravelAgency agency = new TravelAgency("Dream Tours");
 
-        for(Tour tour : tours){
-            if(tour.isReserved()){
-                tour.displayInfo();
-            }
-        }
+        // Create tour objects
+        Tour tour1 = new Tour(1, "Sunny Beach Holiday", 200.0, TourPackage.BEACH_HOLIDAY);
+        Tour tour2 = new Tour(2, "Urban City Adventure", 150.0, TourPackage.CITY_TOUR);
+        Tour tour3 = new Tour(3, "Mountain Trekking", 300.0, TourPackage.MOUNTAIN_ADVENTURE);
+
+        // Add tours to the agency
+        agency.addTour(tour1);
+        agency.addTour(tour2);
+        agency.addTour(tour3);
+
+        // Display all tours
+//        agency.dis
+//
+//        // Reserve and cancel reservations
+//        tour1.reserveTour();
+//        tour1.cancelReservation();
+//        tour2.reserveTour();
 
     }
 }

@@ -1,13 +1,27 @@
 package News;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        News<String ,Category, Author> news = new News<String, Category, Author>("Goycayda telebe 700 bal topladi",
-                new Category<>("Tehsil"),
-                new Author("Huseyn","Rustemli"),
+        ArrayList<News> arr = new ArrayList<>();
+
+        News<String ,Category, Author> news1 = new News<String, Category, Author>("Javada Genericler",
+                new Category<>("Programing"),
+                new Author("Mushfig","Manafli"),
                 LocalDate.of(2024,1,12));
-        news.displayInfo();
+
+
+
+
+        arr.add(news1);
+
+        for(News e:arr){
+            e.displayInfo();
+            System.out.println("---------------------------------------------");
+        }
     }
 }
