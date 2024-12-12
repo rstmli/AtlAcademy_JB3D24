@@ -4,7 +4,16 @@ import java.util.List;
 
 public class Customer {
     private int customerId;
+    private String customerName;
     private List<Tour> reserveTour;
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public List<Tour> getReserveTour() {
+        return reserveTour;
+    }
 
     public int getCustomerId() {
         return customerId;
@@ -22,9 +31,10 @@ public class Customer {
         this.reserveTour = tours;
     }
 
-    public Customer(int customerId, List<Tour> reserveTour) {
+    public Customer(int customerId, String customerName , List<Tour> reserveTour) {
         this.customerId = customerId;
         this.reserveTour = reserveTour;
+        this.customerName = customerName;
     }
     public void reserveTour(Tour tour){
         if(!tour.isReserved()){
@@ -32,7 +42,7 @@ public class Customer {
             reserveTour.add(tour);
             System.out.println("Tour" + tour.getTourName() + " has added list");
         }else{
-            System.out.println("Tour paket reserve olunub artiq");
+            System.out.println("Tour paket artiq reserve olunub");
         }
     }
     public void canselReserve(Tour tour){
@@ -43,5 +53,9 @@ public class Customer {
         }else{
             System.out.println("artiq reserve legv olunub");
         }
+    }
+
+    public void displayInfo(){
+        System.out.println("Customer id: " + customerId + "\n" + "Customer name: " + customerName + "\n"  + "Reserve tour: " + reserveTour);
     }
 }

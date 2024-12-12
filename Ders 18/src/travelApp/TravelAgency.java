@@ -45,8 +45,9 @@ public class TravelAgency {
     }
     public void displayInfo(){
         System.out.println(agencyName + " terefinden teklif olunan turlar");
-        for(Tour tour : tours){
-            tour.displayInfo();
+        for(Customer custom : customer){
+            custom.displayInfo();
+
         }
     }
 
