@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        TravelAgency agency = new TravelAgency("Dream Tours");
+        TravelAgency agency = new TravelAgency("Java");
 
         // Create tour objects
         Tour tour1 = new Tour(1, "Sunny Beach Holiday", 200.0, TourPackage.BEACH_HOLIDAY);
@@ -17,10 +17,12 @@ public class Main {
         agency.addTour(tour2);
         agency.addTour(tour3);
 
-        // Display all tours
-//        agency.dis
-//
-//        // Reserve and cancel reservations
+
+
+        agency.displayInfo();
+
+        tour1.reserve();
+        // Reserve and cancel reservations
 //        tour1.reserveTour();
 //        tour1.cancelReservation();
 //        tour2.reserveTour();

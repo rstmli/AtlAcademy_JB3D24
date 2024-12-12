@@ -44,7 +44,10 @@ public class TravelAgency {
         tours.remove(tour);
     }
     public void displayInfo(){
-        System.out.println(agencyName);
+        System.out.println(agencyName + " terefinden teklif olunan turlar");
+        for(Tour tour : tours){
+            tour.displayInfo();
+        }
     }
 
     @Override

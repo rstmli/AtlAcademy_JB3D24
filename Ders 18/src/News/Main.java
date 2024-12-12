@@ -18,10 +18,13 @@ public class Main {
 
 
         arr.add(news1);
-
+        String tree = "";
         for(News e:arr){
             e.displayInfo();
-            System.out.println("---------------------------------------------");
+
+            for(int i = 0;i<=e.getFormatterInfo().length();i++){
+                 tree = tree + "-";
+            }
         }
     }
 }
