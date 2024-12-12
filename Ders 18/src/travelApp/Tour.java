@@ -1,11 +1,29 @@
 package travelApp;
 
-public abstract class Tour {
+public class Tour {
     private int tourId;
     private String tourName;
-    private boolean isReserved = true;
+    private double price;
+        private boolean isReserved = true;
     private TourPackage tourPackage;
 
+
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public TourPackage getTourPackage() {
+        return tourPackage;
+    }
+
+    public void setTourPackage(TourPackage tourPackage) {
+        this.tourPackage = tourPackage;
+    }
     public int getTourId() {
         return tourId;
     }
@@ -43,7 +61,7 @@ public abstract class Tour {
             System.out.println( getTourName() + " - Tur reserve edildi");
             isReserved = false;
         }else{
-            System.out.println(" - Tur yoxdur!!!!");
+            System.out.println("Tur yoxdur!!!!");
         }
     }
     public void deleteReserve(){
@@ -52,11 +70,18 @@ public abstract class Tour {
         }
     }
 
-    public Tour(int tourId, String tourName, TourPackage tourPackage) {
+    public Tour(int tourId, String tourName,double price, TourPackage tourPackage) {
         this.tourId = tourId;
         this.tourName = tourName;
+        this.price = price;
         this.tourPackage = tourPackage;
     }
-    public abstract void displayInfo();
+    public void displayInfo() {
+        System.out.println("Tour ID: " + tourId +
+                ", Tour Name: " + tourName +
+                ", Price: $" +  price +
+                ", Tour Package: " + tourPackage +
+                ", Reserved: " + (isReserved ? "Yes" : "No"));
+    }
 
 }
