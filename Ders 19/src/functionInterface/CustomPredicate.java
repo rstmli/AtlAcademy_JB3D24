@@ -2,6 +2,6 @@ package functionInterface;
 
 @FunctionalInterface
 public interface CustomPredicate<T> {
-    boolean test(T a);
+    boolean testettt(T a);
 
 }

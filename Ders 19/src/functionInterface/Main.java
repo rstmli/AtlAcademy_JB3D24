@@ -10,8 +10,9 @@ public class Main {
 
 
         // custom Consumer
-//        CustomConsumer consum = (a) -> System.out.println(a);
-//        consum.test("salamlar");
+        CustomConsumer consum = (a) -> System.out.println(a);
+        consum.testEtcagir("salamlar");
+        consum.
 
         // Consumer -
 //        Consumer<String> str = (name) -> System.out.println(name);
