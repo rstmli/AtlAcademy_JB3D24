@@ -1,5 +1,6 @@
 package functionInterface;
 
+import java.util.Random;
 import java.util.function.*;
 
 public class Main {
@@ -10,9 +11,8 @@ public class Main {
 
 
         // custom Consumer
-        CustomConsumer consum = (a) -> System.out.println(a);
-        consum.testEtcagir("salamlar");
-        consum.
+//        CustomConsumer consum = (a) -> System.out.println(a);
+//        consum.testEtcagir("salamlar");
 
         // Consumer -
 //        Consumer<String> str = (name) -> System.out.println(name);
@@ -67,9 +67,13 @@ public class Main {
 
 
         // Supplier
-//        Supplier<String> s = (a) -> {};
-
-
+//        Supplier<Integer> s = () -> new Random().nextInt(100);
+//            int random = s.get();
+//        System.out.println(random);
+        // Custom Supplier
+        SupplierInterface<Integer> s2 = () -> new Random().nextInt(100);
+        int random = s2.getgetir();
+        System.out.println(random);
 
 
 
