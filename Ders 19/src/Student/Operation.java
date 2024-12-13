@@ -14,7 +14,7 @@ public class Operation {
     public void removeStudent(Student student, Course<Student> course) {
         course.removeStudent(student);
         student.removeCourse(course);
-        this.addLog(student.getName() + " adli telebe " + course.getCoursName() + " kursuna silindi");
+        addLog(student.getName() + " adli telebe " + course.getCoursName() + " kursundan silindi");
     }
 
     public void displayInfo() {

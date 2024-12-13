@@ -6,7 +6,7 @@ import Student.Exception.IsNotExistException;
 public class Main {
     public static void main(String[] args) {
 
-        var operation = new Operation();
+        Operation operation = new Operation();
         try {
             Student huseyn = new Student(1, "Huseyn");
             Student ilkin = new Student(2, "Ilkin");
