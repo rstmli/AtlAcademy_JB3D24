@@ -23,7 +23,7 @@ public class Course <T>{
 
     public void addStudent(Student student){
         students.add(student);
-        System.out.println(student.getName() +" telebe elave olundu.");
+        System.out.println(coursName + " kursuna " + student.getName() +" telebe elave olundu.");
     }
     public void displayInfo(){
         System.out.println("\nTelebeler");
