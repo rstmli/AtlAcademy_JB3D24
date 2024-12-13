@@ -76,6 +76,7 @@ public class Tour {
         this.price = price;
         this.tourPackage = tourPackage;
     }
+
     public void displayInfo() {
         System.out.println("Tour ID: " + tourId +
                 ", Tour Name: " + tourName +
@@ -84,4 +85,14 @@ public class Tour {
                 ", Reserved: " + (isReserved ? "Yes" : "No"));
     }
 
+    @Override
+    public String toString() {
+        return "Tour{" +
+                "tourId=" + tourId +
+                ", tourName='" + tourName + '\'' +
+                ", price=" + price +
+                ", isReserved=" + isReserved +
+                ", tourPackage=" + tourPackage +
+                '}';
+    }
 }

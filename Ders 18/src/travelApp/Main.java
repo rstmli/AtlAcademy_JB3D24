@@ -1,6 +1,7 @@
 package travelApp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,15 +14,16 @@ public class Main {
         Tour tour3 = new Tour(3, "Mountain Trekking", 300.0, TourPackage.MOUNTAIN_ADVENTURE);
 
         // Add tours to the agency
+        Customer custom = new Customer(15,"Huseyn",List.of(tour1,tour2,tour3));
         agency.addTour(tour1);
+
         agency.addTour(tour2);
         agency.addTour(tour3);
 
 
-
+        custom.reserveTour(tour1);
+        custom.displayInfo();
         agency.displayInfo();
-
-        tour1.reserve();
         // Reserve and cancel reservations
 //        tour1.reserveTour();
 //        tour1.cancelReservation();

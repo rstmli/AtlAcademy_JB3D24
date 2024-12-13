@@ -1,13 +1,15 @@
 package HotelTask;
 
-public abstract class Room {
+public class Room {
     private final int roomNumber;
     private final double roomPrice;
     private boolean isBooked = true;
+    private RoomType roomType;
 
-    public Room(int roomNumber, double roomPrice) {
+    public Room(int roomNumber, double roomPrice,RoomType roomType) {
         this.roomNumber = roomNumber;
         this.roomPrice = roomPrice;
+        this.roomType = roomType;
     }
 
     public int getRoomNumber() {
@@ -38,5 +40,8 @@ public abstract class Room {
         }
 
     }
-    public abstract void displayInfo();
+    public  void displayInfo(){
+
+    };
+
 }

@@ -1,7 +1,11 @@
 package human;
 
+import javax.swing.plaf.basic.BasicDesktopIconUI;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAmount;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Human {
@@ -9,10 +13,16 @@ public class Human {
     private LocalDate brithDay;
     private int age;
 
-    public Human(String name, LocalDate brithDay, int age) {
+    public int ageCalculator(){
+        int currentlyTime = 2024;
+        int brithYear = brithDay.getYear();
+        return currentlyTime - brithYear;
+    }
+
+    public Human(String name, LocalDate brithDay) {
         this.name = name;
         this.brithDay = brithDay;
-        this.age = age;
+        this.age = ageCalculator();
     }
 
     public Human() {

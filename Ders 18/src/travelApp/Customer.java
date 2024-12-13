@@ -1,5 +1,6 @@
 package travelApp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
@@ -31,20 +32,31 @@ public class Customer {
         this.reserveTour = tours;
     }
 
-    public Customer(int customerId, String customerName , List<Tour> reserveTour) {
+    public Customer(int customerId,String customerName ,List<Tour> reserveTours) {
         this.customerId = customerId;
-        this.reserveTour = reserveTour;
         this.customerName = customerName;
+        this.reserveTour = reserveTours;
     }
     public void reserveTour(Tour tour){
-        if(!tour.isReserved()){
+        if (!tour.isReserved()){
             tour.reserve();
             reserveTour.add(tour);
-            System.out.println("Tour" + tour.getTourName() + " has added list");
-        }else{
-            System.out.println("Tour paket artiq reserve olunub");
+            System.out.println("Tour"+tour.getTourName()+" paket sizin siyahiya elave edildi");
+        }
+        else {
+            System.out.println("Tour paketi artiq reserve olunub");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", reserveTour=" + reserveTour +
+                '}';
+    }
+
     public void canselReserve(Tour tour){
         if(reserveTour.contains(tour)){
             tour.deleteReserve();
@@ -53,6 +65,7 @@ public class Customer {
         }else{
             System.out.println("artiq reserve legv olunub");
         }
+
     }
 
     public void displayInfo(){
