@@ -35,7 +35,7 @@ public class Course <T>{
     public void removeStudent(Student student){
         isNotExist(student);
         students.remove(student);
-        System.out.println();
+        System.out.println(coursName + " kursundan " + student.getName() +" telebe silindi.");
     }
 
 

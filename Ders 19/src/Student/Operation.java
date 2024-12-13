@@ -18,10 +18,10 @@ public class Operation {
     }
 
     public void displayInfo() {
-        int i = 1;
+        int i = 0;
         for(String log : this.logs) {
-            System.out.println(i + ". " + log);
             i++;
+            System.out.println(i + ". " + log);
         }
     }
 
