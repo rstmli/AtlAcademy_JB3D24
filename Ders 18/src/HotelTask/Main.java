@@ -2,17 +2,22 @@ package HotelTask;
 
 public class Main {
     public static void main(String[] args) {
-        StandartRoom standartRoom = new StandartRoom(10,200);
-        SuiteRoom suiteRoom = new SuiteRoom(20,200);
-        DeluxeRoom deluxeRoom = new DeluxeRoom(30,300);
-        Room[] rooms = {standartRoom,suiteRoom,deluxeRoom};
+        HotelAgency agency = new HotelAgency("HTLROOM");
+        Room room1 = new Room(15,200,RoomType.STANDARD);
+        Room room2 = new Room(20,500,RoomType.SUITE);
+        Room room3 = new Room(30,1000,RoomType.DELUXE);
 
-        standartRoom.reserve();
-        suiteRoom.deleteReserve();
-        for(Room room : rooms){
-            if(room.isBooked()){
-                room.displayInfo();
-            }
-        }
+        Customer custom = new Customer(1,"Custom");
+
+        agency.addRoom(room1);
+        agency.addRoom(room2);
+        agency.addRoom(room3);
+        custom.reserveRoom(room1);
+        custom.reserveRoom(room2);
+        agency.displayInfo();
+
+
+
+
     }
 }
