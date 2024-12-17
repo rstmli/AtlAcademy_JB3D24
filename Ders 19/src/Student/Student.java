@@ -54,4 +54,9 @@ public class Student {
             throw new IsNotExistException("Is not exist");
         }
     }
+    public void displayCourses() {
+        for(var course : this.courses) {
+            System.out.println(course.getCoursName());
+        }
+    }
 }

@@ -70,6 +70,8 @@ public class Main {
 //        Supplier<Integer> s = () -> new Random().nextInt(100);
 //            int random = s.get();
 //        System.out.println(random);
+
+
         // Custom Supplier
         SupplierInterface<Integer> s2 = () -> new Random().nextInt(100);
         int random = s2.getgetir();

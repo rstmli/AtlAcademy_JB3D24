@@ -9,13 +9,11 @@ import java.util.List;
 public class Course <T>{
     private String coursName;
     private Subject subject;
-    private List<Student> students;
-    public Course(){}
+    private List<Student> students = new ArrayList<>();
 
     public Course(String courseName,Subject subject) {
         this.coursName = courseName;
         this.subject = subject;
-        this.students = new ArrayList<>();
     }
 
     public String getCoursName() {
@@ -25,7 +23,6 @@ public class Course <T>{
     public List<Student> getStudents() {
         return students;
     }
-
 
     public void addStudent(Student student){
         isExit(student);
