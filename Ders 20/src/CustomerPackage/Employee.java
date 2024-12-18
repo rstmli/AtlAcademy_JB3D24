@@ -1,8 +1,8 @@
-package Employee;
+package CustomerPackage;
 
 import java.util.Objects;
 
-public class Customer {
+public class Employee {
     private String name;
     private Double debt;
 
@@ -22,7 +22,7 @@ public class Customer {
         this.debt = debt;
     }
 
-    public Customer(String name, Double debt) {
+    public Employee(String name, Double debt) {
         this.name = name;
         this.debt = debt;
     }
@@ -30,7 +30,7 @@ public class Customer {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Customer customer = (Customer) o;
+        Employee customer = (Employee) o;
         return Objects.equals(name, customer.name) && Objects.equals(debt, customer.debt);
     }
 
