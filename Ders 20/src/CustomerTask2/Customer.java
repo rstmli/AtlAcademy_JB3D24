@@ -10,10 +10,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                ", debt='" + debt + '\'' +
-                '}';
+        return getName() + " " + getDebt() + " AZN borc";
     }
 
     public String getName() {
