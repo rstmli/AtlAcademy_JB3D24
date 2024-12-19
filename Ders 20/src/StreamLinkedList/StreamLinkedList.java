@@ -9,8 +9,8 @@ public class StreamLinkedList {
         myLinkedList.stream()
                 .filter(e -> e%2==0)
                 .map(e -> e*2)
-                .sorted()
                 .filter(e -> e> 20)
+                .sorted()
                 .forEach(System.out::println);
     }
 }
