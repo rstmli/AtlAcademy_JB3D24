@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-https://getintopc.com/softwares/office-tools/microsoft-office-2016-pro-plus-visio-project-64-bit-download-1218814/
 
 public class Generic{
     public static void main(String[] args) {
