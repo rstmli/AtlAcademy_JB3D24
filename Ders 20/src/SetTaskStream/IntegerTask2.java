@@ -1,5 +1,6 @@
 package SetTaskStream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class IntegerTask2 {
@@ -8,6 +9,8 @@ public class IntegerTask2 {
         var b = Arrays.asList(6,7,8,9,10);
         var c = Arrays.asList(11,12,13,14,15);
         var d = Arrays.asList(a,b,c);
+
         System.out.println(d);
+
     }
 }
