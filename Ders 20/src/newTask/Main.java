@@ -8,7 +8,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         List<String> liststr = Arrays.asList("Huseyn","Rustemli","Zaur");
-        var splitedList = liststr.stream().map(e -> List.of(e.split(""))).toList();
+        var splitedList = liststr.stream().map(e -> Arrays.asList(e.split(""))).toList();
         System.out.println(splitedList);;
 
 
