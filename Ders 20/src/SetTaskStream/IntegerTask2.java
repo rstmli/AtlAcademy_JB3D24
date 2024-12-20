@@ -9,8 +9,8 @@ public class IntegerTask2 {
         var b = Arrays.asList(6,7,8,9,10);
         var c = Arrays.asList(11,12,13,14,15);
         var d = Arrays.asList(a,b,c);
+        d.stream().map(e -> e).forEach(e -> System.out.println(e));
 
-        System.out.println(d);
 
     }
 }
