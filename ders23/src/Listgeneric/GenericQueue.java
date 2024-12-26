@@ -6,10 +6,13 @@ import java.util.Queue;
 
 public class GenericQueue<T> {
     Queue<T> queue = new PriorityQueue<>();
-    public void enqueue(T e){
+
+
+
+    public void add(T e){
         queue.add(e);
     }
-    public void dequeue(){
+    public void remove(){
         queue.poll();
     }
     public void isEmpity(){
@@ -28,10 +31,12 @@ public class GenericQueue<T> {
 
     public static void main(String[] args) {
         GenericQueue queue1 = new GenericQueue();
-        queue1.enqueue(1);
-        queue1.enqueue(5);
-        queue1.dequeue();
-        queue1.dequeue();
+        queue1.add(1);
+        queue1.add(5);
+        queue1.add(15);
+        queue1.remove();
+        queue1.remove();
+        queue1.remove();
         queue1.displayInfo();
         queue1.isEmpity();
 
