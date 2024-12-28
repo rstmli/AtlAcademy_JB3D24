@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Phon phon = new Phon("+994 55 123 32 23");
         List<Phon> huseynPhones = new ArrayList<>();
         huseynPhones.add(new Phon("+994 55 231 13 32"));
         huseynPhones.add(new Phon("+994 55 500 13 50"));
@@ -22,7 +21,6 @@ public class Main {
                 .flatMap(person -> person.getPhonList()
                         .stream()).map(Phon::getNumber)
                 .toList();
-
         System.out.println("Bütün telefon nömrələri:");
         allPhonesNumber.forEach(System.out::println);
 
