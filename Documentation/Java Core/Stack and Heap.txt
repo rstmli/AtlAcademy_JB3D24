@@ -1,0 +1,73 @@
+Əvvəlcə, "stack" və "heap" nədir, qısaca izah edək:
+
+    Stack: Funksiya çağırışları zamanı istifadə olunan yerli dəyişənlər kimi müvəqqəti məlumatların saxlandığı bir yaddaş sahəsidir. Stack-ə giriş sürətlidir, lakin ölçüsü məhduddur.
+    Heap: Obyektlərin və böyük məlumat strukturlarının saxlandığı daha uzunömürlü məlumatların saxlandığı yaddaş sahəsidir. Heap-in ölçüsü daha elastikdir, amma stack-ə nisbətən daha yavaş girişə malikdir.
+
+Java-da Stack (Yığın) və Heap (Təpə) yaddaşın iki əsas hissəsidir və proqramların işləməsi üçün kritik əhəmiyyətə malikdirlər. Bu iki yaddaş sahəsi, məlumatların necə saxlandığı, idarə olunduğu və əldə edildiyi baxımından fərqli mexanizmlərə malikdir. Budur Stack və Heap haqqında ətraflı bir izah:
+
+Stack (Yığın)
+
+    İşləmə Prinsipi: LIFO (Last-In, First-Out - Son Gələn İlk Çıxar) prinsipi ilə işləyir. Yəni, ən son əlavə olunan məlumat ilk olaraq çıxarılır. Bu, bir yığına bənzədilə bilər; üst-üstə qoyulan boşqablardan ən üstteki ilk alınır.
+    Yaddaş İdarəetməsi: Avtomatik olaraq idarə olunur. Metod çağırışları və lokal dəyişənlər üçün yaddaş sahəsi ayrılır və metod tamamlandıqda bu sahə avtomatik olaraq sərbəst buraxılır.
+    Sürət: Çox sürətlidir, çünki yaddaş ayırma və sərbəst buraxma əməliyyatları sadədir və əvvəlcədən müəyyən edilmiş bir qaydada baş verir.
+    Saxlanan Məlumat Növləri:
+        Primitiv Məlumat Tipləri: int, float, double, char, boolean, byte, short, long kimi əsas məlumat tipləri birbaşa Stack-də saxlanılır.
+        Obyekt Referansları: Obyektlərin özləri Heap-də saxlanarkən, bu obyektlərin yaddaş ünvanlarını tutan referanslar Stack-də saxlanılır.
+        Metod Çağırışları və Lokal Dəyişənlər: Bir metod çağırıldıqda, metod üçün bir "frame" yaradılır və bu frame içində metod parametrləri, lokal dəyişənlər və dönüş ünvanı kimi məlumatlar saxlanılır.
+    Ölçü: Adətən Heap-ə nisbətən daha kiçikdir və ölçüsü proqram işə salınmadan əvvəl müəyyən edilir.
+    Üstünlükləri: Sürətli yaddaş girişi və avtomatik yaddaş idarəetməsi.
+    Dezavantajları: Ölçüsü məhduddur və dinamik yaddaş idarəetməsi üçün uyğun deyil. StackOverflowError xətası, Stack-in ölçüsünün aşılması halında ortaya çıxır (məsələn, sonsuz təkrar çağırma - recursive funksiya çağırışları).
+
+Heap (Təpə)
+
+    İşləmə Prinsipi: Məlumatların təsadüfi bir şəkildə saxlandığı bir yaddaş sahəsidir. Yaddaş idarəetməsi Stack qədər avtomatik deyil.
+    Yaddaş İdarəetməsi: Java-da Garbage Collector (Zibil Toplayıcı) tərəfindən idarə olunur. Zibil Toplayıcı, artıq istifadə olunmayan obyektlərin tutduğu yaddaş sahəsini sərbəst buraxır.
+    Sürət: Stack-ə nisbətən daha yavaşdır, çünki yaddaş ayırma və sərbəst buraxma əməliyyatları daha mürəkkəbdir.
+    Saxlanan Məlumat Növləri:
+        Obyektlər: new açar sözü ilə yaradılan bütün obyektlər (sinif nümunələri, massivlər və s.) Heap-də saxlanılır.
+    Ölçü: Stack-ə nisbətən çox daha böyükdür və dinamik olaraq böyüyə bilər.
+    Üstünlükləri: Dinamik yaddaş idarəetməsi və böyük miqdarda məlumat saxlama qabiliyyəti.
+    Dezavantajları: Stack-ə nisbətən daha yavaş yaddaş girişi və zibil toplama səbəbiylə performans dalğalanmaları. OutOfMemoryError xətası, Heap-də kifayət qədər yaddaş qalmadıqda ortaya çıxır.
+
+Stack və Heap Arasındakı Əsas Fərqlər:
+Xüsusiyyət	           Stack	                     Heap
+İşləmə Prinsipi	       LIFO (Son Gələn İlk Çıxar)	 Təsadüfi
+Yaddaş İdarəetmə	   Avtomatik	                 Zibil Toplayıcı (Garbage Collector) tərəfindən idarə olunur
+Sürət	               Sürətli	                     Yavaş
+Ölçü	               Kiçik və məhdud	             Böyük və dinamik
+Saxlanan Məlumat	   Primitiv tiplər,              obyekt referansları, metod çağırışları	Obyektlər
+Xəta Növü	           StackOverflowError	         OutOfMemoryError
+
+Nümunə Ssenari:
+Java
+
+public class Numune {
+    int sayi; // Obyekt dəyişəni (Heap-də)
+
+    public Numune(int sayi) {
+        this.sayi = sayi;
+    }
+
+    public static void main(String[] args) {
+        int x = 10; // Lokal dəyişən (Stack-də)
+        Numune numune1 = new Numune(20); // numune1 referansı Stack-də, Numune obyekti Heap-də
+        Numune numune2 = new Numune(30); // numune2 referansı Stack-də, başqa bir Numune obyekti Heap-də
+        int y = x + numune1.sayi; // x və numune1.sayi dəyərləri Stack-dən oxunur
+    } // main metodu bitdikdə x, numune1, numune2 Stack-dən silinir. Zibil Toplayıcı bir müddət sonra Heap-dəki obyektləri təmizləyə bilər.
+}
+
+Bu nümunədə:
+
+    x və y kimi lokal dəyişənlər Stack-də saxlanılır.
+    numune1 və numune2 dəyişənləri, Heap-də yaradılan Numune obyektlərinin referanslarını tutur. Yəni, numune1 və numune2 Stack-də, yaradılan Numune obyektləri isə Heap-də yerləşir.
+    new Numune(20) ifadəsi ilə Heap-də bir Numune obyekti yaradılır.
+    Metodlar tamamlandıqda (məsələn, main metodu), müvafiq frame Stack-dən silinir və bu frame içindəki lokal dəyişənlər də yox olur.
+    Zibil Toplayıcı, artıq heç bir referans tərəfindən əldə edilə bilməyən obyektləri Heap-dən təmizləyir.
+
+Java Virtual Machine (JVM): JVM, Java kodunu işlədən virtual bir maşındır. Stack və heap, JVM-in idarə etdiyi yaddaş sahələridir.
+Garbage Collector: Heap-də olan istifadə olunmayan obyektləri avtomatik təmizləyən mexanizmdir.
+Yaddaş Sızıntıları: Heap-də istifadə olunmayan obyektlərin təmizlənməməsi nəticəsində yaranan problem.
+
+Xülasə:
+
+Stack və Heap, Java tətbiqlərinin yaddaş idarəetməsinin əsasını təşkil edir. Stack sürətli və avtomatik yaddaş idarəetməsi təmin edir, Heap isə dinamik yaddaş ayırma və böyük miqdarda məlumat saxlama imkanı verir. Bu iki yaddaş sahəsinin fərqlərini anlamaq, Java proqramlarının performansını optimallaşdırmaq və yaddaşla bağlı xətaların qarşısını almaq üçün vacibdir.

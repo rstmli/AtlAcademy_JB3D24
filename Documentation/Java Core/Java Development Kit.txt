@@ -1,0 +1,55 @@
+JDK (Java Development Kit) haqqında ətraflı danışaq. JDK, Java proqramlarını inkişaf etdirmək üçün lazım olan alətlər toplusudur. Bu, Java proqramlarını yazmaq, kompilyasiya etmək, debug etmək və işlətmək üçün lazım olan hər şeyi ehtiva edir.
+
+JDK Nədir və Nə İşə Yarar?
+
+JDK, Java proqramçıları üçün əsas inkişaf mühitidir. Aşağıdakı əsas komponentləri ehtiva edir:
+
+    JRE (Java Runtime Environment): Java proqramlarını işlətmək üçün lazım olan hər şey (JVM, sinif kitabxanaları və s.).
+    Kompilyator (javac): Java mənbə kodunu (.java faylları) bayt koduna (.class faylları) çevirir.
+    Debugger (jdb): Java proqramlarındakı xətaları tapmaq və düzəltmək üçün istifadə olunur.
+    Arxivləmə aləti (jar): Java sinifləri və resurslarını bir faylda toplamaq üçün istifadə olunur (.jar faylları).
+    Sənədləşdirmə generatoru (javadoc): Java mənbə kodundan HTML formatında API sənədləri yaratmaq üçün istifadə olunur.
+    Digər alətlər: JConsole (monitorinq üçün), JVisualVM (profiling üçün) və s. kimi digər faydalı alətlər də daxildir.
+
+JDK-nın Əsas Komponentləri Ətraflı:
+
+    JRE (Java Runtime Environment): JDK-nın tərkib hissəsi olan JRE, Java proqramlarının işləməsi üçün lazım olan hər şeyi, yəni JVM (Java Virtual Machine) və Java sinif kitabxanalarını ehtiva edir.
+    javac (Java Compiler): Bu, Java mənbə kodunu (.java faylları) Java Virtual Machine (JVM) tərəfindən icra edilə bilən bayt koduna (.class faylları) çevirən əsas alətdir.
+    jdb (Java Debugger): Bu alət, proqramçıların Java proqramlarındakı xətaları tapmaq və düzəltmək üçün istifadə etdikləri bir debugerdir. Proqramın icrasını addım-addım izləməyə, dəyişənlərin dəyərlərini yoxlamağa və s. imkan verir.
+    jar (Java Archive): Bu alət, bir neçə Java sinif faylını, resurs faylını və metadata-nı bir arxiv faylında (.jar faylı) birləşdirmək üçün istifadə olunur. JAR faylları, Java proqramlarının paylanmasını və idarə olunmasını asanlaşdırır.
+    javadoc (Java Documentation Generator): Bu alət, Java mənbə kodundakı şərhlərdən avtomatik olaraq HTML formatında API sənədləri yaratmaq üçün istifadə olunur. Bu, proqramçıların kodun necə işlədiyini anlamaq və ondan istifadə etmək üçün çox faydalıdır.
+
+JDK Necə İşləyir?
+
+    Java mənbə kodu .java uzantılı fayllarda yazılır.
+    javac kompilyatoru bu faylları bayt koduna .class uzantılı fayllara çevirir.
+    .class faylları JRE-nin tərkibindəki JVM tərəfindən icra olunur.
+
+JDK, JRE və JVM Arasındakı Fərq:
+
+    JVM (Java Virtual Machine): Java bayt kodunu icra edən virtual maşındır.
+    JRE (Java Runtime Environment): Java proqramlarını işlətmək üçün lazım olan hər şeyi (JVM, sinif kitabxanaları və s.) ehtiva edir.
+    JDK (Java Development Kit): Java proqramlarını inkişaf etdirmək üçün lazım olan alətləri (kompilyator, debugger və s.) və JRE-ni ehtiva edir.
+
+Yəni, JDK, JRE-ni də özündə birləşdirir və proqram inkişafı üçün əlavə alətlər təqdim edir. JRE isə yalnız Java proqramlarını işlətmək üçün lazımdır. JVM isə JRE-nin bir hissəsidir və bayt kodunu icra edir.
+
+JDK-nın Əhəmiyyəti:
+
+JDK, Java proqramlaşdırma dilində proqram inkişaf etdirmək istəyən hər kəs üçün əsas vasitədir. Kompilyator, debugger, sənədləşdirmə generatoru və digər alətləri ilə proqram inkişaf prosesini asanlaşdırır və səmərəli edir.
+
+JDK Implementasiyaları:
+
+Müxtəlif şirkətlər və təşkilatlar tərəfindən JDK-nın müxtəlif implementasiyaları mövcuddur. Ən çox tanınanlar bunlardır:
+
+    OpenJDK: Açıq mənbəli JDK implementasiyası.
+    Oracle JDK: Oracle tərəfindən hazırlanmış və ən çox istifadə olunan JDK implementasiyası.
+    Amazon Corretto: Amazon tərəfindən dəstəklənən OpenJDK-nın bir paylanması.
+    Adoptium (eski AdoptOpenJDK): Kommersiya dəstəyi olmadan pulsuz və açıq mənbəli OpenJDK binaları təqdim edən icma yönümlü bir layihə.
+
+JDK Quraşdırması:
+
+JDK-nı rəsmi Oracle veb saytından və ya digər etibarlı mənbələrdən (məsələn, OpenJDK, Amazon Corretto, Adoptium) yükləyə bilərsiniz. Quraşdırma prosesi əməliyyat sistemindən asılı olaraq dəyişə bilər, lakin ümumiyyətlə sadədir və təlimatlarla müşayiət olunur. Quraşdırdıqdan sonra, ətraf mühit dəyişənlərini (environment variables) konfiqurasiya etmək lazım ola bilər ki, sistem javac və digər alətləri tapa bilsin.
+
+Xülasə:
+
+JDK, Java proqramlarının inkişafı üçün əsas vasitədir. JRE, kompilyator, debugger və digər alətləri ehtiva edir. JDK-nın sayəsində Java proqramları yazmaq, kompilyasiya etmək, debug etmək və işlətmək mümkündür. JDK, JRE və JVM arasındakı fərqi başa düşmək, Java inkişaf mühitini düzgün konfiqurasiya etmək üçün vacibdir.

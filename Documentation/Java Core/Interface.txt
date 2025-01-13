@@ -1,0 +1,62 @@
+İnterfeys (interface) haqqında ətraflı danışaq. Proqramlaşdırmada "interfeys" termini bir neçə məna daşıyır, lakin əsas ideya iki müxtəlif sistemin və ya komponentin bir-biri ilə necə əlaqə qurduğunu təsvir etməkdir. Gündəlik həyatda da interfeyslərlə qarşılaşırıq: məsələn, avtomobilin sükanı və pedalları sürücü ilə avtomobil arasında bir interfeysdir. Proqramlaşdırmada isə bu, daha çox kod səviyyəsində baş verir.
+
+Proqramlaşdırmada İnterfeyslərin Əsas Növləri:
+
+    Qrafik İstifadəçi İnterfeysi (GUI - Graphical User Interface): İstifadəçinin proqramla vizual elementlər (pəncərələr, düymələr, menyular və s.) vasitəsilə qarşılıqlı əlaqədə olmasına imkan verən interfeysdir. Məsələn, Windows, macOS və ya Android əməliyyat sistemlərinin interfeysləri GUI-dir.
+
+    Komanda Sətri İnterfeysi (CLI - Command Line Interface): İstifadəçinin proqramla mətn əmrləri vasitəsilə qarşılıqlı əlaqədə olmasına imkan verən interfeysdir. Məsələn, Windows-da "cmd.exe" və ya Linux-da "terminal" CLI-dir.
+
+    Proqramlaşdırma İnterfeysi (API - Application Programming Interface): Proqramların bir-biri ilə necə əlaqə quracağını təyin edən interfeysdir. API, bir proqramın digər proqramın funksiyalarına və məlumatlarına necə daxil ola biləcəyini müəyyən edir.
+
+    Java-da İnterfeyslər (Interface Keyword): Java proqramlaşdırma dilində interface açar sözü ilə xüsusi bir konstruksiya mövcuddur. Bu, siniflərin "nə etməli" olduğunu (metod imzaları vasitəsilə) təyin edir, lakin "necə etməli" olduğunu (metod implementasiyası) deyil.
+
+Java-da İnterfeyslərin Xüsusiyyətləri və İstifadəsi:
+
+    Abstrakt Metodlar: İnterfeyslər yalnız abstrakt metodları ehtiva edir. Abstrakt metodun yalnız imzası (adı, parametrləri və qaytarma tipi) olur, bədəni (implementasiyası) olmur.
+    Sabitlər (Constants): İnterfeyslər həmçinin public static final olaraq elan edilmiş sabitlər ehtiva edə bilər.
+    Çoxlu İrs (Multiple Inheritance): Java sinifləri yalnız bir sinifdən irs ala bilər, lakin bir neçə interfeysi implement edə bilər. Bu, "çoxlu irs" problemini həll etmək üçün bir mexanizmdir.
+    default Metodlar (Java 8-dən etibarən): Java 8-dən etibarən interfeyslərə default açar sözü ilə implementasiyası olan metodlar əlavə etmək mümkündür. Bu, interfeyslərə geriyə uyğunluğu qoruyaraq yeni funksionallıq əlavə etməyə imkan verir.
+    static Metodlar (Java 8-dən etibarən): Java 8-dən etibarən interfeyslərə static metodlar da əlavə etmək mümkündür. Bu metodlar interfeys obyektləri olmadan birbaşa interfeys adı ilə çağırıla bilər.
+    private Metodlar (Java 9-dan etibarən): Java 9-dan etibarən interfeyslərə private metodlar da əlavə etmək mümkündür. Bu metodlar default və static metodlar tərəfindən istifadə edilə bilər və kod təkrarlanmasının qarşısını alır.
+
+Java-da İnterfeys Nümunəsi:
+Java
+
+interface Drawable {
+    void draw(); // Abstrakt metod
+    default void message(){ // default metod
+        System.out.println("Default message from Drawable");
+    }
+    static int cube(int x){ // static metod
+        return x*x*x;
+    }
+}
+
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Çevrə çəkirəm.");
+    }
+}
+
+public class InterfaceNumune {
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        circle.draw(); // "Çevrə çəkirəm." çap edir
+        circle.message(); // "Default message from Drawable" çap edir
+        System.out.println(Drawable.cube(3)); // 27 çap edir
+    }
+}
+
+Bu nümunədə Drawable bir interfeysdir. Circle sinfi bu interfeysi implement edir və draw() metodunun implementasiyasını təmin edir.
+
+İnterfeyslərin Üstünlükləri:
+
+    Abstraksiya: İnterfeyslər, siniflərin necə işlədiyinin detallarını gizlədərək, yalnız "nə etməli" olduğunu təyin edir. Bu, kodun daha oxunaqlı və anlaşıqlı olmasına kömək edir.
+    Çeviklik: İnterfeyslər, kodun daha çevik olmasına imkan verir. Bir neçə sinif eyni interfeysi implement edə bilər və bu sinifləri bir-birinin yerinə istifadə etmək mümkündür.
+    Çoxlu İrs (Multiple Inheritance): Java-da siniflərin çoxlu irs alması mümkün olmasa da, interfeyslər vasitəsilə bu problemi həll etmək mümkündür.
+    Testləmə: İnterfeyslər, unit testlərini yazmağı asanlaşdırır, çünki mock obyektlərini yaratmaq üçün istifadə edilə bilər.
+
+Xülasə:
+
+İnterfeyslər, proqramlaşdırmada, xüsusən də Java-da, mühüm bir konsepsiyadır. Müxtəlif sistemlərin və komponentlərin bir-biri ilə necə əlaqə quracağını təyin edir, kodun abstraksiyasını, çevikliyini və testlənməsini artırır. Java-da interface açar sözü ilə xüsusi bir konstruksiya olaraq istifadə olunur və abstrakt metodlar, sabitlər, default, static və private metodlar ehtiva edə bilər.

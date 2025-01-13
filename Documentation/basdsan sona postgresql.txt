@@ -1,0 +1,109 @@
+
+GROUP BY
+
+    GROUP BY: Məlumatları qruplaşdırmaq üçün istifadə olunur.
+
+HAVING
+
+    HAVING: Qruplaşdırılmış məlumatlara şərt tətbiq etmək üçün istifadə olunur.
+
+ORDER BY
+
+    ORDER BY: Nəticələri müəyyən bir sütun üzrə artan (ASC) və ya azalan (DESC) sıralamaq üçün istifadə olunur.
+
+DML (Data Manipulation Language)
+
+    DML: Verilənlər bazasında məlumatları əlavə etməyə, silməyə, yeniləməyə və ya əldə etməyə imkan verir.
+
+Əməliyyatlar:
+
+    SELECT: Verilənlər bazasından məlumatları seçmək üçün istifadə olunur.
+    INSERT: Verilənlər bazasına məlumat əlavə etmək üçün istifadə olunur.
+    UPDATE: Verilənlər bazasındakı məlumatları yeniləmək üçün istifadə olunur.
+    DELETE: Verilənlər bazasından məlumatları silmək üçün istifadə olunur.
+
+DDL (Data Definition Language)
+
+    DDL: Obyektlərin strukturunu yaratmaq, dəyişdirmək və ya silmək üçün istifadə olunur.
+
+Əməliyyatlar:
+
+    CREATE: Yeni bir verilənlər bazası, cədvəl və ya obyektləri yaratmaq üçün istifadə olunur.
+    ALTER: Mövcud cədvəldə dəyişiklik etmək (məsələn, yeni sütun əlavə etmək, sütunun tipini dəyişdirmək) üçün istifadə olunur.
+    DROP: Mövcud cədvəli və ya digər obyektləri silmək üçün istifadə olunur.
+    TRUNCATE: Cədvəldəkı bütün məlumatları silmək, amma strukturunu saxlamaq lazım olduqda istifadə olunur.
+
+TCL (Transaction Control Language)
+
+    TCL: Verilənlər bazasında əməliyyatların idarə olunmasını təmin edir, ümumiyyətlə bir neçə DML əməliyyatı bir arada yerinə yetirərkən istifadə olunur.
+
+Əməliyyatlar:
+
+    COMMIT: Əməliyyatları daimi etmək üçün istifadə olunur.
+    ROLLBACK: Əməliyyatları geri qaytarmaq üçün istifadə olunur.
+    SAVEPOINT: Əməliyyatları müəyyən bir nöqtədə dayandırmaq üçün istifadə olunur.
+    RELEASE SAVEPOINT: Yaradılmış savepoint-i silmək üçün istifadə olunur.
+
+Agregat Funksiyalar
+
+    COUNT: Sətirlərin sayını hesablamaq üçün istifadə olunur.
+    SUM: Sütundakı bütün qiymətləri toplamaq üçün istifadə olunur.
+    AVG: Sütundakı bütün qiymətlərin ədədi ortasını tapmaq üçün istifadə olunur.
+    MIN: Sütundakı bütün qiymətlərin ən kiçiyini tapmaq üçün istifadə olunur.
+    MAX: Sütundakı bütün qiymətlərin ən böyüyünü tapmaq üçün istifadə olunur.
+
+Foreign Key
+
+    Foreign Key: Bir cədvəldəki sütunun başqa bir cədvəldəki bir sütuna referans verdiyi bir məhdudiyyətdir.
+    Əsas Məqsəd: Məlumatların ardıcıl olmasını və əlaqəli cədvəllər arasında düzgün məlumat axışını təmin etməkdir.
+
+
+SET NULL: Əgər əlaqəli məlumat silinərsə, Foreign Key sütunu NULL olur.
+CASCADE: Əgər əlaqəli məlumat silinərsə, ona bağlı olan bütün məlumatlar da silinir.
+DEFAULT: Silinən və ya yenilənən məlumat üçün əvvəlcədən təyin edilmiş standart dəyər istifadə edilir.
+RESTRICT: Əgər əlaqəli məlumat varsa, silinmə və ya yeniləmə əməliyyatı dayandırılır.
+NO ACTION: Əgər əlaqəli məlumat varsa, heç bir əməliyyat edilmir, amma bu, sonradan yoxlanılır.
+
+RESTRICT: Əgər əlaqəli cədvəldə bir rekord silinməyə və ya yenilənməyə çalışılarsa, amma ona bağlı başqa cədvəldə məlumat varsa, əməliyyat dayandırılır (silinmə və ya yeniləmə baş verməz).
+
+NO ACTION: Əgər əlaqəli cədvəldəki rekord silinsə və ya yeniləşsə, heç bir əməliyyat edilmir. Bu, RESTRICT ilə eynidir, amma burada məhdudiyyət dərhal yoxlanılmır, ancaq əməliyyat zamanı yoxlanılır.
+
+WHERE: SQL sorğularında müəyyən şərtləri təyin etmək üçün istifadə olunur. Yəni, verilənlər bazasından yalnız müəyyən kriteriyalara uyğun olan məlumatları seçir.
+
+FROM: SQL sorğusunda məlumatları hansı cədvəldən seçmək istədiyinizi göstərir.
+
+SQL: Strukturlaşdırılmış Sorğu Dili (Structured Query Language), verilənlər bazası ilə əlaqə yaratmaq, məlumatları daxil etmək, yeniləmək, silmək və sorğulamaq üçün istifadə olunan bir dildir.
+
+Database: Məlumatların strukturlaşdırılmış şəkildə saxlandığı yerdir. Məlumat bazası cədvəllərdən (tables), sütunlardan (columns), və qeydlərdən (records) ibarət olur.
+
+DELETE
+
+    DELETE: Cədvəlin içindəki müəyyən qeydləri (sətirləri) silmək üçün istifadə olunur. Cədvəl və ya struktur dəyişmir, yalnız məlumatlar silinir.
+    WHERE şərti ilə müəyyən sətirləri seçərək yalnız o qeydləri silmək mümkündür.
+
+DROP
+
+    DROP: Cədvəli, indeksləri, görünüşləri və ya digər verilənlər bazası obyektlərini tamamilə silmək üçün istifadə olunur. DROP əməliyyatı ilə cədvəl və ya obyekt bütövlükdə bazadan silinir və geri qaytarılması mümkün deyil.
+
+Xülasə:
+
+    DELETE: Cədvəlin içindəki məlumatları (sətirləri) silir, cədvəl qalır.
+    DROP: Cədvəli və ya digər verilənlər bazası obyektlərini tamamilə silir.
+
+
+Primary Key
+
+    Primary Key: Cədvəldəki hər bir qeydi unikal şəkildə tanıyan və NULL dəyərlərə icazə verməyən bir sütundur.
+    Bir cədvəldə yalnız bir Primary Key ola bilər.
+    Primary Key olan sütunlar unikaldır və bu sütundakı hər bir dəyər fərqli olmalıdır.
+
+
+Unique Key
+
+    Unique Key: Bu da məlumatların unikal olduğunu təmin edən bir məhdudiyyətdir, lakin NULL dəyərlərinə icazə verir. Bir cədvəldə bir neçə Unique Key ola bilər.
+    Unique Key olan sütunlar da unikal olmalıdır, amma bu sütunda bir və ya bir neçə NULL dəyəri ola bilər (verilənlər bazası sistemindən asılı olaraq).
+
+Xülasə:
+
+    Primary Key: Unikal və NULL olmayan dəyərləri tələb edir, yalnız bir dəfə cədvəldə ola bilər.
+    Unique Key: Unikal dəyərlər tələb edir, amma NULL dəyərlərinə icazə verir və bir neçə dəfə istifadə edilə bilər.

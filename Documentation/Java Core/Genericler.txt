@@ -1,0 +1,45 @@
+Generics Haqqında Uzun Məlumat:
+
+Generics Java proqramlaşdırma dilində tip təhlükəsizliyini təmin etmək və kodun daha çevik, təkrar istifadə edilə bilən olmasını təmin etmək üçün istifadə olunan bir xüsusiyyətdir. Java 5 versiyası ilə tanıdılan Generics, həm siniflərdə, həm metodlarda, həm də interfeyslərdə istifadə oluna bilər. Bu xüsusiyyətlər vasitəsilə, əvvəlcədən müəyyən edilmiş bir tipin yerinə daha çevik və ümumi bir tip istifadə edilərək kodun daha təmiz və təhlükəsiz olması təmin edilir.
+
+Əsas Faydalar:
+
+1. **Tip Təhlükəsizliyi (Type Safety):**
+   - Generics, kodun yazıldığı anda tipin düzgünlüyünü yoxlamağa imkan verir. Bu, səhvləri əvvəlcədən aşkar etməyə kömək edir. Həmçinin, **runtime** zamanı `ClassCastException`-un qarşısını alır. 
+   - Məsələn, `List<Integer>` tipində bir koleksiyanı yalnız `Integer` dəyərləri ilə istifadə etməyə məcbur edəcəkdir, bu da tiplərin qarışmasının qarşısını alır.
+
+2. **Kodun Daha Çevik və Təkrar İstifadə Olunması:**
+   - Generics sayəsində bir sinif və ya metod yalnız bir tipdə deyil, bir neçə fərqli tipdə işləyə bilər. Bu, kodun daha çevik və təkrar istifadə edilə bilən olmasını təmin edir. 
+   - Məsələn, bir `Box` sinifi həm `Integer`, həm də `String` tipindəki obyektləri saxlayacaq şəkildə təyin oluna bilər.
+
+3. **Kodun Daha Oxunaqlı və Təhlükəsiz Olması:**
+   - Generics istifadə etdikdə, tip təhlükəsizliyi təmin edildiyi üçün kod daha oxunaqlı və təhlükəsiz olur. Kodun kompilyasiya zamanı səhvləri aşkar olunur, bu da proqramçının səhvləri daha tez görməsini təmin edir.
+
+Generics ilə işləyərkən əsas anlayışlar:
+
+1. **Generic Siniflər:**
+   - Generic siniflər tipləri parametr olaraq qəbul edir və həmin tipləri sinifdə istifadə edir. Tip parametrləri daxilində işlədikcə hər tip üçün eyni sinifdən istifadə edə bilirik.
+   
+   Misal:
+   ```java
+   class Box<T> {
+       private T value;
+
+       public void setValue(T value) {
+           this.value = value;
+       }
+
+       public T getValue() {
+           return value;
+       }
+   }
+
+   // Box sinifi Integer tipi ilə istifadə olunur
+   Box<Integer> intBox = new Box<>();
+   intBox.setValue(10);
+   System.out.println(intBox.getValue());  // 10
+
+   // Box sinifi String tipi ilə istifadə olunur
+   Box<String> strBox = new Box<>();
+   strBox.setValue("Hello");
+   System.out.println(strBox.getValue());  // Hello

@@ -1,0 +1,104 @@
+Java-da static açar sözü, siniflərin və obyektlərin davranışlarına təsir edən vacib bir anlayışdır. Budur static haqqında ətraflı bir izah (yalnız mətn formatında):
+
+static Nədir?
+
+static açar sözü, bir dəyişənin, metodun, daxili sinifin və ya blokun sinif səviyyəsində olduğunu bildirir. Bu, həmin üzvün sinifin nümunələrindən asılı olmadığı mənasını verir. Başqa sözlə, static bir üzv, sinifin bütün nümunələri tərəfindən paylaşılır və hər nümunə üçün ayrı bir nüsxəsi yaradılmaz.
+
+static Dəyişənlər (Sinif Dəyişənləri)
+
+    static olaraq təyin olunan dəyişənlər, sinifin bütün nümunələri tərəfindən paylaşılır.
+    Bu dəyişənlərə sinif adı üzərindən daxil olmaq mümkündür (məsələn, SinifAdi.deyisenAdi).
+    Obyekt yaradılmadan da istifadə edilə bilərlər.
+    Yaddaşda yalnız bir dəfə yer alırlar.
+
+Nümunə:
+Java
+
+public class Telebe {
+    static int telebeSayi = 0; // static dəyişən
+    String ad;
+
+    public Telebe(String ad) {
+        this.ad = ad;
+        telebeSayi++; // Hər yeni tələbə yaradıldıqda sayını artır
+    }
+
+    public static void main(String[] args) {
+        Telebe telebe1 = new Telebe("Əli");
+        Telebe telebe2 = new Telebe("Ayşə");
+
+        System.out.println("Cəmi tələbə sayı: " + Telebe.telebeSayi); // Sinif adı üzərindən giriş
+    }
+}
+
+static Metodlar (Sinif Metodları)
+
+    static olaraq təyin olunan metodlar, sinifin nümunələrindən asılı deyildir.
+    Bu metodlara sinif adı üzərindən daxil olmaq mümkündür (məsələn, SinifAdi.metodAdi()).
+    static metodlar, yalnız static dəyişənlərə və digər static metodlara daxil ola bilərlər.
+    this açar sözünü istifadə edə bilməzlər, çünki müəyyən bir obyektə aid deyildirlər.
+
+Nümunə:
+Java
+
+public class Riyaziyyat {
+    public static int topla(int a, int b) { // static metod
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int netice = Riyaziyyat.topla(5, 3); // Sinif adı üzərindən giriş
+        System.out.println("Nəticə: " + netice);
+    }
+}
+
+static Bloklar
+
+    static bloklar, sinif yükləndikdə yalnız bir dəfə işə salınır.
+    static dəyişənləri başlamaq və ya sinif yüklənərkən edilməsi lazım olan digər əməliyyatları yerinə yetirmək üçün istifadə olunurlar.
+
+Nümunə:
+Java
+
+public class NumuneSinif {
+    static int sayi;
+
+    static { // static blok
+        sayi = 10;
+        System.out.println("Static blok işlədi.");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sayı: " + NumuneSinif.sayi);
+    }
+}
+
+static Daxili Siniflər (Nested Static Classes)
+
+    Bir sinifin içində təyin olunan static siniflərdir.
+    Xarici sinifə aid nümunələrə daxil ola bilməzlər.
+    Daha çox qruplaşdırma və kapsullaşdırma məqsədilə istifadə olunurlar.
+
+Nümunə:
+Java
+
+class XariciSinif {
+    static class DaxiliSinif {
+        void mesajGoster() {
+            System.out.println("Daxili sinifdən mesaj.");
+        }
+    }
+
+    public static void main(String[] args) {
+        XariciSinif.DaxiliSinif daxiliObyekt = new XariciSinif.DaxiliSinif();
+        daxiliObyekt.mesajGoster();
+    }
+}
+
+static'in İstifadə Sahələri
+
+    Ümumi məlumatları saxlamaq (məsələn, sayğaclar, konfiqurasiya məlumatları).
+    Köməkçi metodlar yaratmaq (məsələn, riyazi əməliyyatlar, köməkçi funksiyalar).
+    Sinif yüklənərkən edilməsi lazım olan əməliyyatları yerinə yetirmək.
+
+Xülasə olaraq, static açar sözü, sinif üzvlərinin sinif səviyyəsində olmasını təmin edir və bu üzvlərin obyekt nümunələrindən asılı olmayaraq istifadə edilə bilməsini mümkün edir. Bu, yaddaş səmərəliliyi və kod oxunaqlılığı baxımından üstünlüklər təmin edir.

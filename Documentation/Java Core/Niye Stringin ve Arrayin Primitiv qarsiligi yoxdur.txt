@@ -1,0 +1,26 @@
+ "String və array-in primitiv qarşılığı yoxdur" cümləsi düzdür. Bu, Java proqramlaşdırma dilinin əsas xüsusiyyətlərindən biridir.
+
+Ətraflı izah:
+
+    Primitiv veri tipləri: Java'da ədədi dəyərlər, simvollar və məntiqi dəyərləri saxlamaq üçün istifadə olunan sadə veri tipləridir. Məsələn, int, double, char, boolean kimi. Bu tiplər birbaşa yaddaşda saxlanılır və dəyişənlər bu yaddaş bölgəsinə bir istinad saxlayır.
+    String və array: Bunlar isə mürəkkəb veri tipləridir.
+        String: Bir sıra simvoldan ibarət olan mətnlərdir.
+        Array: Eyni tipdə bir çox elementi saxlamaq üçün istifadə olunan quruluşlardır.
+        Həm string, həm də array, bir çox primitiv dəyəri bir yerdə saxlaya bilər. Məsələn, bir string bir çox char tipli simvoldan ibarətdir, bir int array isə bir çox int tipli ədədi saxlayır.
+
+Niyə string və array primitiv deyil?
+
+    Mürəkkəb quruluş: Həm string, həm də array bir neçə dəyəri özündə birləşdirdiyindən, primitiv tiplər qədər sadə deyillər.
+    Yaddaş idarəsi: Primitiv tiplər yaddaşda sabit bir ölçü tutur. String və array-lərin ölçüsü isə dəyişə bilər.
+    Əməliyyatlar: String və array üzərində daha çox əməliyyatlar (məsələn, birləşdirmə, axtarma, sıralama) mümkündür. Bu əməliyyatlar, primitiv tiplər üzərində edilən əməliyyatlardan daha mürəkkəbdir.
+
+Nəticə:
+
+String və array-in primitiv qarşılığı olmadığı üçün, onlarla işləyərkən fərqli yanaşmalar tətbiq etmək lazımdır. Məsələn, stringləri birləşdirmək üçün + operatoru, array elementlərinə müraciət etmək üçün indekslərdən istifadə olunur.
+
+Əlavə məlumat üçün:
+
+    Java'da String: Stringlər haqqında daha ətraflı məlumat əldə etmək üçün "Java String" axtarışı edə bilərsiniz.
+    Java'da Array: Arraylər haqqında daha ətraflı məlumat əldə etmək üçün "Java Array" axtarışı edə bilərsiniz.
+
+Qeyd: Bəzi proqramlaşdırma dillərində stringlər primitiv tip olaraq qəbul edilə bilər, amma Java'da belə deyil.

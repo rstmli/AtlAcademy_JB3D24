@@ -1,0 +1,42 @@
+JRE (Java Runtime Environment) haqqında ətraflı danışaq. JRE, Java proqramlarını işlətmək üçün lazım olan proqram təminatı paketidir. Başqa sözlə, Java proqramlarının kompüterinizdə işləməsi üçün mütləq JRE quraşdırılmış olmalıdır.
+
+JRE Nədir və Nə İşə Yarar?
+
+JRE, Java proqramlarını icra etmək üçün zəruri olan hər şeyi ehtiva edir. Buna Java Virtual Machine (JVM), Java sinif kitabxanaları və digər dəstəkləyici fayllar daxildir. JRE, Java proqramlarının əməliyyat sistemindən asılı olmayaraq (Windows, macOS, Linux və s.) eyni şəkildə işləməsini təmin edir.
+
+JRE-nin Əsas Komponentləri:
+
+    Java Virtual Machine (JVM): JRE-nin ən vacib hissəsidir. JVM, Java bayt kodunu (bytecode) icra edən virtual maşındır. Bayt kodu, Java proqramlarının kompilyasiya edildikdən sonra əldə edilən aralıq kodudur. JVM, bu bayt kodunu əməliyyat sisteminə uyğun maşın koduna çevirərək proqramın icrasını təmin edir.
+    Java Sinif Kitabxanaları (Java Class Libraries): Java proqramları üçün əvvəlcədən yazılmış siniflərin və interfeyslərin böyük bir toplusudur. Bu kitabxanalar, giriş/çıxış əməliyyatları, şəbəkə əlaqəsi, qrafik interfeysləri və s. kimi bir çox ümumi tapşırığı yerinə yetirmək üçün funksiyalar təmin edir.
+    Dəstəkləyici Fayllar: JRE, JVM və sinif kitabxanaları ilə yanaşı, konfiqurasiya faylları, xəta mesajları və s. kimi digər dəstəkləyici faylları da ehtiva edir.
+
+JRE Necə İşləyir?
+
+    Java proqramı .java uzantılı mətn faylında yazılır.
+    javac kompilyatoru bu faylı .class uzantılı bayt koduna çevirir.
+    JRE, bu .class faylını JVM-ə yükləyir.
+    JVM, bayt kodunu interpretasiya edir və ya JIT (Just-In-Time) kompilyatoru vasitəsilə maşın koduna çevirərək icra edir.
+    Proqram JRE mühitində işləyir.
+
+JRE, JDK və JVM Arasındakı Fərq:
+
+    JVM (Java Virtual Machine): Java proqramlarını icra edən virtual maşındır.
+    JRE (Java Runtime Environment): Java proqramlarını işlətmək üçün lazım olan hər şeyi (JVM, sinif kitabxanaları və s.) ehtiva edir.
+    JDK (Java Development Kit): Java proqramlarını inkişaf etdirmək üçün lazım olan alətləri (kompilyator, debugger və s.) və JRE-ni ehtiva edir.
+
+Başqa sözlə, JDK, JRE-ni də özündə cəmləşdirir və proqram inkişafı üçün əlavə alətlər təqdim edir. JRE isə yalnız Java proqramlarını işlətmək üçün lazımdır.
+
+JRE-nin Əhəmiyyəti:
+
+JRE, Java proqramlarının platformadan asılı olmayaraq işləməsini təmin edərək, proqram təminatı inkişafında böyük bir rahatlıq yaradır. Bir dəfə yazılmış Java proqramı, müxtəlif əməliyyat sistemlərində JRE quraşdırılmış hər hansı bir kompüterdə işləyə bilir.
+
+JRE Implementasiyaları:
+
+Müxtəlif təşkilatlar tərəfindən JRE-nin müxtəlif implementasiyaları mövcuddur. Ən çox tanınanlar bunlardır:
+
+    OpenJDK: Açıq mənbəli JRE implementasiyası.
+    Oracle JRE: Oracle tərəfindən hazırlanmış və ən çox istifadə olunan JRE implementasiyası.
+
+Xülasə:
+
+JRE, Java proqramlarının işləməsi üçün vacib bir komponentdir. JVM, sinif kitabxanaları və digər dəstəkləyici faylları ehtiva edir. JDK isə proqram inkişafı üçün əlavə alətlər təqdim edərək JRE-ni də özündə birləşdirir. JRE-nin sayəsində Java proqramları platformadan asılı olmayaraq işləyə bilir.

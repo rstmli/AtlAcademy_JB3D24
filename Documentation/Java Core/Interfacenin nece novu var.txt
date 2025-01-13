@@ -1,0 +1,24 @@
+"İnterfeys" termini proqramlaşdırmada müxtəlif mənalarda istifadə olunduğu üçün, "neçə növü var" sualına cavab kontekstdən asılıdır. Əvvəlki cavabımda qeyd etdiyim kimi, ən ümumi növləri bunlardır:
+
+    Qrafik İstifadəçi İnterfeysi (GUI): İstifadəçinin proqramla vizual elementlər vasitəsilə qarşılıqlı əlaqədə olduğu interfeys. Məsələn, Windows əməliyyat sisteminin masaüstü, mobil tətbiqlərin ekranları və s. GUI-yə aiddir.
+
+    Komanda Sətri İnterfeysi (CLI): İstifadəçinin proqramla mətn əmrləri vasitəsilə qarşılıqlı əlaqədə olduğu interfeys. Məsələn, Linux terminalı, Windows-da Command Prompt (cmd.exe) və ya PowerShell CLI-yə aiddir.
+
+    Proqramlaşdırma İnterfeysi (API): Proqramların bir-biri ilə necə əlaqə quracağını təyin edən interfeys. API, bir proqramın digər proqramın funksiyalarına və məlumatlarına necə daxil ola biləcəyini müəyyən edir. API-nin də öz növləri var:
+        REST API: Veb xidmətləri üçün ən çox istifadə edilən API arxitekturalarından biridir. HTTP protokolu üzərindən işləyir və JSON və ya XML formatında məlumat mübadiləsi aparır.
+        SOAP API: Daha ənənəvi bir API arxitekturasıdır. XML formatından istifadə edir və daha mürəkkəb protokollar üzərindən işləyə bilər.
+        GraphQL: API-lər üçün bir sorğu dilidir. Müştəriyə yalnız lazım olan məlumatları almağa imkan verir.
+
+    Java-da İnterfeyslər (Interface Keyword): Java proqramlaşdırma dilində interface açar sözü ilə təyin olunan xüsusi bir konstruksiya. Bu, siniflərin "nə etməli" olduğunu (metod imzaları vasitəsilə) təyin edir, lakin "necə etməli" olduğunu (metod implementasiyası) deyil. Java interfeysləri abstrakt metodlar, sabitlər, default metodlar (Java 8-dən etibarən), static metodlar (Java 8-dən etibarən) və private metodlar (Java 9-dan etibarən) ehtiva edə bilər.
+
+Daha Konkret Növlər (Kontekstdən Asılı Olaraq):
+
+Yuxarıda sadalananlardan əlavə, müxtəlif proqramlaşdırma paradiqmalarında və texnologiyalarında da müxtəlif növ interfeyslər mövcuddur. Məsələn:
+
+    Hardware İnterfeysləri: Kompüterin aparat komponentləri (məsələn, USB, PCI Express) arasında əlaqəni təmin edən interfeyslər.
+    İstifadəçi İnterfeys Nümunələri (UI Patterns): İstifadəçi interfeyslərinin dizaynında tətbiq olunan ümumi həllər və yanaşmalar (məsələn, Modal Pəncərələr, Naviqasiya Menyuları).
+    Protokollar: Şəbəkə protokolları (məsələn, TCP/IP, HTTP) da iki sistem arasında məlumat mübadiləsini təmin edən bir növ interfeysdir.
+
+Xülasə:
+
+"İnterfeys" termininin neçə növü olduğu sualına konkret bir rəqəm vermək çətindir, çünki bu termin müxtəlif kontekstlərdə istifadə olunur. Lakin ən ümumi və əsas növləri yuxarıda sadaladıqlarım kimi GUI, CLI, API və Java-dakı interface konstruksiyasıdır. Kontekstdən asılı olaraq, daha spesifik növlər də mövcud ola bilər. Əsas odur ki, interfeysin əsas ideyası iki sistem və ya komponent arasında əlaqəni və qarşılıqlı fəaliyyəti təyin etməkdir.

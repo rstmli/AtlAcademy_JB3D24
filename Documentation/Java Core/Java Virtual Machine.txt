@@ -1,0 +1,50 @@
+Java Virtual Machine (JVM) haqqında ətraflı danışaq. JVM, Java proqramlaşdırma dilinin əsasını təşkil edən kritik bir komponentdir. "Virtual Maşın" adlandırılması, onun əslində fiziki bir maşın olmaması, lakin kompüterdə fiziki bir maşını təqlid edən bir proqram olması ilə əlaqədardır.
+
+JVM-in Əsas Məqsədi:
+
+JVM-in əsas məqsədi, Java proqramlarının platformadan asılı olmayaraq işləməsini təmin etməkdir. Bu "bir dəfə yaz, hər yerdə işlət" (Write Once, Run Anywhere - WORA) prinsipi Java-nın ən böyük üstünlüklərindən biridir.
+
+JVM Necə İşləyir?
+
+    Kompilyasiya: Java proqramları .java uzantılı mətn fayllarında yazılır. Bu fayllar javac kompilyatoru tərəfindən bayt koduna (bytecode) çevrilir. Bayt kodu, JVM-in başa düşdüyü bir təlimat dəstidir və .class uzantılı fayllarda saxlanılır.
+
+    Yükləmə (Loading): JVM, .class fayllarını yükləyici (ClassLoader) alt sistemi vasitəsilə yaddaşa yükləyir. Yükləmə prosesi üç mərhələdən ibarətdir:
+        Yükləmə (Loading): .class faylının tapılması və yaddaşa oxunması.
+        Doğrulama (Verification): Bayt kodunun formatının və semantikasının düzgünlüyünün yoxlanması.
+        Hazırlıq (Preparation): Statik dəyişənlərə yaddaş ayrılması və default dəyərlərin təyin edilməsi.
+        Həll etmə (Resolution): Simvolik istinadların birbaşa istinadlara çevrilməsi.
+
+    İcra (Execution): Yüklənmiş bayt kodu JVM-in icra mühiti tərəfindən interpretasiya olunur və ya JIT (Just-In-Time) kompilyatoru tərəfindən maşın koduna çevrilərək icra olunur. JIT kompilyatoru, proqramın işləməsi zamanı tez-tez istifadə olunan kod hissələrini maşın koduna çevirərək performansı artırır.
+
+JVM-in Əsas Komponentləri:
+
+    ClassLoader Alt Sistemi: .class fayllarını yaddaşa yükləyən hissə.
+    Yaddaş Alanları (Runtime Data Areas): JVM-in işləməsi zamanı məlumatların saxlanıldığı yaddaş sahələri. Əsas yaddaş alanları bunlardır:
+        Metod Sahəsi (Method Area): Siniflərin metadata-sı, statik dəyişənlər və s. saxlanılır.
+        Yığın (Heap): Obyektlərin yaradıldığı və saxlanıldığı sahə.
+        Zəng Yığını (Stack): Metod zənglərinin və lokal dəyişənlərin saxlanıldığı sahə.
+        Proqram Sayğacı (Program Counter Register): Hər bir thread üçün icra olunan təlimatın ünvanını saxlayır.
+        Yerli Metod Yığını (Native Method Stack): Yerli (native) metodların icrası üçün istifadə olunur.
+    İcra Mühiti (Execution Engine): Bayt kodunu icra edən hissə. Interpretator və JIT kompilyatoru daxildir.
+    Zibil Toplayıcı (Garbage Collector): Artıq istifadə olunmayan obyektləri yaddaşdan silərək yaddaş idarəetməsini təmin edir.
+
+JVM-in Üstünlükləri:
+
+    Platformadan Asılı Olmama: Eyni bayt kodu müxtəlif əməliyyat sistemlərində (Windows, macOS, Linux və s.) işləyə bilir.
+    Yaddaş İdarəetməsi: Zibil toplayıcı avtomatik olaraq yaddaş idarəetməsini həyata keçirir.
+    Təhlükəsizlik: Bayt kodunun doğrulanması sayəsində təhlükəsizliyi təmin edir.
+    Performans: JIT kompilyatoru performansı artırır.
+
+JVM Implementasiyaları:
+
+Müxtəlif şirkətlər və təşkilatlar tərəfindən JVM-in müxtəlif implementasiyaları mövcuddur. Ən çox tanınanlar bunlardır:
+
+    OpenJDK: Açıq mənbəli JVM implementasiyası.
+    Oracle HotSpot JVM: Oracle tərəfindən hazırlanmış və ən çox istifadə olunan JVM implementasiyası.
+    IBM J9 JVM: IBM tərəfindən hazırlanmış JVM implementasiyası.
+
+Xülasə:
+
+JVM, Java proqramlarının platformadan asılı olmayaraq işləməsini təmin edən mühüm bir komponentdir. Bayt kodu, ClassLoader, yaddaş alanları, icra mühiti və zibil toplayıcı kimi əsas komponentləri var. JVM-in üstünlükləri arasında platformadan asılı olmama, yaddaş idarəetməsi, təhlükəsizlik və performans qeyd olunmalıdır.
+
+Əlavə olaraq qeyd edək ki, müasir JVM-lər çox mürəkkəb sistemlərdir və optimallaşdırma baxımından davamlı olaraq təkmilləşdirilir. Bu, Java proqramlarının yüksək performansla işləməsini təmin edir.

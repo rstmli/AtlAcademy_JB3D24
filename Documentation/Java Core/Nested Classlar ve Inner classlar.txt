@@ -1,0 +1,26 @@
+Java-da nested class və inner class konseptləri bir-birinə bənzəsə də, bunlar arasında müəyyən fərqlər mövcuddur. Bu iki tip siniflər obyekt yönümlü proqramlaşdırmada (OOP) müəyyən məqsədlər üçün istifadə olunur və siniflər arasında əlaqələri təşkil etməkdə əhəmiyyətlidir. Aşağıda nested class və inner class arasındakı fərqləri, xüsusiyyətlərini və nümunələrini ətraflı izah edəcəyəm.
+1. Nested Class (Yerli Sinif)
+
+Nested class Java-da bir sinifin içərisində təyin olunan bütün sinifləri əhatə edir. Yəni, bir sinifin içindəki bütün siniflər nested class adlanır.
+Xüsusiyyətlər:
+
+    Static və non-static (inner) nested class var. Static nested class sinifin özü ilə əlaqəli olur, yəni obyekt yaradılmadan belə istifadə edilə bilər. Non-static nested class (inner class) isə yalnız xarici sinifin obyektləri ilə əlaqəli ola bilər.
+    Outer class ilə nested class arasındakı əlaqə yalnız nested class-ın təyin edildiyi outer class ilə məhdudlaşır.
+    Nested class, adətən, sinifin içində müəyyən bir funksiya və ya davranışı təkrar etməmək üçün istifadə edilir.
+
+2. Inner Class (Daxili Sinif)
+
+Inner class nested class-ın bir növüdür. Yəni, inner class xüsusi bir növ non-static nested class-dır. O, xarici sinifin obyektinə daxil ola bilən və xarici sinifin üzvlərinə (field və metodlarına) birbaşa müraciət edə bilən bir sinifdir.
+Xüsusiyyətlər:
+
+    Non-static olduğundan, inner class-ın obyekti outer class-ın obyektinə bağlı olur. Yəni, bir inner class yalnız xarici sinifin bir nümunəsi yaradıldıqdan sonra istifadə edilə bilər.
+    Inner class xarici sinifin bütün üzvlərinə (həmçinin private üzvlərə) daxil ola bilir.
+    Inner class outer class-ın instansiyasına (obyektinə) daxil ola bildiyi üçün, onu müəyyən bir xarici sinif obyektinə bağlamaq mümkündür.
+
+Fərqlər
+Məqam	Nested Class	Inner Class
+Statik Olma	Nested class həm statik, həm də statik olmayan ola bilər.	Inner class hər zaman non-static-dır.
+Xarici Sinifə Bağlılıq	Statik nested class yalnız xarici sinifin sinif səviyyəsinə bağlıdır.	Inner class xarici sinifin obyektinə bağlıdır.
+Xarici Sinifin Üzvlərinə Daxil Olma	Statik nested class yalnız public static üzvlərə daxil ola bilər.	Inner class xarici sinifin bütün üzvlərinə daxil ola bilər (hətta private).
+İstifadə	Statik olaraq istifadə oluna bilər, xarici sinifdən asılı deyil.	Inner class yalnız xarici sinifin obyektinə əsaslanır.
+Yaradılması	Bir static nested class obyekt yaratmadan çağırıla bilər.	Inner class obyekt yaratmaq üçün əvvəlcə xarici sinifin obyekti lazımdır.

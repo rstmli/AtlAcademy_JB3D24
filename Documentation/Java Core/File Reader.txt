@@ -1,0 +1,92 @@
+FileReader, Java-da fayllardan simvol əsaslı məlumat oxumaq üçün istifadə olunan bir sinifdir. java.io paketində yerləşir və InputStreamReader sinifindən törəyir. Bu, FileReaderın əslində bir simvol axını oxuyucusu olduğu mənasını verir. Yəni, fayldan bayt-bayt əvəzinə simvol-simvol oxuma əməliyyatı aparır.
+
+FileReader-ın Əsas Xüsusiyyətləri və İstifadəsi:
+
+    Simvol Əsaslı Oxuma: FileReader, faylları simvol axınları kimi qəbul edir. Bu, mətn faylları kimi simvol məlumatları olan fayllarla işləmək üçün idealdır.
+    Sadə İstifadə: Fayldan oxuma əməliyyatını olduqca sadələşdirir.
+    Unicode Dəstəyi: Simvol əsaslı olduğu üçün Unicode simvollarını düzgün şəkildə oxuya bilir.
+
+FileReader-ın Qurucu Metodları (Constructors):
+
+FileReader sinifinin üç əsas qurucu metodu var:
+
+    FileReader(String fileName): Fayl adını bir String olaraq alır. Fayl tapılmazsa FileNotFoundException atır.
+    Java
+
+try (FileReader fileReader = new FileReader("fayl.txt")) {
+    // Fayldan oxuma əməliyyatları
+} catch (FileNotFoundException e) {
+    System.err.println("Fayl tapılmadı: " + e.getMessage());
+} catch (IOException e) {
+    System.err.println("Oxuma xətası: " + e.getMessage());
+}
+
+FileReader(File file): Bir File obyekti alır. Bu, fayl üzərində daha çox nəzarət sahibi olmağınızı təmin edir.
+Java
+
+File file = new File("fayl.txt");
+try (FileReader fileReader = new FileReader(file)) {
+    // Fayldan oxuma əməliyyatları
+} catch (FileNotFoundException e) {
+    System.err.println("Fayl tapılmadı: " + e.getMessage());
+} catch (IOException e) {
+    System.err.println("Oxuma xətası: " + e.getMessage());
+}
+
+FileReader(File file, Charset charset) / FileReader(String fileName, Charset charset): Faylı oxuyarkən istifadə olunacaq simvol dəstini (character set) göstərməyə imkan verir. Bu, fərqli kodlamalara sahib fayllarla işləyərkən vacibdir. Java 7 və sonrakı versiyalarda mövcuddur. Məsələn, UTF-8 kodlaması ilə bir faylı oxumaq üçün:
+Java
+
+    try (FileReader fileReader = new FileReader("fayl.txt", StandardCharsets.UTF_8)) {
+        // Fayldan oxuma əməliyyatları
+    } catch (IOException e) {
+        System.err.println("Oxuma xətası: " + e.getMessage());
+    }
+
+FileReader-ın Metodları:
+
+    int read(): Fayldan tək bir simvol oxuyur və simvolun Unicode dəyərini (int olaraq) qaytarır. Faylın sonuna çatıldıqda -1 qaytarır.
+    Java
+
+int simvol;
+while ((simvol = fileReader.read()) != -1) {
+    char ch = (char) simvol; // int dəyəri char-a çevir
+    System.out.print(ch);
+}
+
+int read(char[] cbuf): Fayldan göstərilən ölçüdə bir simvol massivinə (char array) simvollar oxuyur və oxunan simvol sayını qaytarır. Fayl sonuna çatıldıqda -1 qaytarır.
+Java
+
+    char[] bufer = new char[1024];
+    int oxunanSimvolSayi;
+    while ((oxunanSimvolSayi = fileReader.read(bufer)) != -1) {
+        System.out.print(new String(bufer, 0, oxunanSimvolSayi)); // Oxunan hissəni çap et
+    }
+
+    int read(char[] cbuf, int off, int len): Fayldan göstərilən ölçüdə bir simvol massivinə, göstərilən ofsetdən başlayaraq göstərilən sayda simvol oxuyur.
+
+    boolean ready(): Oxuyucunun oxumağa hazır olub olmadığını yoxlayır. Adətən faylın sonuna çalıb-çatılmadığını yoxlamaq üçün read() metodu ilə birlikdə istifadə olunur.
+
+    void close(): Faylı bağlayır və sistem resurslarını sərbəst buraxır. try-with-resources quruluşu istifadə edildikdə bu metodu əllə çağırmağa ehtiyac yoxdur.
+
+Vacib Nöqtələr:
+
+    try-with-resources İstifadəsi: Fayl əməliyyatlarında try-with-resources quruluşunu istifadə etmək vacibdir. Bu quruluş, faylın avtomatik olaraq bağlanmasını təmin edir və resurs sızıntılarını önləyir. Yuxarıdakı nümunələrdə bu quruluş istifadə edilmişdir.
+
+    BufferedReader ilə Performans Artışı: FileReader tək-tək simvol oxuduğu üçün böyük fayllarla işləyərkən performansı aşağı düşə bilər. Bu səbəbdən, FileReaderı bir BufferedReader ilə birlikdə istifadə etmək adətən daha səmərəlidir. BufferedReader, məlumatları yaddaşda buferləyir və daha böyük bloklar halında oxuma edərək performansı artırır.
+    Java
+
+    try (FileReader fileReader = new FileReader("fayl.txt");
+         BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+        String sətir;
+        while ((sətir = bufferedReader.readLine()) != null) {
+            System.out.println(sətir);
+        }
+    } catch (IOException e) {
+        System.err.println("Oxuma xətası: " + e.getMessage());
+    }
+
+    Xəta İdarəetmə: Fayl əməliyyatlarında IOException və FileNotFoundException kimi istisnaları idarə etmək vacibdir.
+
+Xülasə:
+
+FileReader, Java-da mətn fayllarından simvol əsaslı məlumat oxumaq üçün istifadə olunan sadə və faydalı bir sinifdir. Lakin, performans problemlərini önləmək üçün adətən BufferedReader ilə birlikdə istifadə edilməsi tövsiyə olunur. try-with-resources quruluşu ilə birlikdə istifadə edildikdə kod daha təhlükəsiz və oxunaqlı hala gəlir.

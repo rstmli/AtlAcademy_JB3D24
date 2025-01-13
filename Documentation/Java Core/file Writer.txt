@@ -1,0 +1,116 @@
+FileWriter, Java'da fayllara simvol əsaslı məlumat yazmaq üçün istifadə olunan bir sinifdir. java.io paketində yerləşir və OutputStreamWriter sinifindən törəyir. Bu, FileWriterın əslində bir simvol axını yazıcısı olduğu mənasını verir. Yəni, məlumatları bayt-bayt deyil, simvol-simvol yazır.
+
+FileWriter-ın Əsas Xüsusiyyətləri və İstifadəsi:
+
+    Simvol Əsaslı Yazma: FileWriter, məlumatları simvol axını kimi qəbul edir. Bu, mətn fayllarına yazmaq üçün idealdır.
+    Unicode Dəstəyi: Simvol əsaslı olduğu üçün Unicode simvollarını düzgün şəkildə yaza bilir.
+    Sadə İstifadə: Fayla yazma əməliyyatını olduqca sadələşdirir.
+
+FileWriter-ın Qurucu Metodları (Constructors):
+
+FileWriter sinifinin bir neçə qurucu metodu var:
+
+    FileWriter(String fileName): Fayl adını bir String olaraq alır. Fayl mövcud deyilsə, yaradılır. Mövcud olsa, üzərinə yazılır (əvvəlki məzmun silinir).
+    Java
+
+try (FileWriter fileWriter = new FileWriter("fayl.txt")) {
+    // Fayla yazma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Yazma xətası: " + e.getMessage());
+}
+
+FileWriter(String fileName, boolean append): Fayl adını və əlavə etmə (append) rejimini göstərən bir boolean dəyər alır. append true olarsa, yeni məlumat mövcud məzmuna əlavə olunur. false olarsa (və ya sadəcə FileWriter(String fileName) istifadə edildikdə), əvvəlki məzmun silinir.
+Java
+
+try (FileWriter fileWriter = new FileWriter("fayl.txt", true)) { // Əlavə etmə rejimi
+    // Fayla yazma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Yazma xətası: " + e.getMessage());
+}
+
+FileWriter(File file): Bir File obyekti alır.
+Java
+
+File file = new File("fayl.txt");
+try (FileWriter fileWriter = new FileWriter(file)) {
+    // Fayla yazma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Yazma xətası: " + e.getMessage());
+}
+
+FileWriter(File file, boolean append): Bir File obyekti və əlavə etmə rejimini göstərən bir boolean dəyər alır.
+Java
+
+File file = new File("fayl.txt");
+try (FileWriter fileWriter = new FileWriter(file, true)) { // Əlavə etmə rejimi
+    // Fayla yazma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Yazma xətası: " + e.getMessage());
+}
+
+FileWriter(File file, Charset charset) / FileWriter(String fileName, Charset charset) / FileWriter(File file, Charset charset, boolean append) / FileWriter(String fileName, Charset charset, boolean append): Fayla yazarkən istifadə olunacaq simvol dəstini (character set) göstərməyə imkan verir. Bu, fərqli kodlamalara sahib fayllarla işləyərkən vacibdir. Java 7 və sonrakı versiyalarda mövcuddur. Məsələn, UTF-8 kodlaması ilə bir fayla yazmaq üçün:
+Java
+
+    try (FileWriter fileWriter = new FileWriter("fayl.txt", StandardCharsets.UTF_8)) {
+      // UTF-8 kodlaması ilə yazma əməliyyatları
+    } catch (IOException e) {
+      System.err.println("Yazma xətası: " + e.getMessage());
+    }
+
+FileWriter-ın Metodları:
+
+    void write(int c): Fayla tək bir simvol yazır. c dəyərinin aşağı 16 biti simvol kimi yazılır.
+    void write(char[] cbuf): Fayla bir simvol massivi yazır.
+    void write(char[] cbuf, int off, int len): Fayla bir simvol massivinin bir hissəsini yazır. off başlanğıc indeksi, len isə yazılacaq simvol sayıdır.
+    void write(String str): Fayla bir sətir (String) yazır.
+    void write(String str, int off, int len): Fayla bir sətrin bir hissəsini yazır.
+    void flush(): Buferdəki bütün məlumatların dərhal fayla yazılmasını təmin edir. Bu, məlumat itkisinin qarşısını almaq üçün vacibdir, xüsusən də proqram qəfil bağlandıqda.
+    void close(): Axını bağlayır və sistem resurslarını sərbəst buraxır. try-with-resources quruluşu istifadə edildikdə bu metodu əllə çağırmağa ehtiyac yoxdur.
+
+Vacib Nöqtələr:
+
+    try-with-resources İstifadəsi: Fayl əməliyyatlarında try-with-resources quruluşunu istifadə etmək çox vacibdir. Bu, faylın avtomatik olaraq bağlanmasını təmin edir və resurs sızıntılarını önləyir. Bütün yuxarıdakı nümunələrdə bu quruluş istifadə edilmişdir.
+
+    Buferləmə: FileWriter özü buferləmə aparmır. Performansı artırmaq üçün adətən BufferedWriter ilə birlikdə istifadə olunur.
+    Java
+
+    try (FileWriter fileWriter = new FileWriter("fayl.txt");
+         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+        bufferedWriter.write("Bu bir sətirdir.\n");
+        bufferedWriter.write("Bu da başqa bir sətirdir.");
+    } catch (IOException e) {
+        System.err.println("Yazma xətası: " + e.getMessage());
+    }
+
+    Xəta İdarəetmə: Fayl əməliyyatlarında IOException istisnasını idarə etmək vacibdir.
+
+FileWriter Nümunəsi:
+Java
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterNumune {
+    public static void main(String[] args) {
+        String faylAdi = "yeni_fayl.txt";
+
+        try (FileWriter fileWriter = new FileWriter(faylAdi);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+
+            bufferedWriter.write("Salam Dünya!\n");
+            bufferedWriter.write("Bu, Java ilə yazılmış bir fayldır.");
+
+        } catch (IOException e) {
+            System.err.println("Faylı yazma xətası: " + e.getMessage());
+        }
+
+        System.out.println("Fayl uğurla yazıldı: " + faylAdi);
+    }
+}
+
+Bu nümunədə, FileWriter və BufferedWriter birlikdə istifadə olunaraq "yeni_fayl.txt" adlı bir fayla iki sətir mətn yazılır. try-with-resources bloku sayəsində fayllar avtomatik olaraq bağlanır.
+
+Xülasə:
+
+FileWriter, Java'da fayllara simvol əsaslı məlumat yazmaq üçün sadə və rahat bir vasitədir. Performansı artırmaq üçün adətən BufferedWriter ilə birlikdə istifadə olunur. try-with-resources quruluşu ilə birlikdə istifadə edildikdə kod daha təhlükəsiz və səliqəli olur.

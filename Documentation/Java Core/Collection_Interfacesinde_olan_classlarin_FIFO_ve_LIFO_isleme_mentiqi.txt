@@ -1,0 +1,124 @@
+List İnterfeysində Olan Siniflər və Çalışma Mantiğı
+
+Java'da List interfeysi, sıralı kolleksiyaları ifadə edir və elementləri müəyyən bir sıralama ilə saxlayır. List içindəki elementlər müəyyən bir sıraya görə əlavə olunur və bu sıraya əsasən onlara daxil olmaq mümkündür. Bununla yanaşı, FIFO (First In, First Out) və LIFO (Last In, First Out) prinsiplərinə əsaslanan siniflər də mövcuddur.
+FIFO (First In, First Out) Mantiğına Göre Çalışan Siniflər:
+
+    ArrayList: Elementlər sıralı şəkildə əlavə olunur və eyni sırayla onlara daxil olunur. Lakin, ArrayList bir FIFO strukturu deyil. Yəni, sadəcə sıralı şəkildə elementləri saxlayır, amma əlavə etmə və silmə əməliyyatları sıralamaya əsasən edilmir.
+
+    LinkedList: LinkedList də sıralı kolleksiyaları saxlayır, amma burada FIFO prinsipi daha açıq şəkildə görünür. LinkedList həm də Queue kimi istifadə oluna bilər və elementlərin sırayla əlavə edilməsi və çıxarılması əməliyyatları yerinə yetirilə bilər. Bu, əlavə olunan ilk elementin çıxarılacaq ilk element olduğu FIFO prinsipi ilə uyğundur.
+
+LIFO (Last In, First Out) Mantiğına Göre Çalışan Siniflər:
+
+    Stack: Stack sinifi, LIFO prinsipinə əsaslanan bir kolleksiya növüdür. Bu struktura son əlavə olunan element ilk çıxarılır. Bu, bir yığın kimi işləyir, yəni sonuncu əlavə olunan element ilk çıxarılır.
+
+Xülasə:
+
+    FIFO prinsipinə əsaslanan siniflər: LinkedList (Queue kimi istifadə edildikdə)
+    LIFO prinsipinə əsaslanan siniflər: Stack
+
+
+
+
+Set İnterfeysində Olan Siniflər və Çalışma Mantığı
+
+Java'da Set interfeysi, təkrarlanan elementləri qəbul etməyən və yalnız unikal elementləri saxlayan bir kolleksiya növüdür. Set içərisindəki elementlər heç bir müəyyən sıralama ilə saxlanılmır, yəni Set kolleksiyasında daxil olan elementlərin sırası qəbul edilmir.
+Set və Əsas Siniflər:
+
+    HashSet:
+        HashSet, Set interfeysinin ən çox istifadə edilən siniflərindən biridir. Bu sinif elementləri hashing metoduna əsaslanaraq saxlayır.
+        HashSet daxilində elementlər sırasız olaraq saxlanılır və təkrarlanan elementlərə icazə verilmir.
+        Bu sinif FIFO və ya LIFO prinsiplərinə uyğun deyil, çünki elementlərin sırası deterministik deyil və əlavə etmə sırasına görə təşkil olunmur.
+
+    LinkedHashSet:
+        LinkedHashSet, HashSet-ə bənzər şəkildə işləyir, amma əlavə etdiyi elementlərin sırasını saxlayır.
+        LinkedHashSet, əlavə edilən elementlərin sırasını saxlayır və bu səbəbdən daxil olan elementlər sırasına görə əldə edilə bilər.
+        Bu sinif həm də FIFO prinsipinə uyğun işləyir, yəni ilk əlavə olunan element ilk olaraq əldə edilə bilər.
+
+    TreeSet:
+        TreeSet, elementləri təbii sıralama (natural ordering) və ya xüsusi Comparator istifadə edərək sıralayır.
+        TreeSet elementləri sıralı şəkildə saxlayır və təkrarlanan elementləri qəbul etmir.
+        Bu sinif həm də FIFO prinsipinə uyğun işləyir, amma sıralama natural ordering-ə əsaslanır.
+
+Set Siniflərinin Ümumi Xüsusiyyətləri:
+
+    Unikal elementlər: Set yalnız unikal elementləri saxlayır, yəni eyni elementdən bir neçə dəfə ola bilməz.
+    Sıra yoxdur: Set içindəki elementlər sırasız şəkildə saxlanılır (bəzən sıralanmış olsa da, bu sıralama müəyyən deyil).
+    Təkrarlama yoxdur: Hər bir element yalnız bir dəfə mövcud ola bilər.
+
+Xülasə:
+
+    HashSet: Elementləri sırasız saxlayır və təkrarlanmır.
+    LinkedHashSet: Elementləri əlavə etmə sırasına əsasən saxlayır və FIFO prinsipinə uyğundur.
+    TreeSet: Elementləri təbii sıralama və ya xüsusi sıralama ilə saxlayır və FIFO prinsipinə uyğundur.
+
+
+
+Queue İnterfeysində Olan Siniflər və Çalışma Mantiğı
+
+Java'da Queue interfeysi, FIFO (First In, First Out) prinsipinə əsaslanan bir kolleksiya növüdür. Bu interfeys, elementlərin daxil edildiyi sırayla işlənməsi üçün nəzərdə tutulub. Queue daxilində əlavə olunan ilk element ilk olaraq çıxarılır. Bu, növbə (queue) strukturu kimi işləyir.
+Queue və Əsas Siniflər:
+
+    LinkedList:
+        LinkedList həm List, həm də Queue interfeyslərini həyata keçirən bir sinifdir. Bu sinifdə FIFO prinsipinə uyğun olaraq elementlər sırayla əlavə olunur və çıxarılır.
+        LinkedList həmçinin əlavə etmə və çıxarma əməliyyatlarını sürətli şəkildə yerinə yetirə bilir. Bu səbəbdən Queue olaraq istifadə edildikdə çox faydalıdır.
+
+    PriorityQueue:
+        PriorityQueue, elementləri təbii sıralama və ya xüsusi Comparator istifadə edərək sıralayır. Bu, FIFO prinsipinə uyğun deyil, çünki ən yüksək prioritetə sahib olan element birinci çıxarılır.
+        PriorityQueue əsasən sıralanmış növbələrdə istifadə olunur. Yəni burada elementlərin sıraya daxil olma sırası deyil, onların prioritetinə görə çıxarılması həyata keçirilir.
+        Bu sinifdə LIFO və FIFO qarışığı ola bilər, çünki prioritetə əsasən sıralama edilir.
+
+    ArrayDeque:
+        ArrayDeque, sırasıyla element əlavə etmə və çıxarma əməliyyatlarını həyata keçirən bir Queue implementasiyasıdır.
+        ArrayDeque həm də FIFO prinsipi ilə işləyir və LinkedList ilə müqayisədə daha sürətli performans təqdim edir.
+        Bu sinif Deque (Double Ended Queue) olaraq da istifadə edilə bilər, yəni həm başdan, həm də sondan elementlər əlavə edilə və çıxarıla bilər.
+
+Queue Siniflərinin Ümumi Xüsusiyyətləri:
+
+    FIFO Prinsipi: Queue-da daxil olan ilk element ilk olaraq çıxarılır.
+    Elementlərin əlavə edilməsi: Yeni elementlər növbənin sonuna əlavə edilir.
+    Elementlərin çıxarılması: Elementlər növbənin başından çıxarılır.
+
+Xülasə:
+
+    LinkedList: FIFO prinsipinə əsaslanaraq işləyir və Queue olaraq istifadə edilə bilər.
+    PriorityQueue: Elementləri prioritetə əsasən sıralayır, FIFO ilə deyil, prioritet sırası ilə işləyir.
+    ArrayDeque: FIFO prinsipinə əsaslanan növbə və sıralama əməliyyatlarını sürətli şəkildə yerinə yetirir.
+
+
+
+
+Map İnterfeysində Olan Siniflər və Çalışma Mantiğı
+
+Java'da Map interfeysi, anahtar-değer (key-value) cütləri şəklində məlumatları saxlamaq üçün istifadə olunan bir kolleksiya növüdür. Map içərisində hər bir anahtar yalnız bir dəyərə malikdir və bu anahtarlar unikal olmalıdır. Map kolleksiyaları əsasən verilənlər bazasında və ya əlaqəli məlumatları saxlama məqsədilə istifadə olunur.
+Map və Əsas Siniflər:
+
+    HashMap:
+        HashMap ən çox istifadə edilən Map implementasiyalarından biridir. Bu sinif hashing üsuluna əsaslanır və hər bir anahtar-ı uyğun bir dəyər ilə əlaqələndirir.
+        HashMap daxilində anahtar sırasız şəkildə saxlanılır və təkrarlanan anahtar-lar qəbul edilmir.
+        HashMap həmçinin sürətli əməliyyatlar təqdim edir, lakin elementlərin sırası deterministik deyil (yəni əlavə olunma sırasına əsaslanmaz).
+
+    LinkedHashMap:
+        LinkedHashMap, HashMap-ə bənzəyir, amma əlavə etdiyi anahtar-değer cütlərinin sırasını saxlayır. Bu, FIFO prinsipinə uyğun olaraq işləyir, çünki elementlər əlavə edildiyi sıraya əsasən əldə edilə bilər.
+        LinkedHashMap həmçinin HashMap-in sürətini qoruyarkən, əlavə etdiyi elementlərin sırasını da saxlayır.
+
+    TreeMap:
+        TreeMap elementləri təbii sıralama (natural ordering) və ya xüsusi Comparator istifadə edərək sıralayır.
+        Bu sinif SortedMap interfeysini həyata keçirir və anahtar-değer cütlərini sıralı şəkildə saxlayır.
+        TreeMap daxilindəki anahtarlar təbii sıralamaya əsasən sıralanır (məsələn, String tipində isə əlifba sırasına görə).
+
+    Hashtable:
+        Hashtable bir vaxtlar HashMap ilə eyni məqsəd üçün istifadə olunurdu, amma Hashtable sinifi synchronized olduğu üçün paralel işləmə vəziyyətində daha yaxşı performans göstərir. Bu, lakin HashMap-ə nisbətən daha yavaşdır.
+        Hashtable də null dəyərləri qəbul etmir.
+
+Map Siniflərinin Ümumi Xüsusiyyətləri:
+
+    Anahtar-deyer cütləri: Hər bir anahtar yalnız bir dəyərə malikdir.
+    Unikal anahtarlar: Map kolleksiyasında hər bir anahtar yalnız bir dəfə istifadə oluna bilər.
+    Element sırası: HashMap sırasız, LinkedHashMap isə sıralı elementlər saxlayır, TreeMap isə anahtarları sıralı saxlayır.
+
+Xülasə:
+
+    HashMap: Anahtar-değer cütlərini sırasız saxlayır və sürətli əməliyyatlar təqdim edir.
+    LinkedHashMap: Anahtar-değer cütlərini əlavə edilmə sırasına əsasən saxlayır və FIFO prinsipinə uyğundur.
+    TreeMap: Anahtar-ları sıralı şəkildə saxlayır və təbii sıralama ilə işləyir.
+    Hashtable: HashMap-ə bənzər şəkildə işləyir, lakin synchronized olduğu üçün paralel işləmə üçün daha uyğundur.

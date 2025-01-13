@@ -1,0 +1,22 @@
+JIT nədir? - **JIT** (Just-In-Time) kompilyatoru, Java Virtual Machine (JVM) tərəfindən istifadə olunan bir mexanizmdir və Java bytecode-un yerli maşın koduna çevrilməsi prosesini idarə edir. **JIT kompilyasiyası** proqramın icrası zamanı bytecode-u təhlil edir və yalnız lazım olduqda onu təkmilləşdirir, bu da proqramın performansını artırmağa kömək edir.
+-----------------------------------------------------------------------------------------------------------
+JIT necə işləyir? - Java-da proqramlar əvvəlcə **source code**-dan **bytecode**-a çevrilir və sonra JVM tərəfindən işlədilir. Bu bytecode, JVM tərəfindən hər hansı bir platformada (Windows, Linux, Mac) işləyə bilər. Lakin JVM bytecode-u birbaşa yerli maşın koduna çevirmir. Bunun əvəzinə, **JIT kompilyatoru** bytecode-u **proqram işlədikcə** yerli maşın koduna çevirir. Yəni, **JIT kompilyasiyası** proqramın müəyyən hissələrini "just-in-time" (zamanında) olaraq təkmilləşdirir.
+
+JIT-nin əsas məqsədi, proqramın işini optimallaşdırmaqdır. JIT kompilyasiyası yalnız **lazım olduqda** baş verir və yalnız tez-tez istifadə olunan kod parçaları yerli maşın koduna çevrilir. Bu yanaşma performansı artırır və proqramın daha sürətli işləməsini təmin edir.
+
+### JIT-nin Əsas Xüsusiyyətləri:
+1. **Performansın artırılması**: JIT kompilyatoru, bytecode-u yerli maşın koduna çevirməklə proqramın sürətini artırır. Bu, xüsusən böyük proqramlarda təsirli olur.
+2. **Yalnız lazım olduqda kompilyasiya**: JIT yalnız proqramın müəyyən hissələrini, ilk dəfə çağırıldıqda və ya təkrar istifadə edildikdə təkmilləşdirir.
+3. **Optimizasiya**: JIT kompilyatoru, kodun təkrarlanmasından və daha çox istifadə olunmasından sonra optimallaşdırmalar tətbiq edir (məsələn, **inlining** və **loop unrolling** kimi optimizasiyalar).
+
+### JIT-nin Növləri:
+- **Client JIT**: Yüngül tətbiqlər üçün optimallaşdırmalar edir və tez başlanğıc təmin edir.
+- **Server JIT**: Daha böyük və daha mürəkkəb tətbiqlər üçün optimallaşdırmalar edərək daha uzun müddətli icra müddətində yüksək performans təmin edir.
+
+### JIT və AOT Arasındakı Fərq:
+- **AOT** (Ahead-Of-Time) kompilyasiyası, proqramın işlədilməsi başlamazdan əvvəl bütün kodu maşın koduna çevirir. Bu yanaşma, JIT-ə nisbətən başlanğıcda daha sürətlidir, lakin performans baxımından daha az çevikdir.
+- **JIT** isə yalnız icra zamanı kodu təkmilləşdirdiyi üçün daha çevik və dinamikdir, amma başlanğıcda bir az daha yavaş ola bilər.
+
+JIT kompilyatorunun istifadəsi ilə, Java proqramları daha sürətli işləyir və sistem resurslarını daha səmərəli istifadə edir. Bu xüsusiyyət, Java-nın platformadan asılı olmadan performansını artırmağa imkan verir.
+--------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,89 @@
+BufferedReader, Java'da simvol əsaslı giriş axınlarından səmərəli şəkildə mətn oxumaq üçün istifadə olunan bir sinifdir. java.io paketində yerləşir və Reader abstrakt sinifindən törəyir. Adından da göründüyü kimi, məlumatları bir bufer istifadə edərək oxuyur, bu da performansı əhəmiyyətli dərəcədə artırır.
+
+BufferedReader-ın Əsas Xüsusiyyətləri və Üstünlükləri:
+
+    Buferləmə (Buffering): BufferedReader, məlumatları birbaşa mənbədən tək-tək oxumaq əvəzinə, müəyyən bir ölçüdəki bir buferə (varsayılan olaraq 8192 simvol) toplayır. Daha sonra, məlumatlar bu buferdən oxunur. Bu, disk və ya şəbəkə kimi yavaş mənbələrdən edilən oxuma əməliyyatlarının sayını azaldaraq performansı artırır.
+    Sətir Oxuma (readLine()): Ən vacib metodlarından biri olan readLine(), bir mətn sətrini oxuyur və bir String olaraq qaytarır. Bu, mətn fayllarını sətir-sətir emal etmək üçün çox faydalıdır.
+    Səmərəlilik: Buferləmə sayəsində, FileReader kimi buferləmə istifadə etməyən siniflərə nisbətən çox daha səmərəlidir. Xüsusilə böyük fayllarla işləyərkən nəzərəçarpacaq bir performans fərqi görünür.
+    Simvol Əsaslı: Simvol axınları ilə işlədiyi üçün Unicode simvollarını düzgün şəkildə oxuya bilir.
+
+BufferedReader-ın Qurucu Metodları (Constructors):
+
+BufferedReader sinifinin iki əsas qurucu metodu var:
+
+    BufferedReader(Reader in): Bir Reader obyekti alır. Bu, oxunacaq mənbəni göstərir. Adətən FileReader, InputStreamReader və ya başqa bir Reader obyekti istifadə olunur.
+    Java
+
+try (FileReader fileReader = new FileReader("fayl.txt");
+     BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+    // Fayldan oxuma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Oxuma xətası: " + e.getMessage());
+}
+
+BufferedReader(Reader in, int sz): Bir Reader obyekti və bufer ölçüsünü (simvol cinsindən) alır. Bufer ölçüsünü özəlləşdirmək lazım olduqda istifadə olunur.
+Java
+
+    try (FileReader fileReader = new FileReader("fayl.txt");
+         BufferedReader bufferedReader = new BufferedReader(fileReader, 4096)) { // 4KB bufer
+        // Fayldan oxuma əməliyyatları
+    } catch (IOException e) {
+        System.err.println("Oxuma xətası: " + e.getMessage());
+    }
+
+BufferedReader-ın Metodları:
+
+    String readLine(): Bir mətn sətrini oxuyur və bir String olaraq qaytarır. Sətir sonu simvolu ('\n', '\r' və ya '\r\n') oxunmur. Faylın sonuna çatıldıqda null qaytarır.
+    Java
+
+    String sətir;
+    while ((sətir = bufferedReader.readLine()) != null) {
+        System.out.println(sətir);
+    }
+
+    int read(): Tək bir simvol oxuyur və simvolun Unicode dəyərini (int olaraq) qaytarır. Faylın sonuna çatıldıqda -1 qaytarır. Nadir hallarda birbaşa istifadə olunur, adətən readLine() daha uyğundur.
+
+    int read(char[] cbuf, int off, int len): Müəyyən bir hissəyə simvolları oxuyur. cbuf oxunan simvolların saxlanıldığı massivdir, off massivdə oxunan simvolların yerləşdiriləcəyi başlanğıc indeksidir, len oxunacaq maksimum simvol sayıdır.
+
+    void close(): Axını bağlayır və sistem resurslarını sərbəst buraxır. try-with-resources quruluşu istifadə edildikdə bu metodu əllə çağırmağa ehtiyac yoxdur. Bu quruluş, axının avtomatik olaraq bağlanmasını təmin edir.
+
+    boolean ready(): Axının oxumağa hazır olub olmadığını yoxlayır.
+
+    void mark(int readAheadLimit): Axımda cari mövqeyi işarələyir. reset() metodu ilə bu işarələnmiş mövqeyə geri qayıtmaq mümkündür. readAheadLimit isə işarələnmiş mövqedən sonra neçə simvolun oxunmasının hələ də işarəni etibarlı saxlayacağını göstərir.
+
+    void reset(): Axını ən son işarələnmiş mövqeyə geri qaytarır.
+
+    boolean markSupported(): Bu axının mark() və reset() əməliyyatlarını dəstəkləyib-dəstəkləmədiyini yoxlayır. BufferedReader bu əməliyyatları dəstəkləyir.
+
+BufferedReader Nümunəsi (FileReader ilə birlikdə):
+Java
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferedReaderNumune {
+    public static void main(String[] args) {
+        String faylAdi = "fayl.txt";
+
+        try (FileReader fileReader = new FileReader(faylAdi);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            String sətir;
+            int sətirSayi = 1;
+            while ((sətir = bufferedReader.readLine()) != null) {
+                System.out.println(sətirSayi + ": " + sətir);
+                sətirSayi++;
+            }
+
+        } catch (IOException e) {
+            System.err.println("Faylı oxuma xətası: " + e.getMessage());
+        }
+    }
+}
+
+Bu nümunədə, BufferedReader bir FileReader ilə birlikdə istifadə olunaraq "fayl.txt" faylındakı sətirləri oxuyur və hər sətri sətir nömrəsi ilə birlikdə ekrana çap edir. try-with-resources bloku sayəsində fayllar avtomatik olaraq bağlanır.
+
+Xülasə:
+
+BufferedReader, Java-da mətn faylları və digər simvol axınları ilə işləyərkən performans optimallaşdırması üçün vacib bir vasitədir. Buferləmə və readLine() metodu kimi xüsusiyyətləri sayəsində kodunuz daha səmərəli və oxunaqlı olur.

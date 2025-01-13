@@ -1,0 +1,96 @@
+"Serializable" Java-da obyektlərin seriyalaşdırılması üçün istifadə olunan bir interfeysdir. Seriyalaşdırma, bir obyektin yaddaşdakı vəziyyətinin (məlumatlarının) bayt axınına çevrilməsi prosesidir. Bu bayt axını sonra saxlanıla bilər (məsələn, faylda, verilənlər bazasında) və ya şəbəkə üzərindən ötürülə bilər. Daha sonra bu bayt axınından orijinal obyekt yenidən yaradıla bilər (deseriyalaşdırma).
+
+Serializable interfeysinin əsas məqsədi:
+
+Java-da obyektlərin davamlılığını (persistence) və şəbəkə üzərindən ötürülməsini təmin etməkdir.
+
+Serializable interfeysinin xüsusiyyətləri:
+
+    Marker interfeysdir: Serializable interfeysi heç bir metodu ehtiva etmir. Bu, sadəcə Java-ya bu sinfin obyektlərinin seriyalaşdırıla biləcəyini bildirən bir marker (işarə) rolunu oynayır.
+    java.io paketində yerləşir: java.io.Serializable kimi import edilməlidir.
+    Bütün sahələr seriyalaşdırılır: Bir sinif Serializable interfeysini implement etdikdə, onun bütün sahələri (instance variables) avtomatik olaraq seriyalaşdırılır. Lakin, bəzi sahələrin seriyalaşdırılmasının qarşısını almaq üçün transient açar sözündən istifadə etmək mümkündür.
+    Statik sahələr seriyalaşdırılmır: Statik sahələr sinfə aiddir, obyektə deyil. Buna görə də, seriyalaşdırma prosesində nəzərə alınmırlar.
+
+Seriyalaşdırmanın istifadə sahələri:
+
+    Fayllara saxlama: Obyektlərin vəziyyətini fayllarda saxlamaq və proqram yenidən başladığında onları geri yükləmək.
+    Şəbəkə üzərindən ötürmə: Obyektləri şəbəkə üzərindən digər proqramlara və ya sistemlərə ötürmək (məsələn, RMI, Java EE).
+    Kəşləmə (caching): Obyektləri yaddaşda saxlamaq və daha sonra sürətli şəkildə əldə etmək.
+    Sessiya idarəetməsi: Veb tətbiqlərində istifadəçi sessiyalarını saxlamaq.
+
+Serializable interfeysinin implementasiyası:
+
+Bir sinfin obyektlərinin seriyalaşdırıla bilməsi üçün həmin sinif java.io.Serializable interfeysini implement etməlidir:
+Java
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private String username;
+    private String password;
+    private transient int tempValue; // Bu sahə seriyalaşdırılmayacaq
+
+    // Konstruktor, getter və setter metodları
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.tempValue = 0;
+    }
+    //...
+}
+
+Bu nümunədə User sinfi Serializable interfeysini implement edir. tempValue sahəsi transient olaraq təyin edildiyi üçün seriyalaşdırma prosesində nəzərə alınmayacaq.
+
+Seriyalaşdırma və Deseriyalaşdırma prosesi:
+
+Java-da seriyalaşdırma və deseriyalaşdırma üçün ObjectOutputStream və ObjectInputStream sinifləri istifadə olunur:
+
+Seriyalaşdırma:
+Java
+
+import java.io.*;
+
+public class SerializationExample {
+    public static void main(String[] args) throws IOException {
+        User user = new User("testuser", "password");
+
+        try (FileOutputStream fileOutputStream = new FileOutputStream("user.ser");
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+
+            objectOutputStream.writeObject(user);
+            System.out.println("Obyekt seriyalaşdırıldı.");
+        }
+    }
+}
+
+Deseriyalaşdırma:
+Java
+
+import java.io.*;
+
+public class DeserializationExample {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        try (FileInputStream fileInputStream = new FileInputStream("user.ser");
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+
+            User user = (User) objectInputStream.readObject();
+            System.out.println("Obyekt deseriyalaşdırıldı: " + user.getUsername());
+        }
+    }
+}
+
+Vacib məqamlar:
+
+    SerialVersionUID: Serializable siniflərin versiyasını idarə etmək üçün serialVersionUID adlı bir statik sabitdən istifadə etmək tövsiyə olunur. Bu, sinifdə dəyişikliklər edildikdə deseriyalaşdırma zamanı uyğunsuzluqların qarşısını alır. Əgər siz serialVersionUID təyin etməsəniz, Java kompilyatoru avtomatik olaraq bir dəyər yaradacaq, lakin sinifdə dəyişikliklər olduqda bu dəyər dəyişə bilər ki, bu da deseriyalaşdırma zamanı problemlərə səbəb ola bilər.
+    Java
+
+    private static final long serialVersionUID = 1L;
+
+    Təhlükəsizlik: Seriyalaşdırma zamanı həssas məlumatların (məsələn, parol) açıq şəkildə saxlanmasının qarşısını almaq üçün diqqətli olmaq lazımdır. Bu məlumatları şifrələmək və ya transient olaraq təyin etmək tövsiyə olunur.
+
+    Performans: Seriyalaşdırma və deseriyalaşdırma əməliyyatları performans baxımından bahalı ola bilər. Buna görə də, çox böyük obyektlərin seriyalaşdırılmasından və ya tez-tez seriyalaşdırma əməliyyatlarından qaçınmaq lazımdır.
+
+Xülasə:
+
+Serializable interfeysi Java-da obyektlərin davamlılığını və şəbəkə üzərindən ötürülməsini təmin edən vacib bir mexanizmdir. Düzgün istifadə edildikdə, proqramların daha çevik və etibarlı olmasına kömək edir. Lakin, təhlükəsizlik və performans məsələlərinə diqqət yetirmək lazımdır.
+

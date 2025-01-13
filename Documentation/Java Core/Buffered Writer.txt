@@ -1,0 +1,87 @@
+BufferedWriter, Java-da simvol əsaslı çıxış axınlarına səmərəli şəkildə mətn yazmaq üçün istifadə olunan bir sinifdir. java.io paketində yerləşir və Writer abstrakt sinifindən törəyir. BufferedWriter əsas məqsədi yazma əməliyyatlarının sayını azaltmaqla performansı artırmaqdır. Bunu məlumatları bir buferə (yaddaş sahəsinə) yığmaq və sonra onları birdən-birə çıxış axınına göndərməklə həyata keçirir.
+
+BufferedWriter-ın Əsas Xüsusiyyətləri və Üstünlükləri:
+
+    Buferləmə (Buffering): BufferedWriter, məlumatları birbaşa çıxış axınına tək-tək yazmaq əvəzinə, müəyyən bir ölçüdəki buferə (varsayılan olaraq 8192 simvol) toplayır. Bufer dolduqda və ya flush() metodu çağırıldıqda, buferin məzmunu çıxış axınına göndərilir. Bu, diskə və ya şəbəkəyə edilən yazma əməliyyatlarının sayını azaldır və beləliklə, performansı artırır.
+    Səmərəlilik: Buferləmə sayəsində, buferləmə istifadə etməyən siniflərə (məsələn, birbaşa FileWriter istifadəsi) nisbətən çox daha səmərəlidir. Xüsusilə böyük həcmli məlumatlarla işləyərkən bu fərq daha çox nəzərə çarpır.
+    Karakter Əsaslı: Simvol axınları ilə işlədiyi üçün Unicode simvollarını düzgün şəkildə yaza bilir.
+    newLine() Metodu: Sətir sonu simvolunu (platformaya uyğun olaraq \n və ya \r\n) avtomatik olaraq əlavə edən newLine() metodu var. Bu, platformalararası uyğunluğu təmin edir.
+
+BufferedWriter-ın Qurucu Metodları (Constructors):
+
+BufferedWriter sinifinin iki əsas qurucu metodu var:
+
+    BufferedWriter(Writer out): Bir Writer obyekti alır. Bu, yazılacaq mənbəni göstərir. Adətən FileWriter, OutputStreamWriter və ya başqa bir Writer obyekti istifadə olunur.
+    Java
+
+try (FileWriter fileWriter = new FileWriter("fayl.txt");
+     BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+    // Fayla yazma əməliyyatları
+} catch (IOException e) {
+    System.err.println("Yazma xətası: " + e.getMessage());
+}
+
+BufferedWriter(Writer out, int sz): Bir Writer obyekti və bufer ölçüsünü (simvol cinsindən) alır. Bufer ölçüsünü özəlləşdirmək lazım olduqda istifadə olunur. Böyük fayllar üçün daha böyük bir bufer ölçüsü performansı bir qədər artıra bilər.
+Java
+
+    try (FileWriter fileWriter = new FileWriter("fayl.txt");
+         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter, 16384)) { // 16KB bufer
+        // Fayla yazma əməliyyatları
+    } catch (IOException e) {
+        System.err.println("Yazma xətası: " + e.getMessage());
+    }
+
+BufferedWriter-ın Metodları:
+
+    void write(int c): Tək bir simvol yazır.
+    void write(char[] cbuf, int off, int len): Simvol massivinin bir hissəsini yazır.
+    void write(String str, int off, int len): Sətrin bir hissəsini yazır.
+    void write(String str): Tam bir sətir yazır.
+    void newLine(): Sətir sonu simvolunu yazır (platformaya uyğun olaraq).
+    void flush(): Buferdəki bütün məlumatları dərhal alt axına (underlying stream) göndərir. Bu, məlumat itkisinin qarşısını almaq üçün vacibdir, xüsusən də proqram qəfil bağlandıqda.
+    void close(): Axını bağlayır və sistem resurslarını sərbəst buraxır. try-with-resources quruluşu istifadə edildikdə bu metodu əllə çağırmağa ehtiyac yoxdur.
+
+BufferedWriter Nümunəsi (FileWriter ilə birlikdə):
+Java
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class BufferedWriterNumune {
+    public static void main(String[] args) {
+        String faylAdi = "çıxış.txt";
+
+        try (FileWriter fileWriter = new FileWriter(faylAdi);
+             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+
+            bufferedWriter.write("Bu, ilk sətirdir.\n"); // \n istifadə etmək mümkündür
+            bufferedWriter.newLine(); // Amma newLine() daha tövsiyə olunandır (platforma uyğunluğu üçün)
+            bufferedWriter.write("Bu isə ikinci sətirdir.");
+            bufferedWriter.newLine();
+            char[] simvollar = {'Ü', 'ç', 'ö', 'ş', 'ğ', 'ı'};
+            bufferedWriter.write(simvollar);
+            bufferedWriter.newLine();
+            String metn = "Əlavə mətn";
+            bufferedWriter.write(metn, 0, 3); // "Əla" yazılır
+            bufferedWriter.flush(); // Buferi boşaltmaq üçün (zəruri deyil, çünki try-with-resources close() çağırır)
+
+        } catch (IOException e) {
+            System.err.println("Faylı yazma xətası: " + e.getMessage());
+        }
+
+        System.out.println("Fayl uğurla yazıldı: " + faylAdi);
+    }
+}
+
+Bu nümunədə, BufferedWriter bir FileWriter ilə birlikdə istifadə olunaraq "çıxış.txt" adlı bir fayla bir neçə sətir mətn yazılır. newLine() metodu platformalararası uyğun sətir sonu simvolunu əlavə edir. flush() metodu buferi məcburi olaraq boşaldır (ancaq try-with-resources bloku istifadə edildiyi üçün avtomatik olaraq close() metodunda da bufer boşaldılır).
+
+Vacib Məqamlar:
+
+    try-with-resources İstifadəsi: Fayl əməliyyatlarında try-with-resources quruluşundan istifadə etmək çox vacibdir. Bu, faylın və axının avtomatik olaraq bağlanmasını təmin edir və resurs sızıntılarının qarşısını alır.
+    flush() Metodunun İstifadəsi: Məlumatların dərhal fayla yazılmasını təmin etmək üçün, xüsusən də böyük miqdarda məlumat yazdıqdan sonra və ya proqramın qəfil bağlanma ehtimalı olduqda flush() metodunu çağırmaq tövsiyə olunur. Lakin, try-with-resources istifadə edildikdə, axın bağlandıqda bufer avtomatik olaraq boşaldılır.
+    Performans: BufferedWriter, buferləmə sayəsində, xüsusən də çoxsaylı kiçik yazma əməliyyatları edildikdə, performansı əhəmiyyətli dərəcədə artırır.
+
+Xülasə:
+
+BufferedWriter, Java-da mətn faylları və digər simvol əsaslı çıxış axınları ilə işləyərkən performans optimallaşdırması üçün vacib bir vasitədir. Buferləmə və newLine() metodu kimi xüsusiyyətləri sayəsində kodunuz daha səmərəli və platformalararası uyğun olur.

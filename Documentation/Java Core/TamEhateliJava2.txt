@@ -1,0 +1,256 @@
+WORA prinsipi nedir - Write Once Runtime Anywhere (Bir dəfə yaz hər yerdə işlət)
+
+abstract anlayisi nedir - **abstract** anlayışı abstrakt class və metodlar yalnız irsi təmin edir, lakin birbaşa obyekt kimi istifadə edilə bilməz. Abstrakt classlar yalnız digər classlar tərəfindən irsiyyət yolu ilə genişləndirilə bilər.
+
+interface nedir - **Interface** Java-da tamamilə abstrakt olan və classlar üçün şablon rolunu oynayan bir quruluşdur. **Interface** yalnız metod imzalarını (bədən olmadan) və static (final və static dəyişənlər) özündə saxlayır. **Interface** siniflər üçün davranış şablonu təmin edir və siniflər onu implement edərək müvafiq metodları təyin edir.
+
+interface ile abstract classin ferqi  - ek link( https://muratoner.net/abstract-class-ile-interface-arasindaki-fark-nedir )
+Interface'lər
+
+    Tərif: Tamamilə soyut metodlardan ibarət olan bir quruluşdur. Interface-dəki bütün metodlar, alt siniflərdə mütləq yenidən yazılmalıdır.
+Abstract Sınıflar
+
+    Tərif: Bir və ya daha çox soyut metodu (bədəni olmayan metodu) özündə birləşdirən sinifdir. Soyut metodlar, alt siniflərdə mütləq yenidən yazılmalıdır.
+
+soyut Metod -  İçində heç bir əməliyyat yerinə yetirməyən, yəni gövdəsi olmayan metodlardır. Yalnız imzaları (adı, parametrləri, qayıdış tipi) müəyyən edilir. soyut metodlar, alt siniflərdə yenidən yazılaraq (override edilərək) konkret hala gətirilir.
+
+nested classlar nedir - **Nested class** (daxili classlar), başqa bir classın daxilində elan edilən classlardır. Nested class-lar əsas classla əlaqəli funksionallığı qruplaşdırmaq üçün istifadə olunur. Bu, kodun daha təmiz və oxunaqlı olmasına kömək edir. Nested class-lar həmçinin **static** və **non-static** ola bilər.
+
+iterator nedir - Java'da **Iterator**, bir **Collection** içindeki elementlere sırasıyla əl çatmaq və bu elementleri üzərində əməliyyat aparmaq üçün istifadə olunan bir vasitədir. Iterator, **next()**, **hasNext()**, **remove()** kimi metodları təmin edir. Bu metodlar sayəsində kolleksiya üzərində elementlərə baxıla bilər və istənilən əməliyyatlar edilə bilər.
+
+
+
+collectionlar nedir - Java-da **Collection** frame, verilənləri saxlamaq, əlavə etmək, silmək və emal etmək üçün istifadə olunan, Iterable interfacesinden implement olunur, classlar və interfeyslərdən ibarət bir strukturdur. Java Collections Framework (JCF) **List**, **Set**, **Queue**, və **Map** kimi müxtəlif siniflərə malikdir. Bu siniflər, verilənlər strukturunu dinamik olaraq idarə etməyə imkan verir.
+
+List İnterfeysi:
+
+    Collection interfeysindən irəli gəlir və elementlərin sırasını saxlamağa imkan verir. List interfeysi, ardıcıl (ordered) verilənlər strukturudur və təkrarlanan elementləri dəstəkləyir.
+    Əsas classlar: ArrayList, LinkedList, Vector
+
+Set İnterfeysi:
+
+    Collection interfeysindən irəli gəlir və təkrarlanan elementlərin saxlanmasına icazə vermir. Hər bir element yalnız bir dəfə saxlanılır.
+    Əsas classlar: HashSet, TreeSet, LinkedHashSet.
+
+Queue İnterfeysi:
+
+    Collection interfeysindən irəli gəlir və elementləri sıralamağa və onları bir-bir ardıcıl şəkildə saxlamağa imkan verir. Çox vaxt FIFO (First In, First Out) prinsipi ilə işləyir.
+    Əsas classlar: LinkedList, PriorityQueue, ArrayDeque.
+
+Map İnterfeysi:
+
+    Kolleksiya siniflərinə daxil olmasa da, Map verilənlər strukturudur və elementləri açar-dəyər cütləri şəklində saxlayır. Map interfeysi kolleksiya üçün əsas deyil, amma kolleksiyaların bir hissəsi hesab olunur.
+    Əsas siniflər: HashMap, TreeMap, LinkedHashMap, Hashtable.
+
+Anonymous class nedir - **Anonymous class** adı olmayan bir classdır. Bu class yalnız bir dəfə istifadə olunur və çox vaxt bir interfeysi və ya abstrakt classı implement etmək üçün istifadə edilir. **Anonymous class** Java-da kodun daha qısa və təmiz olmasına imkan verir.
+
+data typeler - Java-da məlumat tipləri əsasən iki qrupa bölünür: **primitive types** və **reference types**. Primitive types sadə verilənlər növlərini (int, char, boolean və s.), reference types isə obyektləri və massivləri təmsil edir. Məsələn: `int`, `char`, `double`, `boolean` və `String`, `Array` kimi referans tiplər.
+
+
+data typeler nedir - Java proqramlaşdırma dilində, verilənlərin növünü və ölçüsünü təyin etmək üçün veri tipləri istifadə olunur. Hər bir veri tipi, yaddaşda tutduğu yer və təmsil edə biləcəyi dəyərlər aralığı ilə fərqlənir.
+
+float yazilisi = 14.0f // sonu kicik f veya boyuk F ile bitir
+long yazilisi = 12342114214L // sonu boyuk L ile bitir, kicik l ile bite biler yalniz java bize boyuk L ile yazmagi tovsiye edecek
+Stringin ve arrayin primitiv qarsiligi yoxdur.
+
+Əsas Veri Tipləri:
+
+    byte: 8 bitlik bir ədədi təmsil edir. -128 ilə 127 arasındakı tam ədədləri saxlayır.
+    short: 16 bitlik bir ədədi təmsil edir. -32768 ilə 32767 arasındakı tam ədədləri saxlayır.
+    int: Ən çox istifadə olunan tam ədəd tipi, 32 bitlikdir. -2147483648 ilə 2147483647 arasındakı tam ədədləri saxlayır.
+    long: Böyük tam ədədlər üçün istifadə olunur, 64 bitlikdir.
+    float: Tək dəqiqlikli onluq ədədlər üçün istifadə olunur, 32 bitlikdir.
+    double: Çox dəqiqlikli onluq ədədlər üçün istifadə olunur, 64 bitlikdir.
+    char: Tək bir simvolu təmsil edir, 16 bitlikdir.
+    boolean: Doğru (true) və ya səhf (false) dəyərlərini alır.
+
+Kiçikdən Böyüyə Sıralanma:
+
+Ümumiyyətlə, yaddaşda tutulan yerə görə sıralanma aşağıdakı kimidir:
+
+byte - 8 bit < short - 16 bit < int 32 bit < long - 64 bit < float - 32 bit  < double - 64 bit > boolean - true/false > char 16 bit
+
+
+enum nedir - **Enum** (enumeration) Java-da sabitləri təmsil edən xüsusi bir məlumat tipidir. Enum sinifi müəyyən dəyər (constant) siyahısını təmsil edir və onu Java-da daha rahat və təhlükəsiz şəkildə istifadə etməyə imkan verir. Enum sinifi metodlar və sahələrə malik ola bilər. Məsələn, **Day** enum-u bir həftənin günlərini təmsil edə bilər.
+
+LocalDate nedir - **LocalDate**, Java 8 ilə təqdim edilən bir sinifdir və yalnız **tarix** məlumatlarını saxlayır (gün, ay, il). Bu sinif **zaman** məlumatını saxlamır. Zaman məlumatı ilə işləmək üçün **LocalTime** və ya **LocalDateTime** istifadə olunur.
+
+FileWriter və FileReader nedir - **FileWriter** və **FileReader** Java IO kitabxanasına aid siniflərdir. **FileWriter** fayldan məlumat oxumaq, **FileReader** isə fayla məlumat yazmaq üçün istifadə olunur. Bu siniflər yalnız simvol (char) əsaslı giriş və çıxış əməliyyatları edir. **FileWriter** daha çox mətn məlumatları üçün istifadə edilir.
+
+static anlayisi nedir - **static** anlayışı Java-da sinifin nümunəsindən asılı olmayan dəyişənləri və metodları təyin etmək üçün istifadə olunur. Static metodlar və dəyişənlər yalnız sinifin özü ilə əlaqəlidir və obyekt yaradılmadan istifadə oluna bilər. Static metodlar yalnız digər static üzvlərlə işləyə bilər.
+
+static method nedir - **Static method** sinifin instansiyasından asılı olmadan çağırıla bilən metodlardır. Bu metodlar yalnız static dəyişənlər və metodlarla işləyə bilər.
+
+static class nedir - **Static class**, daxili siniflərin yalnız **static** olaraq yaradılmasına imkan verir. Bu, daxili siniflərin yalnız xarici sinifin nümunəsindən asılı olmadan istifadəsini təmin edir.
+
+final nedir - **final** Java-da dəyişənlər, metodlar və siniflər üçün istifadə olunur. **Final** ilə təyin edilmiş dəyişənin dəyəri dəyişdirilə bilməz, metod override edilə bilməz və sinif irsiyyətə verilə bilməz.
+
+mutable nedir - **Mutable** obyektlər dəyişdirilə bilən obyektlərdir. Bu, obyektin vəziyyətinin proqram icrasında dəyişdirilə bilməsi deməkdir.
+
+immutable nedir - **Immutable** obyektlər dəyişdirilə bilməz. Bu obyektin yaradılması zamanı verilən bütün məlumatlar təyin olunmuş olur və həmin obyektin vəziyyəti sonradan dəyişdirilə bilməz.
+
+access modifiers-lar hansilardir - Java-da **access modifiers** dörd əsas növü təmsil edir: **private**, **default**, **protected**, və **public**. Bu modifikatorlar, siniflər və onların üzvlərinə girişin necə idarə olunacağını müəyyən edir.
+
+Object nedir?
+- `Object` sinifi Java dilinin ən əsas sinifidir və bütün digər siniflər, ya birbaşa, ya da dolaylı olaraq bu sinifdən irəliləyir. Java-da sinifin tərif olunmasında `extends Object` avtomatik olaraq tətbiq edilir, hətta biz bunu birbaşa göstərməsək də.
+- `Object` sinifi **java.lang** paketində yerləşir və Java dilindəki hər bir obyektin əsasıdır. Java-da bir sinifin obyektini yaratdıqda, bu obyektin özünü **Object** sinifindən irəlilədiyini bilirik.
+
+generic nedir - **Generics** Java-da tipləri parametrik olaraq təyin etməyə imkan verir. Bu xüsusiyyət siniflər, interfeyslər və metodlar üçün xüsusi tip təhlükəsizliyi təmin edir. Məsələn: **List<Integer>** yalnız tam ədəd (integer) qiymətlərini saxlaya bilər.
+
+Object Sinifi ilə Generics Arasındakı Fərq:
+- **Object sinifi** Java-da bütün siniflərin əcdadıdır və müxtəlif tipdəki obyektləri qəbul edir, lakin **tip təhlükəsizliyi** təmin etmir və **casting** tələb edir.
+- **Generics** isə müəyyən bir tipə aid siniflər və metodlar təyin edir, beləliklə **tip təhlükəsizliyi** təmin edilir və castingə ehtiyac qalmır.
+- Object sinifi ümumi obyektlər üçün istifadə olunur, amma **Generics** daha xüsusi və tip təhlükəsizliyi təmin edən bir yanaşmadır.
+
+override nedir - **Override** üsulu, bir üst sinifin metodunun alt sinifdə yenidən yazılmasına imkan verir. Bu metod, üst sinifdəki metodun funksionallığını dəyişdirməyə imkan verir.
+
+overload nedir - **Overload** metodu eyni ada sahib olan, amma fərqli parametrlərlə təyin edilmiş metodlardır. Parametrlərin sayı və ya tipi fərqli olmalıdır.
+
+OOP prinsipleri hansilardir - **Object-Oriented Programming (OOP)** prinsipləri aşağıdakılardır:
+  - **Encapsulation** (kapsullama): Daxili məlumatların gizlədilməsi və yalnız lazımlı metodlarla təqdim edilməsi. Bu prinsipi həyata keçirmək üçün **private** dəyişənlər, **getter** və **setter** metodları istifadə olunur.
+  - **Abstraction** (Abstraksiya): Əsas funksionallığın göstərilməsi və digər detallardan gizlədilməsi. Bu, yalnız vacib məlumatları təqdim etməyə imkan verir.
+  - **Inheritance** (İrsiyyət): Bir sinifin digər bir sinifin xüsusiyyətlərini və davranışlarını miras alması.
+  - **Polymorphism** (Çox formalılıq): Eyni metod adı ilə müxtəlif əməliyyatlar etmək. Bu, həm metod override, həm də metod overload ilə mümkündür.
+
+exceptionlar nedir - **Exception** Java-da proqramın işləməsi zamanı baş verə biləcək səhvlərdir. Throwable classindan extends olunur İki növ exception var:
+  - **Checked exceptions**: Proqramın işləməsi zamanı (Runtime Exception) baş verə bilən istisnalar (məsələn, **IOException**).
+  - **Unchecked exceptions**: Java tərəfindən avtomatik olaraq tutulan (Compale) istisnalar (məsələn, **NullPointerException**).
+
+IO (System.in) - **System.in** klaviaturadan məlumat oxumaq üçün istifadə edilir. **System.out** isə ekrana məlumat çap etmək üçün istifadə olunur. **System.err** isə səhv mesajlarını ekrana çıxarmaq üçün istifadə olunur.
+
+reference type haqqinda melumat - **Reference type** obyektləri və massivləri saxlayan məlumat tipləridir. Java-da obyektlər və massivlər **reference types** kimi işlənir, yəni bir dəyişən yalnız bir obyektin yaddaş ünvanını saxlayır.
+
+stack heap detayla melumat - **Stack** və **Heap** Java-da yaddaşın iki fərqli sahəsidir:
+  - **Stack**: Metodların yerinə yetirilməsi zamanı istifadə olunan yaddaş sahəsidir. Yerləşdirdiyi məlumatlar metodun daxilində təyin olunan dəyişənlərdir.
+  - **Heap**: Obyektlərin yaradıldığı yaddaş sahəsidir. Obyektlər burada saxlanılır və avtomatik olaraq **Garbage Collector** tərəfindən idarə olunur.
+
+exceptionlar novleri - Java-da istisnalar aşağıdakı kimi iki əsas növə bölünür:
+  - **Checked exceptions**: Metoddan tutaraq idarə edilməlidir (məsələn, **IOException**) - (Compile-time).
+  - **Unchecked exceptions**: İstifadəçi tərəfindən idarə edilməlidir (məsələn, **NullPointerException**) - (Runtime).
+
+serializable nedir - **Serializable** interfeysi Java-da obyektlərin axınlara yazılması və oxunması üçün istifadə olunur. Bu interfeysi implement edən siniflərin obyektləri **serialization** və **deserialization** proseslərinə tabe olur.
+
+serialization nedir? - serialization (serializasiya), bir obyektin yaddaşdakı vəziyyətinin bayt sırasına çevrilərək saxlanması və ya şəbəkə üzərindən ötürülməsi prosesidir. Bu, obyektin məzmununu fayla yazmaq, verilənlər bazasına saxlamaq və ya uzaq bir sistemə göndərmək məqsədilə istifadə olunur. Serialization, obyektlərin daşıma və qalıcı olmasını təmin edir.
+
+throws nedir - **Throws** açar sözü, bir metodun hansı exceptionlar ata biləcəyini bildirmək üçün istifadə edilir. Bu, metodun imzasında göstərilir.
+
+BufferedWriter və BufferedReader nedir - **BufferedWriter** və **BufferedReader** sinifləri, Java IO kitabxanasında verilənlərin daha sürətli oxunması və yazılması üçün istifadə olunur. **BufferedWriter** mətnin yazılmasını sürətləndirir, **BufferedReader** isə fayldan məlumat oxumaq üçün istifadə olunur.
+
+Thread və Runnable arasındakı fərq nədir - **Thread** sinifi birbaşa iş parçacığı yaratmağa imkan verir, **Runnable** interfeysi isə iş parçacığının implementasiyasını təmin edir.
+
+synchronized anlayisi nədir - **Synchronized** çox iş parçacığının eyni anda resurslara girməsini idarə edir və məlumatların korlanmaması üçün lock mexanizması təmin edir.
+
+finalize() metodu nədir - **finalize()** metodu obyektin **Garbage Collection** (GC) prosesinə keçməzdən əvvəl çağırılır və obyektin təmizlənməsi üçün istifadə edilir.
+
+throw və throws nədir - **throw** bir exception atmağınıza imkan verir, **throws** isə metodda hansı exceptionlarin meydana gələcəyini elan etmək üçün istifadə edilir.
+
+Comparator və Comparable arasındakı fərq nədir - **Comparable** obyektləri bir şəkildə müqayisə etməyə imkan verir, **Comparator** isə obyektləri fərqli şəkildə müqayisə etməyə imkan verir.
+
+String və StringBuilder arasındakı fərq nədir - **String** immutabledır, **StringBuilder** isə mutable-dir və mətni daha effektiv şəkildə emal etmək üçün istifadə olunur.
+
+Java-da **var** açar sözü nədir - **var** tipin avtomatik olaraq təyin edilməsini təmin edir, ancaq yalnız yerli dəyişənlər üçün istifadə olunur.
+
+Garbage Collection (GC) nədir - **Garbage Collection**, istifadə olunmayan obyektlərin avtomatik olaraq yığılmasını təmin edən yaddaş idarəetmə mexanizmidir.
+
+lambda expressions nədir - **Lambda expressions** funksiyaları qısa şəkildə təyin etməyə imkan verir və Java 8 ilə təqdim edilmişdir.
+
+Optional class nədir - **Optional** null dəyərləri idarə etməyə kömək edir və **NullPointerException**-ın qarşısını alır.
+
+ForkJoinPool nədir - **ForkJoinPool**, paralel işləməyi təmin edən və böyük işləri kiçik parçalara ayıraraq paralel şəkildə həyata keçirən bir mexanizmdir.
+
+JVM (Java Virtual Machine) nədir - **JVM** Java proqramlarının işlədilməsi üçün istifadə olunan mühitdir və Java kodunun bytecode formatında işlənməsini təmin edir.
+
+JRE nədir? - **JRE** (Java Runtime Environment), Java proqramlarını işlətmək üçün lazım olan mühitdir. JRE, Java Virtual Machine (JVM), Java API-ləri və digər vasitələrdən ibarətdir. JRE proqramların işlədilməsi üçün bütün lazım olan komponentləri təmin edir, lakin proqram yazmaq üçün lazım olan alətlər və kitabxanalar təmin edilmir.
+
+JDK nədir? - **JDK** (Java Development Kit), Java proqramlarının yazılması və işlədilməsi üçün lazım olan alətlərin tam bir paketidir. JDK, JRE-ni ehtiva edir və əlavə olaraq Java proqramlarının inkişafı üçün lazımlı olan kompilatoru (javac), alətləri (Javadoc, Jar) və digər inkişaf mühitlərini təmin edir. JDK, həmçinin proqram inkişaf etdirənlərə alətlər və kitabxanalar təqdim edir.
+
+JIT nədir? - **JIT** (Just-In-Time) kompilyatoru, Java Virtual Machine (JVM) tərəfindən istifadə olunan bir mexanizmdir və Java bytecode-un yerli maşın koduna çevrilməsi prosesini idarə edir. **JIT kompilyasiyası** proqramın icrası zamanı bytecode-u təhlil edir və yalnız lazım olduqda onu təkmilləşdirir, bu da proqramın performansını artırmağa kömək edir.
+
+FileReader və FileWriter nədir - **FileReader** fayldan mətn oxumaq, **FileWriter** isə fayla mətn yazmaq üçün istifadə olunur.
+
+
+Functional interface nedir? - Functional Interface-lər Java 8 ilə birlikdə lambda ifadələrinin və metod referanslarının istifadəsini asanlaşdırmaq üçün geniş şəkildə istifadə edilir. Onlar funksional proqramlaşdırma üslubunun tətbiqini mümkün edir və tətbiqlərin daha qısa və oxunaqlı olmasına kömək edir. Hər bir interfeys yalnız bir abstrakt metod ehtiva edir və bu, lambda ifadələrini və metod referanslarını rahatlıqla tətbiq etməyə imkan verir.
+
+Functional Interface-lər və Növləri
+
+1. Consumer<T>
+   Tərifi: 
+   - `Consumer<T>` interfeysi bir arqument qəbul edən və heç bir dəyər qaytarmayan funksiyanı təmsil edir. 
+   - Bu interfeys verilənlər üzərində əməliyyatlar həyata keçirmək üçün istifadə olunur. Məsələn, verilənləri çap etmək, dəyişdirmək və ya saxlamaq kimi əməliyyatlar.
+   
+   Tətbiqi:
+   - Verilənləri qəbul edib heç bir nəticə qaytarmadan əməliyyatlar aparmaq üçün istifadə edilir. Məsələn, verilənlərin hər birini çap etmək.
+
+2. Supplier<T>
+   Tərifi:
+   - `Supplier<T>` interfeysi heç bir arqument qəbul etməyən, lakin bir **T** tipində dəyər qaytaran funksiyanı təmsil edir. 
+   - Bu interfeys məlumat istehsal etmək və ya təzələmək üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Məlumatları yaratmaq və ya yeni dəyərlər təmin etmək üçün istifadə edilir. Məsələn, təsadüfi dəyərlər və ya obyektlər yaratmaq.
+
+3. Function<T, R>
+   Tərifi:
+   - `Function<T, R>` interfeysi bir arqument qəbul edir və bir **R** tipində nəticə qaytarır. 
+   - Bu, verilənlər üzərində dönüşüm etmək və ya hesablama aparmaq üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Verilənləri çevirmək və ya hesablama əməliyyatları aparmaq üçün istifadə olunur. Məsələn, bir tam ədədin string formatına çevrilməsi.
+
+4. Predicate<T>
+   Tərifi:
+   - `Predicate<T>` interfeysi bir arqument qəbul edir və **boolean** nəticə qaytarır. 
+   - Bu interfeys verilənlərin test edilməsi və şərt yoxlamaları üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Verilənlər üzərində şərt yoxlamaları etmək və filterləmə əməliyyatları həyata keçirmək üçün istifadə olunur. Məsələn, cüt ədədləri seçmək.
+
+5. BiFunction<T, U, R>
+   Tərifi:
+   - `BiFunction<T, U, R>` interfeysi iki arqument qəbul edən və bir **R** tipində nəticə qaytarır.
+   - Bu interfeys iki fərqli tipdə olan verilənlər üzərində əməliyyatlar aparmaq üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Fərqli tipdəki verilənlər üzərində dönüşüm və ya hesablama əməliyyatları aparmaq üçün istifadə olunur. Məsələn, iki ədədin cəmindən əldə edilən nəticəni string formatında qaytarmaq.
+
+6. BiConsumer<T, U>
+   Tərifi:
+   - `BiConsumer<T, U>` interfeysi iki arqument qəbul edən və heç bir dəyər qaytarmayan funksiyanı təmsil edir.
+   - Bu interfeys iki parametrli əməliyyatları yerinə yetirmək üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Verilənlər üzərində əməliyyatlar aparmaq və nəticə qaytarmadan yalnız dəyişikliklər etmək üçün istifadə olunur. Məsələn, iki ədədin cəmini çap etmək.
+
+7. UnaryOperator<T>
+   Tərifi:
+   - `UnaryOperator<T>` interfeysi `Function<T, T>`-in xüsusi bir halıdır. Burada həm giriş, həm də çıxış tipi eyni olmalıdır.
+   - Bu interfeys verilənlər üzərində dəyişikliklər etmək üçün istifadə olunur.
+   
+   Tətbiqi:
+   - Həm giriş, həm də çıxış tipinin eyni olduğu vəziyyətlərdə verilənlər üzərində əməliyyatlar aparmaq üçün istifadə olunur. Məsələn, bir ədədin ikiqatını almaq.
+
+8. BinaryOperator<T>
+   Tərifi:
+   - `BinaryOperator<T>` interfeysi iki **T** tipində arqument qəbul edir və bir **T** tipində nəticə qaytarır.
+   - Bu interfeys iki element üzərində əməliyyatlar aparmaq üçün istifadə olunur.
+   
+   Tətbiqi:
+   - İki parametrli əməliyyatları yerinə yetirmək üçün istifadə olunur. Məsələn8 iki ədədin cəmini tapmaq.
+
+Stream nədir? - Stream Java proqramlaşdırma dilində məlumatların axın formasında işlənməsini təmin edən bir xüsusiyyətdir. Java-da, Stream obyektləri məlumatların ardıcıl şəkildə, tək-tək elementlər olaraq oxunması və ya yazılması üçün istifadə olunur. Streamlər, həmçinin məlumatların təhlili və işlənməsi (filtrləmə, sıralama, transformasiya və s.) üçün geniş imkanlar təqdim edir. Java-da, InputStream və OutputStream əsas olaraq byte-lə işləyir, Reader və Writer isə simvollara əsaslanır.
+
+Thread nədir? - Thread (İz) paralel işləyən kiçik bir proqram vahididir. Java-da, threadlər proqramın müxtəlif hissələrinin paralel və ya eyni anda işləməsini təmin edir. Hər bir thread öz proqram axınına sahib olur və bir-birindən müstəqil işləyə bilər. Java-da threadlər Thread sinfi və ya Runnable interfeysi vasitəsilə yaradılır. Multi-threading xüsusiyyəti çoxsaylı əməliyyatların eyni anda yerinə yetirilməsini mümkün edir, bu da proqramların daha sürətli işləməsini təmin edir, xüsusilə çox nüvəli prosessorlar üçün.
+
+
+
+Error nədir? - Error Java proqramlaşdırma dilində ciddi və həll edilməsi çətin olan problemləri təmsil edir. Bu problemlər, proqramın işini dayandırmağa və ya düzgün icra etməməsinə səbəb olur. Java-da, Error sinfi, Throwable sinifinin bir alt sinfi olaraq işləyir və əsasən JVM (Java Virtual Machine) tərəfindən idarə olunan sistem xətalarını göstərir.
+
+Error-lər proqramçının müdaxiləsi ilə düzəldilə bilməz. Bu, adətən sistemin və ya JVM-in düzgün işləməsi ilə əlaqəli olan məsələlərdir. Məsələn:
+
+    OutOfMemoryError: Java proqramı üçün ayrılmış yaddaşın bitməsi.
+    StackOverflowError: Rekursiya səbəbindən stəkinin dolması.
+    VirtualMachineError: JVM-in özündə yaranan kritik xətalar (məsələn, JVM-in düzgün işləməməsi).
+
+Exception vs. Error: Java-da iki əsas növ səhv var: Exception və Error. Exception-lar proqramçılar tərəfindən müəyyən edilə və idarə oluna bilər, ancaq Errors sistem və JVM-in problemləri ilə əlaqədardır və bunlar adətən proqramın düzgün işləməsinə mane olur.
+
+Exception daha geniş şəkildə idarə oluna bilər və proqram daxilində xüsusi səhv vəziyyətləri (məsələn, fayl tapılmadığı zaman və ya istifadəçi tərəfindən girmə səhvi) üçün istifadə olunur, Error isə daha çox sistemin və ya JVM-in işini təsir edən xətalarla bağlıdır.
