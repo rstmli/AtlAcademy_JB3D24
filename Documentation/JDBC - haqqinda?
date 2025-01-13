@@ -1,0 +1,42 @@
+1. JDBC Nədir?
+
+Cavab:
+JDBC (Java Database Connectivity), Java tətbiqlərinin verilənlər bazalarına qoşulmasına, verilənləri əldə etməsinə və göndərməsinə imkan verən bir API-dir. JDBC, SQL sorğuları vasitəsilə verilənlər bazası ilə əlaqə qurmağa və bu verilənlərlə işləməyə imkan verir.
+
+2. JDBC ilə Verilənlər Bazası Bağlantısı Necə Qurulur?
+
+Cavab:
+JDBC ilə verilənlər bazası bağlantısı qurularkən, əsas addımlar aşağıdakılardır:
+
+    JDBC sürücüsünün yüklənməsi (adətən, sürücü sinifi Class.forName() ilə yüklənir).
+    Connection obyektini istifadə edərək verilənlər bazasına qoşulmaq.
+
+3. Statement, PreparedStatement və CallableStatement Arasındakı Fərqlər Nələrdir?
+
+Cavab:
+
+    Statement: Sadə SQL sorğuları üçün istifadə edilir. SQL sorğusu birbaşa yazılır və icra olunur.
+
+    PreparedStatement: Parametrli sorğular üçün istifadə edilir. SQL sorğuları əvvəlcədən təhlil edilir və optimallaşdırılır, bu da performans baxımından daha üstün edir.
+
+    CallableStatement: Verilənlər bazasında saxlama prosedurlarını çağırmaq üçün istifadə olunur.
+
+4. JDBC ilə Verilənlər Bazasında Sorğu Necə İcra Olunur?
+
+Cavab:
+Verilənlər bazasına sorğu göndərmək üçün Statement və ya PreparedStatement istifadə olunur. Sorğu icra edildikdən sonra, nəticələr ümumiyyətlə ResultSet ilə geri qaytarılır.
+
+5. JDBC Bağlantısının Bağlanması Niyə Vacibdir?
+
+Cavab:
+Verilənlər bazası bağlantıları məhdud resurslardır və açıq bağlantılar sistemin resurslarını sərf edir. Bağlantıların düzgün bağlanmaması, verilənlər bazası bağlantı hovuzunun tükənməsinə, yaddaş sızıntılarına və performans problemlərinə səbəb ola bilər. Buna görə də hər Connection, Statement və ResultSet obyektləri istifadə edildikdən sonra bağlanmalıdır.
+
+6. JDBC ilə Verilənlər Bazasında Verilən Necə Alınır?
+
+Cavab:
+Verilənlər bazasından məlumat əldə etmək üçün ResultSet obyektindən istifadə olunur. Sorğu icra edildikdən sonra nəticələr ResultSet ilə geri qaytarılır və məlumatlar while dövrü ilə əldə edilir.
+
+7. JDBC ilə TCL Transaksiya İdarəetməsi Necə Aparılır?
+
+Cavab:
+JDBC-də verilənlər bazasında tranzaksiya idarəetməsi üçün setAutoCommit(false) istifadə olunur. Bu, avtomatik commit etməyi dayandırır və manual olaraq commit və ya rollback əməliyyatları həyata keçirməyə imkan verir.

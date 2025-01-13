@@ -6,19 +6,20 @@ import java.sql.*;
 public class JDBCApi {
     public static void main(String[] args) {
         final String url = "jdbc:postgresql://localhost:5432/postgres";
-        final String username = "myuser";
+        final String username = "owner";
         final String password = "12345";
+
 
 //
 //        CreateTable(url,username,password);
 //        AlterTable(url, username, password);
-        delete_column(url, username, password);
+//        delete_column(url, username, password);
 //        Insert_table(url, username, password);
 //        UpdateData(url,username,password);
+//        deleteTable(url,username,password);
 //        Selectdata(url,username,password);
-//        drop_table2(url, username, password);
+//        drop_table(url, username, password);
 //        truncate_table(url,username,password);
-//        delete_table(url, username, password);
 
 
 
@@ -39,6 +40,10 @@ public class JDBCApi {
             e.printStackTrace();
         }
     }
+
+
+
+
     public static void AlterTable(String url,String username,String password) {
         String ALTER_TABLE = "ALTER TABLE Student  ADD COLUMN email varchar(255)";
         try(Connection connection = DriverManager.getConnection(url, username, password)){
@@ -50,7 +55,7 @@ public class JDBCApi {
     }
     public static void Insert_table(String url,String username,String password) {
         String INSERT_INTO = "Insert into Student(id,name,surname,age)values (?,?,?,?)";
-        try(        Connection connection = DriverManager.getConnection(url,username,password)){
+        try(Connection connection = DriverManager.getConnection(url,username,password)){
             PreparedStatement preparedStatement =connection.prepareStatement(INSERT_INTO);
             preparedStatement.setInt(1,1);
             preparedStatement.setString(2,"Ilkin");
@@ -75,6 +80,7 @@ public class JDBCApi {
             String UPDATE_COLUMN = "UPDATE student SET name = ?, age = ? WHERE id = ?";
 
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_COLUMN);
+            Statement statement;
             preparedStatement.setString(1, "Huseyn"); // New name value
             preparedStatement.setInt(2, 21); // New age value
             preparedStatement.setInt(3, 25); // ID of the student to be updated
@@ -99,7 +105,7 @@ public class JDBCApi {
             e.printStackTrace();
         }
     }
-    public static void drop_table2(String url,String username,String password){
+    public static void drop_table(String url,String username,String password){
         String Drop_table = "DROP TABLE IF EXISTS Student";
         try(Connection connection = DriverManager.getConnection(url, username, password)){
             PreparedStatement preparedStatement = connection.prepareStatement(Drop_table);
@@ -118,11 +124,11 @@ public class JDBCApi {
             e.printStackTrace();
         }
     }
-    public static void delete_table(String url,String username,String password){
-        String delete_table = "DELETE FROM STUDENT WHERE ID = ?";
-        try(Connection connection = DriverManager.getConnection(url, username, password)){
+    public static void deleteTable(String url, String username, String password){
+        String delete_table = "DELETE FROM student where id = ?";
+        try(Connection connection = DriverManager.getConnection(url,username,password)){
             PreparedStatement preparedStatement = connection.prepareStatement(delete_table);
-            preparedStatement.setInt(1,25);
+            preparedStatement.setInt(1,1);
             preparedStatement.executeUpdate();
 
         }catch (Exception e){
@@ -130,7 +136,6 @@ public class JDBCApi {
         }
     }
     public static void delete_column(String url,String username,String password){
-
         try(Connection connection = DriverManager.getConnection(url, username, password)){
             String delete_column = "Alter table Student DROP COLUMN email";
             PreparedStatement preparedStatement = connection.prepareStatement(delete_column);
