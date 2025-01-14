@@ -1,0 +1,38 @@
+Spring Framework Haqqında Əsas Məqamlar
+Spring Framework Java dünyasında geniş şəkildə istifadə olunan, açıq mənbəli bir tətbiq inkişaf etdirmə çərçivəsidir. Bu çərçivə, mürəkkəb enterprise Java tətbiqlərinin inkişafını sadələşdirmək və daha idarə oluna bilən etmək üçün dizayn edilmişdir.
+
+Niyə Spring Framework?
+
+IOC (Inversion of Control): Obje həyat dövrü və onların asılılıqlarının idarə edilməsi kimi vəzifələri çərçivəyə həvalə edərək, kodun daha az sıx bağlı olmasını təmin edir.
+AOP (Aspect-Oriented Programming): Kross-kəsimli məsələləri (məsələn, loqlama, təhlükəsizlik) əsas biznes məntiqindən ayıraraq kodu daha modul və yenidən istifadə oluna bilən edir.
+Veritabanı Əlaqəsi: JDBC, ORM (Object-Relational Mapping) və digər texnologiyalar vasitəsilə veritabanı əməliyyatlarını sadələşdirir.
+Web MVC: Web tətbiqləri üçün Model-View-Controller dizayn modelini dəstəkləyir.
+Test Konteksti Çərçivəsi: Tətbiqlərin sınaq edilməsini asanlaşdırır.
+Spring Framework'ün Əsas Komponentləri:
+
+Core Container: Çərçivənin əsas hissəsi olub, IoC konteynerini ehtiva edir.
+AOP: Aspect-Oriented Programming'i dəstəkləyir.
+Data Access/Integration: JDBC, ORM, OXM, JMS və tranzaksiya idarəçiliyini dəstəkləyir.
+Web MVC: Web tətbiqləri üçün MVC dizayn modelini dəstəkləyir.
+Test Context Framework: Tətbiqlərin sınaq edilməsini asanlaşdırır.
+Spring Framework'ün Üstünlükləri:
+
+Daşıma qabiliyyəti: Spring tətbiqləri istənilən Java EE konteynerində işləyə bilər.
+Genişləndiriləbilmə: Yeni funksiyalar əlavə etmək üçün çoxsaylı genişləndirmə nöqtələri təqdim edir.
+Topluluk: Böyük və aktiv bir topluluğa malikdir, bu da bol mənbə və dəstək deməkdir.
+Modulyarlık: İhtiyaclarınıza uyğun olaraq fərqli modulları seçib istifadə edə bilərsiniz.
+Nəyə görə Spring Framework populyardır?
+
+Sadəlik: Mürəkkəb enterprise tətbiqlərini daha sadə və idarə oluna bilən hala gətirir.
+Güc: Geniş bir xüsusiyyət çoxluğu təklif edir.
+Bir çox texnologiya ilə inteqrasiya: Digər çərçivə və texnologiyalarla yaxşı bir şəkildə inteqrasiya olunur.
+Açıq mənbəli: Pulsuz və açıq mənbəli olması sayəsində geniş bir istifadəçi bazasına malikdir.
+Nəticə
+
+Spring Framework, Java dünyasında ən populyar və güclü çərçivələrdən biridir. Əgər siz də enterprise Java tətbiqləri inkişaf etdirirsinizsə, Spring Framework sizin üçün çox yaxşı bir seçim ola bilər.
+
+Əlavə məlumat üçün:
+
+Spring Framework'ün rəsmi saytı: https://spring.io/
+Spring Boot: Spring Framework üzərində qurulmuş, mikroservis arxitekturası üçün optimallaşdırılmış bir çərçivədir.
+Qeyd: Bu məqalə Spring Framework haqqında ümumi bir baxış verir. Daha dərin bir öyrənmə üçün rəsmi sənədləri və digər mənbələri araşdıra bilərsiniz.
