@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import jdk.jfr.StackTrace;
 import lombok.*;
 
-@ToString
-@Builder
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
