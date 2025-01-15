@@ -10,7 +10,7 @@ public class JDBCApi {
         final String password = "12345";
 
 
-//
+
 //        CreateTable(url,username,password);
 //        AlterTable(url, username, password);
 //        delete_column(url, username, password);
@@ -20,6 +20,7 @@ public class JDBCApi {
 //        Selectdata(url,username,password);
 //        drop_table(url, username, password);
 //        truncate_table(url,username,password);
+//        trunckate("Huseyn");
 
 
 
@@ -40,10 +41,6 @@ public class JDBCApi {
             e.printStackTrace();
         }
     }
-
-
-
-
     public static void AlterTable(String url,String username,String password) {
         String ALTER_TABLE = "ALTER TABLE Student  ADD COLUMN email varchar(255)";
         try(Connection connection = DriverManager.getConnection(url, username, password)){
@@ -73,8 +70,6 @@ public class JDBCApi {
         }
 
     }
-
-
     public static void UpdateData(String url,String username,String password) {
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
             String UPDATE_COLUMN = "UPDATE student SET name = ?, age = ? WHERE id = ?";
@@ -93,7 +88,7 @@ public class JDBCApi {
 
 
     }
-    public static void Selectdata(String url,String username,String password) {
+    public static void Selectdata(String url, String username, String password) {
         String Select = "SELECT name, surname, age FROM student where name = 'Huseyn'";
         try(Connection connection = DriverManager.getConnection(url, username, password)){
             Statement statement = connection.createStatement();
@@ -143,6 +138,9 @@ public class JDBCApi {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public static void trunckate(String name){
+        System.out.println("Salam " + name);
     }
 
 }

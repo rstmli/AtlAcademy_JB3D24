@@ -2,7 +2,7 @@ spring:
   application:
     name: SpringBoot
   datasource:
-    url: jdbc:postgresql://localhost:5432/
+    url: jdbc:postgresql://localhost:5432/postgres
     username: owner
     password: 12345
   jpa:
