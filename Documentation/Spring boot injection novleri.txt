@@ -1,0 +1,17 @@
+Spring Boot-da asılılıq (dependency) inyeksiyası (DI) üçün bir neçə üsul mövcuddur. Bu üsullar Spring Framework-ün əsas xüsusiyyətlərindəndir və Spring Boot da onları istifadə etməyə imkan verir. Bu inyeksiya növləri aşağıdakılardır:
+
+1. Constructor Injection
+
+	Constructor-based dependency injection (konstruktordan istifadə ilə inyeksiya) ən çox tövsiyə edilən yanaşmadır. Bu yanaşma ilə obyektlər yalnız bir dəfə yaradılır və əlaqələndirilən asılılıqlar yalnız obyektin yaradılması zamanı inyeksiya olunur.
+
+2. Field Injection
+
+	Field-based dependency injection (field ilə inyeksiya) vasitəsilə birbaşa sinifin sahələrinə asılılıqlar inyeksiya olunur. Lakin bu üsul test və təmir baxımından problem yarada bilər, çünki asılılıqların idarəsi daha az açıq olur.
+
+3. Setter Injection
+
+	Setter-based dependency injection (setter ilə inyeksiya) vasitəsilə asılılıqlar setter metodları vasitəsilə daxil edilir. Bu yanaşma, asılılıqların istənilən vaxt dəyişdirilməsinə imkan verir, lakin hər zaman bütün asılılıqların düzgün tərtib olunması təmin edilmir.
+
+4. Interface Injection
+
+	Bu yanaşma daha az yayılmışdır və Spring Boot-da birbaşa istifadə edilmir, lakin bəzi hallarda özünün fərdi yanaşmalarını tələb edən tətbiqlərdə tətbiq oluna bilər. Burada obyektin asılılıqları bir interfeys vasitəsilə inyeksiya olunur.
