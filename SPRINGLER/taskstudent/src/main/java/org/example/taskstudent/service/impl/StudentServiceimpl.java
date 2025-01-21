@@ -30,7 +30,6 @@ public class StudentServiceimpl implements StudentService {
         return studentMapper.bookDtoToEntity(studentEntity);
     }
 
-    @Override
     public StudentResponseDto getAllId(Long id){
         Optional<StudentEntity> optionalStudentEntity = studentRepository.findById(id);
         StudentEntity studentEntity = StudentEntity.builder().build();
