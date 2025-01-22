@@ -1,0 +1,89 @@
+POJO (Plain Old Java Object) Nədir?
+
+POJO, Java proqram təminatının inkişafında tez-tez istifadə olunan bir anlayışdır və sadə və təmiz obyekt modelinə işarə edir. POJO, heç bir framework və ya xarici kitabxanadan asılı olmayan, yalnız öz içindəki dəyişənləri və metodları saxlayan bir Java sinifidir.
+POJO-nun Əsas Xüsusiyyətləri:
+
+    Asılılıq Yoxdur: POJO heç bir framework və ya kitabxanaya asılı deyil.
+    Sadə Məlumat Strukturu: POJO-lar yalnız sahələr (fields) və onların getter/setter metodlarından ibarət olur.
+    Serializable Olmaq Məcburiyyəti Yoxdur: POJO-lar serializasiya edilə bilən və ya başqa Java interfeyslərini implement etmək məcburiyyətində deyil.
+    Container Bağımsızdır: POJO-lar heç bir xüsusi Java Enterprise Edition (JEE) və ya digər framework-dən asılı deyil.
+
+POJO konsepsiyasını sadə və əsas Java obyektləri kimi düşünə bilərsiniz. Məsələn, sadə getter, setter və konstruktor metodları ilə yaradılan bir sinif POJO sayılır.
+
+
+
+Java Bean Nədir?
+
+Java Bean, Java tətbiqlərində komponent əsaslı proqramlaşdırmanı dəstəkləyən bir quruluşdur. Java Bean-lər yalnız məlumat saxlamaqla qalmır, həm də iş məntiqi və giriş metodları təqdim edir.
+Java Bean Tərifinə Uyğun Olmaq Üçün Gərəkli Şərtlər:
+
+    Public Constructor: JavaBean sinifi parametrsiz (no-arg) bir konstruktor təqdim etməlidir.
+    Serializable Olmalı: JavaBean sinifi, obyektlərin şəbəkə üzərindən və ya diskə yazılmasını təmin edən Serializable interfeysini implement etməlidir.
+    Getter və Setter Metodları: JavaBean, dəyişənlər üçün getter və setter metodlarına sahib olmalıdır.
+
+JavaBean tərifi daha çox getter və setter metodları ilə işləyən və məlumat saxlayan obyektlərə aiddir. Hər JavaBean, bir POJO-dur, amma hər POJO, JavaBean deyil.
+
+
+
+JavaBean-lərin Əsas Xüsusiyyətləri
+
+    No-arg Constructor: JavaBeans, parametrsiz (no-arg) konstruktor ilə başlanmalıdır.
+    Serializable: JavaBean-lər, obyektləri seriləşdirə bilən və şəbəkə üzərindən ötürə bilən siniflərdir.
+    Getter/Setter Metodları: JavaBean-lər, dəyişənlərə daxil olmaq üçün müvafiq getter və setter metodlarını təqdim edir.
+    Private Xüsusiyyətlər: JavaBean-lərdə dəyişənlər private olmalıdır və yalnız getter/setter metodları vasitəsilə əlçatan olmalıdır.
+
+
+
+Spring Bean Nədir?
+
+Spring Bean, Spring Framework tərəfindən idarə olunan və yaradılan obyektlərdir. Bu obyektlər Spring tətbiqlərinin əsas quruluş daşlarıdır və adətən asılılıq enjeksiyonu (dependency injection) ilə konfiqurasiya edilirlər.
+Spring Bean-in Xüsusiyyətləri:
+
+    İnjected (İnjekte Olunmuş) Obyektlər: Spring Container tərəfindən nümunələnir və idarə olunur.
+    IoC (Inversion of Control) Container: Spring IoC Container, tətbiqin əsas komponentlərini idarə edir və bu komponentlər Spring Bean-ləridir.
+    Constructor və Field Injection: Spring Bean-ləri constructor və ya field injection ilə başqa siniflərə inject edilir.
+    Scope: Spring Bean-lərin default olaraq Singleton scope-a sahib olduğunu unutmayın. Yəni, Spring yalnız bir dəfə Bean nümunəsi yaradaraq bunu bütün tətbiqdə istifadə etməyə imkan verir. Əgər fərqli Bean nümunələri lazımdırsa, Prototype scope təyin etmək mümkündür.
+
+
+
+Spring Bean-in İşləmə Prinsipi:
+
+Spring tətbiqi işə saldıqda, @Service və ya @Component notası ilə işarələnmiş siniflərdən Bean-lər yaradılır və Spring IoC Container-a əlavə olunur. Bu Bean-lər daha sonra tətbiqdəki digər siniflərə inject edilir. Məsələn, bir Controller sinifinə bağlı bir Service sinifi constructor injection və ya field injection ilə daxil edilir.
+
+
+
+@Autowired Annotation və Injection Növləri
+
+@Autowired Spring-də asılılıq enjeksiyonunu təmin edən ən çox istifadə olunan annotasiyadır.
+
+    Constructor Injection: Ən yaxşı təcrübə olaraq, asılılıq yalnız constructor vasitəsilə inject edilməlidir. Bu metod debug etmək üçün daha əlverişlidir.
+    Field Injection: @Autowired annotasiyası birbaşa sahələrə də tətbiq oluna bilər, amma bu halda debug etmək çətin ola bilər. Bunun üçün, constructor daxilində istifadə edilməsini tövsiyə edirəm.
+
+
+
+Singleton Scope: Spring Bean-lər varsayılan olaraq Singleton olaraq yaradılır, yəni yalnız bir dəfə nümunələnir və tətbiqin bütün hissələrində istifadə edilə bilər. Əgər fərqli Bean-lər yaradılmaq istəyirsinizsə, Prototype scope istifadə edə bilərsiniz.
+
+
+
+
+Bean Scope-ları
+
+Spring Bean-lərinin bir neçə növ scope-u mövcuddur:
+
+    Singleton: Bir Bean yalnız bir dəfə nümunələnir və tətbiq boyunca istifadə olunur. Bu, varsayılan scope-dur.
+    Prototype: Hər dəfə yeni bir Bean nümunəsi yaradılır.
+    Request: Hər HTTP sorğusu üçün yeni bir Bean nümunəsi yaradılır.
+    Session: Hər HTTP sessiyası üçün yeni bir Bean nümunəsi yaradılır.
+
+Spring-də scope-ları təyin edərək, Bean-lərin həyat dövrünü idarə edə bilərsiniz.
+
+
+
+
+Nəticə
+
+    POJO sadə və framework-dən asılı olmayan obyektlərdir, əsas Java obyektləri kimi qəbul edilə bilər.
+    JavaBean daha strukturlaşdırılmış və getter/setter metodları ilə işlər görən siniflərdir.
+    Spring Bean isə Spring Framework-də idarə olunan və asılılıq enjeksiyonu ilə konfiqurasiya edilən obyektlərdir.
+
+Bu terminləri başa düşmək, Spring və Java tətbiqlərinin daha effektiv inkişaf etdirilməsi üçün əsaslı bir addımdır.

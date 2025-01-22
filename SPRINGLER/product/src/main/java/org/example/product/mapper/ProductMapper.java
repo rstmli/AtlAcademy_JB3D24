@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.logging.log4j.util.ProcessIdUtil;
 import org.example.product.dao.entity.ProductEntity;
 import org.example.product.dto.ProductRequestDto;
 import org.example.product.dto.ProductResponseDto;
+import org.example.product.util.ProductDateUtil;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class ProductMapper {
     public List<ProductResponseDto> getProduct(List<ProductEntity> entities){
         List<ProductResponseDto> dtos = new ArrayList<>();
         for(ProductEntity e : entities){
-            var dto = ProductResponseDto.builder().name(e.getName()).price(e.getPrice()).build();
+            var dto = ProductResponseDto.builder().name(e.getName()).price(e.getPrice()).created_at(ProductDateUtil.getFormetter(e.getCreated_at(),false)).update_at(ProductDateUtil.getFormetter(e.getUpdate_at(),false)).build();
             dtos.add(dto);
         }
         return dtos;

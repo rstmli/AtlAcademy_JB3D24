@@ -1,8 +1,6 @@
 package org.example.product.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.example.product.dto.ProductRequestDto;
 import org.example.product.dto.ProductResponseDto;
 import org.example.product.service.ProductService;
@@ -23,7 +21,7 @@ public class ProductController {
 
     @GetMapping("/get")
     public List<ProductResponseDto> getProduct(ProductResponseDto dto){
-        return productService.getAllProduct(dto);
+        return productService.getAllProduct();
     }
 
     @GetMapping("/get/{id}")
@@ -31,8 +29,12 @@ public class ProductController {
         return productService.getByIdProduct(id);
     }
 
-    @PostMapping("/update/{id}")
+    @PatchMapping("/update/{id}")
     public Long updateProduct(@RequestBody ProductResponseDto dto, @PathVariable Long id){
         return productService.updateProduct(dto,id);
+    }
+    @DeleteMapping("/delete/{id}")
+    public void deleteUser(@PathVariable Long id){
+        productService.deleteAllProductTable(id);
     }
 }

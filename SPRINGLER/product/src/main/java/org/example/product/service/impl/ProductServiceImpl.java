@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductResponseDto> getAllProduct(ProductResponseDto dto) {
+    public List<ProductResponseDto> getAllProduct() {
         List<ProductEntity> entity = productRepository.findAll();
         return productMapper.getProduct(entity) ;
     }
@@ -46,7 +46,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Long updateProduct(ProductResponseDto dto, Long id) {
-
         Optional<ProductEntity> optionalProductEntity = productRepository.findById(id);
         if(optionalProductEntity.isPresent()){
             ProductEntity entity = optionalProductEntity.get();
@@ -58,6 +57,11 @@ public class ProductServiceImpl implements ProductService {
 
 
         return 0L;
+    }
+
+    @Override
+    public void deleteAllProductTable(Long id) {
+        productRepository.deleteById(id);
     }
 
 

@@ -1,19 +1,18 @@
 package org.example.product.dao.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "product")
 @Builder
-@NoArgsConstructor
+@RequiredArgsConstructor
 @AllArgsConstructor
 public class ProductEntity {
     @Id
@@ -21,9 +20,9 @@ public class ProductEntity {
     private Long id;
     private String name;
     private BigDecimal price;
-    @Builder.Default
-    private LocalDate created_at = LocalDate.now();
-    @Builder.Default
-    private LocalDate update_at = LocalDate.now();
+    @CreationTimestamp
+    private LocalDateTime created_at;
+    @UpdateTimestamp
+    private LocalDateTime update_at;
 
 }
