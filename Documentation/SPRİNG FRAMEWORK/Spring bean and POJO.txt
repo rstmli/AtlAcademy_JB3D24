@@ -87,3 +87,5 @@ Nəticə
     Spring Bean isə Spring Framework-də idarə olunan və asılılıq enjeksiyonu ilə konfiqurasiya edilən obyektlərdir.
 
 Bu terminləri başa düşmək, Spring və Java tətbiqlərinin daha effektiv inkişaf etdirilməsi üçün əsaslı bir addımdır.
+
+Joining de N+1 - dusunelim ki bir book tablemiz ve genre tablemiz var n+1 problemi burda o dur ki n qeder kitab ucun +1 qeder sorgu atilacaq yeni sorgumuz bir defe kitablari getirecek ve kitabin sayi qeder sorgu atip genre-larini getirecek

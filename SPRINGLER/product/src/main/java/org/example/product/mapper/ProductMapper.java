@@ -30,7 +30,7 @@ public class ProductMapper {
 
     }
 
-    public List<ProductResponseDto> getProduct(List<ProductEntity> entities){
+    public List<ProductResponseDto> entityToDto(List<ProductEntity> entities){
         List<ProductResponseDto> dtos = new ArrayList<>();
         for(ProductEntity e : entities){
             var dto = ProductResponseDto.builder().name(e.getName()).price(e.getPrice()).created_at(ProductDateUtil.getFormetter(e.getCreated_at(),false)).update_at(ProductDateUtil.getFormetter(e.getUpdate_at(),false)).build();

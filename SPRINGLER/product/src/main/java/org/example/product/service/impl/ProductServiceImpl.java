@@ -7,10 +7,12 @@ import org.example.product.dao.entity.ProductEntity;
 import org.example.product.dao.repository.ProductRepository;
 import org.example.product.dto.ProductRequestDto;
 import org.example.product.dto.ProductResponseDto;
+import org.example.product.dto.UpdateRequestDto;
 import org.example.product.mapper.ProductMapper;
 import org.example.product.service.ProductService;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductResponseDto> getAllProduct() {
         List<ProductEntity> entity = productRepository.findAll();
-        return productMapper.getProduct(entity) ;
+        return productMapper.entityToDto(entity) ;
     }
 
     @Override
@@ -62,6 +64,31 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteAllProductTable(Long id) {
         productRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ProductResponseDto> getGetirAllTable() {
+        return productMapper.entityToDto(productRepository.getgetirbutuntable());
+
+    }
+
+    @Override
+    public List<ProductResponseDto> getgetir60danboyukleri(BigDecimal price) {
+        return productMapper.entityToDto(productRepository.getgetirboyukdur60(price)) ;
+    }
+
+    @Override
+    public void updateNames(UpdateRequestDto dto, Long id) {
+        productRepository.updatename(dto.getName(),id);
+    }
+
+    public void delelteproduct(Long id){
+        productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public List<ProductResponseDto> productPrice(BigDecimal price) {
+        return productMapper.entityToDto(productRepository.getPriceProduct(price));
     }
 
 

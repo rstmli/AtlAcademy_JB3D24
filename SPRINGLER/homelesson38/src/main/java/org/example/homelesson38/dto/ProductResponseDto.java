@@ -1,5 +1,4 @@
-package org.example.product.dto;
-
+package org.example.homelesson38.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,16 +7,16 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-@Builder
 @Data
+@Builder
+@Component
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductResponseDto {
     private String name;
     private BigDecimal price;
-    private String created_at;
-    private String update_at;
+    private LocalDateTime created_At;
+    private LocalDateTime updated_At;
 }
-
-

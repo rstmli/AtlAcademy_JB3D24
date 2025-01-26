@@ -1,5 +1,4 @@
-package org.example.product.dto;
-
+package org.example.homelesson38.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,15 +8,13 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Builder
 @Data
+@Component
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductResponseDto {
+public class ProductNameAndPriceDTO {
     private String name;
     private BigDecimal price;
-    private String created_at;
-    private String update_at;
-}
 
-
+   }

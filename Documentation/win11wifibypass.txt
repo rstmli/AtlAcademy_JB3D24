@@ -1,0 +1,4 @@
+windows 11 kurarken zorunlu olan internete baglan kismini atlama komutu
+
+shift + f10 // terminali acar
+oobe/bypassnro // pc yeniden baslar ve wifi kisminda internet baglantisi olmadan devam et yazar
