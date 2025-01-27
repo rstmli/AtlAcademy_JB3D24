@@ -1,9 +1,6 @@
 package org.example.homelesson38.mapper;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.example.homelesson38.dao.entity.ProductEntity;
 import org.example.homelesson38.dto.ProductNameAndPriceDTO;
 import org.example.homelesson38.dto.ProductNameDto;
@@ -54,6 +51,11 @@ public class ProductMaper {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+    public ProductResponseDto entityToListDto(ProductEntity entity){
+        var dto = ProductResponseDto.builder().name(entity.getName()).price(entity.getPrice()).created_At(entity.getCreated_At()).updated_At(entity.getUpdated_At()).build();
+        return dto;
     }
 
 

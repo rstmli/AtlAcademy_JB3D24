@@ -73,4 +73,11 @@ public class ProductServiceImpl implements ProductService {
     public List<String> getDistintProduct() {
         return productRepository.getDistintProduct();
     }
+
+    @Override
+    public ProductResponseDto getmax() {
+        return productMaper.entityToListDto(productRepository.getmax());
+    }
+
+
 }

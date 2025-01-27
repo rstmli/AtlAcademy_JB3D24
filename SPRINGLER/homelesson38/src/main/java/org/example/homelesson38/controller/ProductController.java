@@ -69,6 +69,11 @@ public class ProductController {
         return productService.getDistintProduct();
     }
 
+    @GetMapping("/maxproduct")
+    public  ProductResponseDto getmax(){
+        return productService.getmax();
+    }
+
 
 
 }

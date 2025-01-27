@@ -27,6 +27,9 @@ public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
     @Query(value = "select MAX(price) as max from product",nativeQuery = true)
     BigDecimal getMaxPrice();
 
+    @Query(value = "select * from product order by price DESC limit 1",nativeQuery = true)
+    ProductEntity getmax();
+
     @Query(value = "select * from product order by created_at DESC limit 10",nativeQuery = true)
     List<ProductEntity>getOrderByCreatedAt();
 

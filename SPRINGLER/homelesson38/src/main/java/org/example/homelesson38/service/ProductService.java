@@ -20,4 +20,5 @@ public interface ProductService{
     List<ProductNameAndPriceDTO> findNameAndPrice();
     List<ProductResponseDto> findCreatedAt(String createdat);
     List<String> getDistintProduct();
+    ProductResponseDto getmax();
 }
