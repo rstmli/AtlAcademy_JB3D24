@@ -3,7 +3,6 @@ package org.example.studenttask4testing.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.example.studenttask4testing.dao.entity.StudentEntity;
 import org.example.studenttask4testing.dto.StudentRequestDto;
 import org.example.studenttask4testing.dto.StudentResponseDto;
 import org.example.studenttask4testing.service.StudentService;
