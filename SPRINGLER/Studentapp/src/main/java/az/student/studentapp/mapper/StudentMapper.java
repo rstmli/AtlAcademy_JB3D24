@@ -1,6 +1,7 @@
 package az.student.studentapp.mapper;
 
 import az.student.studentapp.dao.entity.StudentEntity;
+import az.student.studentapp.dto.StudentRequestDto;
 import az.student.studentapp.dto.StudentResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,5 +25,15 @@ public class StudentMapper {
             dtos.add(dto);
         }
         return dtos;
+    }
+
+    public StudentResponseDto entityToDto(StudentEntity e){
+        List<StudentResponseDto> dtos = new ArrayList<>();
+
+
+        var dto = StudentResponseDto.builder().id(e.getId()).name(e.getName()).surname(e.getSurname()).gender(e.getGender()).build();
+
+
+        return dto;
     }
 }

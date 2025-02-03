@@ -1,14 +1,35 @@
 package az.student.studentapp.service;
 
-import az.student.studentapp.dto.StudentRequestDto;
-import az.student.studentapp.dto.StudentResponseDto;
+import az.student.studentapp.dao.entity.Student;
+import az.student.studentapp.dao.repository.StudentRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface StudentService{
-    void postStudent(StudentRequestDto dto);
-    List<StudentResponseDto> getALl();
-    Long update(Long id, StudentRequestDto dto);
-    Long delete(Long id);
-    List<StudentResponseDto> getnaem(String name);
+@Service
+@RequiredArgsConstructor
+public class StudentService {
+    private final StudentRepository studentRepository;
+
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
+    public List<Student> searchByName(String name) {
+        return studentRepository.findByNameContaining(name);
+    }
+
+    public void saveStudent(Student student) {
+        studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
+
+    public Optional<Student> getStudentById(Long id) {
+        return studentRepository.findById(id);
+    }
 }

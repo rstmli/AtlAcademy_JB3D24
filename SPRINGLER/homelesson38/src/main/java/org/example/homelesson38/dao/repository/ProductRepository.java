@@ -1,16 +1,13 @@
 package org.example.homelesson38.dao.repository;
 
 import org.example.homelesson38.dao.entity.ProductEntity;
-import org.example.homelesson38.dto.ProductNameAndPriceDTO;
-import org.example.homelesson38.dto.ProductRequestDto;
-import org.example.homelesson38.dto.ProductResponseDto;
+import org.example.homelesson38.dto.JoinDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -44,6 +41,10 @@ public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
 
     @Query(value = "select distinct name as name from product", nativeQuery = true)
     List<String> getDistintProduct();
+
+    @Query(value = "select p.name as nameProduct, c.name as nameCategory from product p left join public.category c on c.id = p.category_id", nativeQuery = true)
+    List<JoinDto> findProductAndCategoryNames();
+
 
 }
 

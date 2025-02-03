@@ -23,6 +23,7 @@ public class ProductEntity {
     private Long id;
     private String name;
     private BigDecimal price;
+    private Long category_id;
     @CreationTimestamp
     private LocalDateTime created_At;
     @UpdateTimestamp

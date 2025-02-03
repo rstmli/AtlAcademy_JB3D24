@@ -13,7 +13,7 @@ import java.util.List;
 @Component
 @Builder
 @AllArgsConstructor
-public class ProductMaper {
+public class ProductMapper {
     public List<ProductResponseDto> entityToDto(List<ProductEntity> entities){
         List<ProductResponseDto> dtos = new ArrayList<>();
 
@@ -57,6 +57,8 @@ public class ProductMaper {
         var dto = ProductResponseDto.builder().name(entity.getName()).price(entity.getPrice()).created_At(entity.getCreated_At()).updated_At(entity.getUpdated_At()).build();
         return dto;
     }
+
+
 
 
 

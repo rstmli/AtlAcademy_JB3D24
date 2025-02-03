@@ -5,11 +5,11 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.example.homelesson38.dao.entity.ProductEntity;
 import org.example.homelesson38.dao.repository.ProductRepository;
+import org.example.homelesson38.dto.JoinDto;
 import org.example.homelesson38.dto.ProductNameAndPriceDTO;
-import org.example.homelesson38.dto.ProductNameDto;
 import org.example.homelesson38.dto.ProductRequestDto;
 import org.example.homelesson38.dto.ProductResponseDto;
-import org.example.homelesson38.mapper.ProductMaper;
+import org.example.homelesson38.mapper.ProductMapper;
 import org.example.homelesson38.service.ProductService;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
-    private final ProductMaper productMaper;
+    private final ProductMapper productMaper;
 
 
     @Override
@@ -77,6 +77,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductResponseDto getmax() {
         return productMaper.entityToListDto(productRepository.getmax());
+    }
+
+    @Override
+    public List<JoinDto> getjoin() {
+        return productRepository.findProductAndCategoryNames();
     }
 
 

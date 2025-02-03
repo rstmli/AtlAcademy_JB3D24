@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class StudentResponseDto {
+    private Long id;
     private String name;
     private String surname;
     private Gender gender;

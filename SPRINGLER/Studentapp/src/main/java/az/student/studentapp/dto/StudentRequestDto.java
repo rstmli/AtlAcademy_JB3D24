@@ -2,15 +2,16 @@ package az.student.studentapp.dto;
 
 
 import az.student.studentapp.util.Gender;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@RequiredArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentRequestDto {
+    private Long id;
     private String name;
     private String surname;
     private Gender gender;

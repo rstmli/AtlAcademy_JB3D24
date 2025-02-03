@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Ekle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Yeni Öğrenci Ekle</h1>
+
+    <form th:object="${student}" th:action="@{/students/save}" th:method="POST">
+        <div class="form-group">
+            <label for="student-name">Ad:</label>
+            <input type="text" class="form-control" id="student-name" th:field="*{name}">
+        </div>
+
+        <div class="form-group">
+            <label for="student-surname">Soyad:</label>
+            <input type="text" class="form-control" id="student-surname" th:field="*{surname}">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Kaydet</button>
+    </form>
+</div>
+</body>
+</html>

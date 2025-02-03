@@ -1,40 +1,47 @@
 package az.student.studentapp.controller;
 
-import az.student.studentapp.dto.StudentRequestDto;
-import az.student.studentapp.dto.StudentResponseDto;
+import az.student.studentapp.dao.entity.Student;
 import az.student.studentapp.service.StudentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
-@RequestMapping("api/v1/student")
+@RequestMapping("/students")
 public class StudentController {
     private final StudentService studentService;
 
-    @PostMapping("post")
-    public void postStudent(@RequestBody StudentRequestDto dto){
-        studentService.postStudent(dto);
+    @GetMapping("/list")
+    public String listStudents(Model model) {
+        model.addAttribute("students", studentService.getAllStudents());
+        return "student-list";
     }
 
-    @GetMapping("/getall")
-    public List<StudentResponseDto> getAll(){
-        return studentService.getALl();
+    @GetMapping("/search")
+    public String searchStudents(@RequestParam String name, Model model) {
+        model.addAttribute("students", studentService.searchByName(name));
+        return "student-list";
     }
 
-    @GetMapping("/getname")
-    public List<StudentResponseDto> getName(@RequestParam String name){
-        return studentService.getnaem(name);
+    @GetMapping("/add")
+    public String addStudentForm(Model model) {
+        model.addAttribute("student", new Student());
+        return "student-form";
     }
 
-    @PutMapping("/update/{id}")
-    public Long update(@PathVariable Long id,@RequestBody StudentRequestDto dto){
-        return studentService.update(id,dto);
+    @PostMapping("/save")
+    public String saveStudent(@ModelAttribute Student student) {
+        studentService.saveStudent(student);
+        return "redirect:/students/list";
     }
-    @DeleteMapping("/delete/{id}")
-    public Long delete(@PathVariable Long id){
-        return studentService.delete(id);
+
+    @GetMapping("/delete/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return "redirect:/students/list";
     }
 }

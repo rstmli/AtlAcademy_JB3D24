@@ -24,6 +24,7 @@ private Long id;
 private String name;
 private String surname;
 private Gender gender;
+private Long academy_id;
 
 @CreationTimestamp
 private LocalDateTime createAt;

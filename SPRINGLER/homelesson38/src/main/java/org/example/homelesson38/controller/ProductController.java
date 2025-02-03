@@ -2,10 +2,7 @@ package org.example.homelesson38.controller;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.example.homelesson38.dto.ProductNameAndPriceDTO;
-import org.example.homelesson38.dto.ProductNameDto;
-import org.example.homelesson38.dto.ProductRequestDto;
-import org.example.homelesson38.dto.ProductResponseDto;
+import org.example.homelesson38.dto.*;
 import org.example.homelesson38.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,6 +69,11 @@ public class ProductController {
     @GetMapping("/maxproduct")
     public  ProductResponseDto getmax(){
         return productService.getmax();
+    }
+
+    @GetMapping("getjoin")
+    public List<JoinDto> getjoin(){
+        return productService.getjoin();
     }
 
 

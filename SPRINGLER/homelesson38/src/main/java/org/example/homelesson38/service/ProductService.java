@@ -1,12 +1,9 @@
 package org.example.homelesson38.service;
 
-import org.example.homelesson38.dto.ProductNameAndPriceDTO;
-import org.example.homelesson38.dto.ProductNameDto;
-import org.example.homelesson38.dto.ProductRequestDto;
-import org.example.homelesson38.dto.ProductResponseDto;
+import org.example.homelesson38.dao.entity.ProductEntity;
+import org.example.homelesson38.dto.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface ProductService{
@@ -21,4 +18,5 @@ public interface ProductService{
     List<ProductResponseDto> findCreatedAt(String createdat);
     List<String> getDistintProduct();
     ProductResponseDto getmax();
+    List<JoinDto> getjoin();
 }
