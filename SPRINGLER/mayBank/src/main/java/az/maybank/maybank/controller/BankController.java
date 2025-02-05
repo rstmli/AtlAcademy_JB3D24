@@ -4,6 +4,7 @@ import az.maybank.maybank.dto.BankResponseDto;
 import az.maybank.maybank.dto.UserRequestDto;
 import az.maybank.maybank.dto.UserResponseDto;
 import az.maybank.maybank.service.BankService;
+import az.maybank.maybank.service.UserService;
 import jakarta.validation.Valid;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -18,11 +19,8 @@ import java.util.List;
 @Validated
 public class BankController {
     private final BankService bankService;
+    private final UserService userService;
 
-    @PostMapping("add")
-    public void addUsers(@Valid @RequestBody UserRequestDto dto){
-        bankService.addUsers(dto);
-    }
     @GetMapping("/get")
     public List<BankResponseDto> getAll(){
         return bankService.getall();

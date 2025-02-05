@@ -23,6 +23,7 @@ public class BankServiceImpl implements BankService {
     private final UsersRepository usersRepository;
     private final BankMapper bankMapper;
 
+
     @Override
     public List<BankResponseDto> getall() {
         return bankMapper.entityListToDto(bankRepository.findAll());
@@ -31,15 +32,6 @@ public class BankServiceImpl implements BankService {
     @Override
     public BankResponseDto getById(Long id) {
         return bankMapper.entityToDto(id);
-    }
-
-    @Override
-    public void addUsers(UserRequestDto dto) throws BankNotFoundException {
-
-        BankEntity bank = bankRepository.findById(dto.getBankId()).orElseThrow(() -> new BankNotFoundException("not found bank"));
-
-        UserEntity entity = UserEntity.builder().name(dto.getName()).surname(dto.getSurname()).bankEntity(bank).build();
-        usersRepository.save(entity);
     }
 
 
