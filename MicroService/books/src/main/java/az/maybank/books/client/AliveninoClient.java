@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
-@FeignClient(name = "alivenino-client", url = "http://localhost:8801/api/v1/alivenino/")
+@FeignClient(name = "alivenino-client", url = "http://194.105.5.229:8801/api/v1/alivenino/")
 public interface AliveninoClient {
         @RequestMapping(method = RequestMethod.GET , value = "get")
         List<AliveninoDto> getAll();

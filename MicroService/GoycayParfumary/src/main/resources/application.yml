@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: taskstudent
+  datasource:
+    url: jdbc:postgresql://194.105.5.229:5432/postgres
+    username: myuser
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8803
+  main:
+    allow-bean-definition-overriding: true

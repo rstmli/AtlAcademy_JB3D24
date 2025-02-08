@@ -2,7 +2,6 @@ package az.maybank.books.mapper;
 
 import az.maybank.books.dto.AliveninoDto;
 import az.maybank.books.dto.BookResponseDto;
-import az.maybank.books.dto.CategoryDto;
 import az.maybank.books.dto.LibrafDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -19,7 +18,7 @@ public class BookMapper {
     private static final String ALIVENINO = "ali ve nino";
 
 
-    public List<BookResponseDto> aliveninodtoToLibrafDto(List<AliveninoDto> dtos){
+    public List<BookResponseDto> aliveninoDtoToListBookResponseDto(List<AliveninoDto> dtos){
         var dto = new ArrayList<BookResponseDto>();
         for(AliveninoDto a : dtos){
             dto.add(
@@ -29,7 +28,7 @@ public class BookMapper {
         return dto;
     }
 
-    public List<BookResponseDto> libraftoToLibrafDto(List<LibrafDto> dtos){
+    public List<BookResponseDto> librafDtoToListBookResponseDto(List<LibrafDto> dtos){
         var dto = new ArrayList<BookResponseDto>();
         for(LibrafDto l : dtos){
             dto.add(
@@ -42,8 +41,8 @@ public class BookMapper {
 
     public Map<String,List<BookResponseDto>> categorizeBooks(List<LibrafDto> librafDtos,List<AliveninoDto> aliveninoDtos){
         Map<String,List<BookResponseDto>> categorizedBooks = new HashMap<>();
-        categorizedBooks.put("Librof kitapxanasi",libraftoToLibrafDto(librafDtos));
-        categorizedBooks.put("Ali ve Nino kitapxanasi",aliveninodtoToLibrafDto(aliveninoDtos));
+        categorizedBooks.put("Libraf kitapxanasi", librafDtoToListBookResponseDto(librafDtos));
+        categorizedBooks.put("Ali ve Nino kitapxanasi", aliveninoDtoToListBookResponseDto(aliveninoDtos));
         return categorizedBooks;
     }
 
