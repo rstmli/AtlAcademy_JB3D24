@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: taskstudent
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: myuser
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
